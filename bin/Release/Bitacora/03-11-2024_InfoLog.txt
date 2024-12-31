@@ -1,0 +1,8 @@
+03/11/2024 12:46:34 [Info] : El Usuario 'caja2024', con el rol 'Cajero' inicio sesion.
+03/11/2024 13:02:18 [Info] : El Usuario 'caja2024', con el rol 'Cajero' inicio sesion.
+03/11/2024 19:08:10 [Info] : El Usuario 'caja2024', con el rol 'Cajero' inicio sesion.
+03/11/2024 19:16:42 [Info] : El Usuario 'prueba', con el rol 'prueba' inicio sesion.
+03/11/2024 19:17:21 [Info] : El Usuario 'caja2024', con el rol 'Cajero' inicio sesion.
+03/11/2024 19:50:16 [Info] : El Usuario 'caja2024', con el rol 'Cajero' inicio sesion.
+03/11/2024 21:15:19 [Info] : El Usuario 'caja2024', con el rol 'Cajero' inicio sesion.
+03/11/2024 21:28:09 [Info] : El Usuario 'prueba', con el rol 'prueba' inicio sesion.

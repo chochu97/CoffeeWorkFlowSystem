@@ -1,0 +1,905 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Datos</name>
+    </assembly>
+    <members>
+        <member name="T:Datos.Contracts.Items.IDetallePedidoRepository">
+            <summary>
+            Interfaz para el repositorio de detalles de pedidos.
+            Hereda de <see cref="T:Datos.IGenericInterface`1"/> para operaciones CRUD.
+            </summary>
+        </member>
+        <member name="M:Datos.Contracts.Items.IDetallePedidoRepository.ObtenerDetallesPorPedido(System.Guid)">
+            <summary>
+            Obtiene una lista de detalles de productos asociados a un pedido específico.
+            </summary>
+            <param name="PedidoID">El identificador único del pedido.</param>
+            <returns>Una lista de <see cref="T:Domain.DTO.ProductoDetalleDTO"/> que representan los detalles del pedido.</returns>
+        </member>
+        <member name="T:Datos.Contracts.Items.IProductoRepository">
+            <summary>
+            Interfaz para el repositorio de productos.
+            Hereda de <see cref="T:Datos.IGenericInterface`1"/> para operaciones CRUD.
+            </summary>
+        </member>
+        <member name="M:Datos.Contracts.Items.IProductoRepository.GetByName(System.String)">
+            <summary>
+            Obtiene una lista de productos que coinciden con el nombre especificado.
+            </summary>
+            <param name="name">El nombre del producto a buscar.</param>
+            <returns>Una lista de <see cref="T:Domain.DTO.ProductoDTO"/> que representan los productos encontrados.</returns>
+        </member>
+        <member name="M:Datos.Contracts.Items.IProductoRepository.GetProducts">
+            <summary>
+            Obtiene una lista de todos los productos.
+            </summary>
+            <returns>Una lista de <see cref="T:Domain.DTO.ProductoDTO"/> que representan todos los productos.</returns>
+        </member>
+        <member name="M:Datos.Contracts.Items.IProductoRepository.GetBebidas">
+            <summary>
+            Obtiene una lista de productos que son bebidas.
+            </summary>
+            <returns>Una lista de <see cref="T:Domain.DTO.ProductoDTO"/> que representan las bebidas.</returns>
+        </member>
+        <member name="M:Datos.Contracts.Items.IProductoRepository.GetComidas">
+            <summary>
+            Obtiene una lista de productos que son comidas.
+            </summary>
+            <returns>Una lista de <see cref="T:Domain.DTO.ProductoDTO"/> que representan las comidas.</returns>
+        </member>
+        <member name="M:Datos.Contracts.Items.IProductoRepository.EnableDisable(System.Guid)">
+            <summary>
+            Habilita o deshabilita un producto por su identificador único.
+            </summary>
+            <param name="id">El identificador único del producto a habilitar o deshabilitar.</param>
+        </member>
+        <member name="T:Datos.Contracts.Items.IPedidoRepository">
+            <summary>
+            Interfaz para el repositorio de pedidos.
+            Hereda de <see cref="T:Datos.IGenericInterface`1"/> para operaciones CRUD.
+            </summary>
+        </member>
+        <member name="M:Datos.Contracts.Items.IPedidoRepository.ObtenerPedidos">
+            <summary>
+            Obtiene una lista de todos los pedidos completos.
+            </summary>
+            <returns>Una lista de <see cref="T:Domain.DTO.PedidoCompletoDTO"/> que representan los pedidos.</returns>
+        </member>
+        <member name="M:Datos.Contracts.Items.IPedidoRepository.ProcesarPedido(Domain.PEDIDO)">
+            <summary>
+            Procesa un pedido específico.
+            </summary>
+            <param name="pedido">El objeto <see cref="T:Domain.PEDIDO"/> a procesar.</param>
+        </member>
+        <member name="T:Datos.Contracts.Performance.IBonoRepository">
+            <summary>
+            Interfaz para el repositorio de bonos.
+            Hereda de <see cref="T:Datos.IGenericInterface`1"/> para operaciones CRUD.
+            </summary>
+        </member>
+        <member name="M:Datos.Contracts.Performance.IBonoRepository.GetBonos">
+            <summary>
+            Obtiene una lista de todos los bonos.
+            </summary>
+            <returns>Una lista de <see cref="T:Domain.DTO.BonoDTO"/> que representan todos los bonos.</returns>
+        </member>
+        <member name="T:Datos.Contracts.Performance.IEmpleadoTareaRepository">
+            <summary>
+            Interfaz para el repositorio de tareas de empleados.
+            Hereda de <see cref="T:Datos.IGenericInterface`1"/> para operaciones CRUD.
+            </summary>
+        </member>
+        <member name="M:Datos.Contracts.Performance.IEmpleadoTareaRepository.HacerTarea(Domain.DETALLE_TAREA)">
+            <summary>
+            Asigna una tarea a un empleado.
+            </summary>
+            <param name="detalle">El detalle de la tarea a realizar.</param>
+        </member>
+        <member name="M:Datos.Contracts.Performance.IEmpleadoTareaRepository.FinalizarTarea(System.Guid)">
+            <summary>
+            Finaliza una tarea específica por su identificador.
+            </summary>
+            <param name="idTarea">El identificador de la tarea a finalizar.</param>
+        </member>
+        <member name="M:Datos.Contracts.Performance.IEmpleadoTareaRepository.GetDetalles">
+            <summary>
+            Obtiene una lista de todos los detalles de tareas.
+            </summary>
+            <returns>Una lista de <see cref="T:Domain.DTO.DetalleTareaDTO"/> que representan todos los detalles de tareas.</returns>
+        </member>
+        <member name="M:Datos.Contracts.Performance.IEmpleadoTareaRepository.GetDetallesPorEmp(System.Int32)">
+            <summary>
+            Obtiene una lista de detalles de tareas asignadas a un empleado específico.
+            </summary>
+            <param name="id">El identificador del empleado.</param>
+            <returns>Una lista de <see cref="T:Domain.DTO.DetalleTareaDTO"/> que representan los detalles de tareas del empleado.</returns>
+        </member>
+        <member name="M:Datos.Contracts.Performance.IEmpleadoTareaRepository.ObtenerBonosDelMes">
+            <summary>
+            Obtiene una lista de bonos del mes para los empleados.
+            </summary>
+            <returns>Una lista de <see cref="T:Domain.DTO.EmpleadoDesempDTO"/> que representan los bonos del mes.</returns>
+        </member>
+        <member name="T:Datos.Contracts.Performance.ITareaRepository">
+            <summary>
+            Interfaz para el repositorio de tareas.
+            Hereda de <see cref="T:Datos.IGenericInterface`1"/> para operaciones CRUD.
+            </summary>
+        </member>
+        <member name="M:Datos.Contracts.Performance.ITareaRepository.ResetearTareasTurno">
+            <summary>
+            Reinicia las tareas del turno actual.
+            </summary>
+        </member>
+        <member name="M:Datos.Contracts.Performance.ITareaRepository.ProcesarEstado(Domain.TAREA)">
+            <summary>
+            Procesa el estado de una tarea específica.
+            </summary>
+            <param name="obj">El objeto <see cref="T:Domain.TAREA"/> que representa la tarea a procesar.</param>
+        </member>
+        <member name="M:Datos.Contracts.Performance.ITareaRepository.GetTareas">
+            <summary>
+            Obtiene una lista de todas las tareas.
+            </summary>
+            <returns>Una lista de <see cref="T:Domain.DTO.TareaDTO"/> que representan todas las tareas.</returns>
+        </member>
+        <member name="T:Datos.Contracts.People.IClienteRepository">
+            <summary>
+            Interfaz para el repositorio de clientes.
+            Hereda de <see cref="T:Datos.IGenericInterface`1"/> para operaciones CRUD.
+            </summary>
+        </member>
+        <member name="M:Datos.Contracts.People.IClienteRepository.GetClienteByDNI(System.Int32)">
+            <summary>
+            Obtiene una lista de clientes que coinciden con el DNI especificado.
+            </summary>
+            <param name="dni">El DNI del cliente a buscar.</param>
+            <returns>Una lista de <see cref="T:Domain.DTO.ClienteDTO"/> que representan los clientes encontrados.</returns>
+        </member>
+        <member name="M:Datos.Contracts.People.IClienteRepository.GetClientes">
+            <summary>
+            Obtiene una lista de todos los clientes.
+            </summary>
+            <returns>Una lista de <see cref="T:Domain.DTO.ClienteDTO"/> que representan todos los clientes.</returns>
+        </member>
+        <member name="M:Datos.Contracts.People.IClienteRepository.GetOneClientDNI(System.Int32)">
+            <summary>
+            Obtiene un cliente específico por su DNI.
+            </summary>
+            <param name="dni">El DNI del cliente a buscar.</param>
+            <returns>Un objeto <see cref="T:Domain.CLIENTE"/> que representa el cliente encontrado, o null si no se encuentra.</returns>
+        </member>
+        <member name="T:Datos.Contracts.People.IEmpleadoRepository">
+            <summary>
+            Interfaz para el repositorio de empleados.
+            Hereda de <see cref="T:Datos.IGenericInterface`1"/> para operaciones CRUD.
+            </summary>
+        </member>
+        <member name="M:Datos.Contracts.People.IEmpleadoRepository.GetEmpByName(System.String)">
+            <summary>
+            Obtiene una lista de empleados que coinciden con el nombre especificado.
+            </summary>
+            <param name="name">El nombre del empleado a buscar.</param>
+            <returns>Una lista de <see cref="T:Domain.DTO.EmpleadoDTO"/> que representan los empleados encontrados.</returns>
+        </member>
+        <member name="M:Datos.Contracts.People.IEmpleadoRepository.GetEmpById(System.Int32)">
+            <summary>
+            Obtiene un empleado específico por su identificador.
+            </summary>
+            <param name="empId">El identificador del empleado a buscar.</param>
+            <returns>Un objeto <see cref="T:Domain.EMPLEADO"/> que representa el empleado encontrado, o null si no se encuentra.</returns>
+        </member>
+        <member name="M:Datos.Contracts.People.IEmpleadoRepository.GetEmpleadosDTO">
+            <summary>
+            Obtiene una lista de todos los empleados en formato DTO.
+            </summary>
+            <returns>Una lista de <see cref="T:Domain.DTO.EmpleadoDTO"/> que representan todos los empleados.</returns>
+        </member>
+        <member name="M:Datos.Contracts.People.IEmpleadoRepository.DeleteEmp(System.Int32)">
+            <summary>
+            Elimina un empleado por su identificador.
+            </summary>
+            <param name="id">El identificador del empleado a eliminar.</param>
+        </member>
+        <member name="T:Datos.IGenericInterface`1">
+            <summary>
+            Interfaz genérica para operaciones CRUD (Crear, Leer, Actualizar, Eliminar).
+            </summary>
+            <typeparam name="T">El tipo de objeto que se manejará en la interfaz.</typeparam>
+        </member>
+        <member name="M:Datos.IGenericInterface`1.Agregar(`0)">
+            <summary>
+            Agrega un nuevo objeto.
+            </summary>
+            <param name="obj">El objeto a agregar.</param>
+        </member>
+        <member name="M:Datos.IGenericInterface`1.Eliminar(System.Guid)">
+            <summary>
+            Elimina un objeto por su identificador único.
+            </summary>
+            <param name="id">El identificador único del objeto a eliminar.</param>
+        </member>
+        <member name="M:Datos.IGenericInterface`1.Modificar(`0)">
+            <summary>
+            Modifica un objeto existente.
+            </summary>
+            <param name="obj">El objeto a modificar.</param>
+        </member>
+        <member name="M:Datos.IGenericInterface`1.GetOne(System.Guid)">
+            <summary>
+            Obtiene un objeto por su identificador único.
+            </summary>
+            <param name="id">El identificador único del objeto a obtener.</param>
+            <returns>El objeto correspondiente al identificador.</returns>
+        </member>
+        <member name="M:Datos.IGenericInterface`1.GetAll">
+            <summary>
+            Obtiene todos los objetos.
+            </summary>
+            <returns>Una lista de todos los objetos.</returns>
+        </member>
+        <member name="T:Datos.Factory.FactoryDAO">
+            <summary>
+            Clase estática que proporciona métodos para obtener instancias de repositorios.
+            Utiliza el patrón de diseño de fábrica para crear repositorios basados en el tipo de backend configurado.
+            </summary>
+        </member>
+        <member name="M:Datos.Factory.FactoryDAO.GetClienteRepository">
+            <summary>
+            Obtiene una instancia del repositorio de clientes.
+            </summary>
+            <returns>Una instancia de <see cref="T:Datos.Contracts.People.IClienteRepository"/>.</returns>
+            <exception cref="T:System.NotImplementedException">Se lanza si el backend no está implementado.</exception>
+        </member>
+        <member name="M:Datos.Factory.FactoryDAO.GetEmpleadoRepository">
+            <summary>
+            Obtiene una instancia del repositorio de empleados.
+            </summary>
+            <returns>Una instancia de <see cref="T:Datos.Contracts.People.IEmpleadoRepository"/>.</returns>
+            <exception cref="T:System.NotImplementedException">Se lanza si el backend no está implementado.</exception>
+        </member>
+        <member name="M:Datos.Factory.FactoryDAO.GetPedidoRepository">
+            <summary>
+            Obtiene una instancia del repositorio de pedidos.
+            </summary>
+            <returns>Una instancia de <see cref="T:Datos.Contracts.Items.IPedidoRepository"/>.</returns>
+            <exception cref="T:System.NotImplementedException">Se lanza si el backend no está implementado.</exception>
+        </member>
+        <member name="M:Datos.Factory.FactoryDAO.GetDetallePedidoRepository">
+            <summary>
+            Obtiene una instancia del repositorio de detalles de pedidos.
+            </summary>
+            <returns>Una instancia de <see cref="T:Datos.Contracts.Items.IDetallePedidoRepository"/>.</returns>
+            <exception cref="T:System.NotImplementedException">Se lanza si el backend no está implementado.</exception>
+        </member>
+        <member name="M:Datos.Factory.FactoryDAO.GetProductoRepository">
+            <summary>
+            Obtiene una instancia del repositorio de productos.
+            </summary>
+            <returns>Una instancia de <see cref="T:Datos.Contracts.Items.IProductoRepository"/>.</returns>
+            <exception cref="T:System.NotImplementedException">Se lanza si el backend no está implementado.</exception>
+        </member>
+        <member name="M:Datos.Factory.FactoryDAO.GetBonoRepository">
+            <summary>
+            Obtiene una instancia del repositorio de bonos.
+            </summary>
+            <returns>Una instancia de <see cref="T:Datos.Contracts.Performance.IBonoRepository"/>.</returns>
+            <exception cref="T:System.NotImplementedException">Se lanza si el backend no está implementado.</exception>
+        </member>
+        <member name="M:Datos.Factory.FactoryDAO.GetEmpleadoTareaRepository">
+            <summary>
+            Obtiene una instancia del repositorio de tareas de empleados.
+            </summary>
+            <returns>Una instancia de <see cref="T:Datos.Contracts.Performance.IEmpleadoTareaRepository"/>.</returns>
+            <exception cref="T:System.NotImplementedException">Se lanza si el backend no está implementado.</exception>
+        </member>
+        <member name="M:Datos.Factory.FactoryDAO.GetTareaRepository">
+            <summary>
+            Obtiene una instancia del repositorio de tareas.
+            </summary>
+            <returns>Una instancia de <see cref="T:Datos.Contracts.Performance.ITareaRepository"/>.</returns>
+            <exception cref="T:System.NotImplementedException">Se lanza si el backend no está implementado.</exception>
+        </member>
+        <member name="T:Datos.Factory.BackendType">
+            <summary>
+            Enumeración que define los tipos de backend disponibles.
+            </summary>
+        </member>
+        <member name="T:Datos.IDGenerator.GuidGenerator">
+            <summary>
+            Clase estática para generar identificadores únicos globales (GUID).
+            </summary>
+        </member>
+        <member name="M:Datos.IDGenerator.GuidGenerator.NewGuid">
+            <summary>
+            Genera un nuevo GUID.
+            </summary>
+            <returns>Un nuevo identificador único global (GUID).</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Helpers.SqlHelper.ExecuteNonQuery(System.String,System.Data.CommandType,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Ejecuta un comando SQL que no devuelve filas (INSERT, UPDATE, DELETE).
+            </summary>
+            <param name="commandText">El texto del comando SQL.</param>
+            <param name="commandType">El tipo de comando (StoredProcedure, Text, etc.).</param>
+            <param name="parameters">Parámetros opcionales para el comando SQL.</param>
+            <returns>El número de filas afectadas.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Helpers.SqlHelper.CheckNullables(System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Verifica y reemplaza los valores nulos de los parámetros por DBNull.Value.
+            </summary>
+            <param name="parameters">Los parámetros a verificar.</param>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Helpers.SqlHelper.ExecuteScalar(System.String,System.Data.CommandType,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Ejecuta un comando SQL y devuelve un único valor.
+            </summary>
+            <param name="commandText">El texto del comando SQL.</param>
+            <param name="commandType">El tipo de comando (StoredProcedure, Text, etc.).</param>
+            <param name="parameters">Parámetros opcionales para el comando SQL.</param>
+            <returns>El valor devuelto por el comando SQL.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Helpers.SqlHelper.ExecuteReader(System.String,System.Data.CommandType,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Ejecuta un comando SQL y devuelve un SqlDataReader para leer los resultados.
+            </summary>
+            <param name="commandText">El texto del comando SQL.</param>
+            <param name="commandType">El tipo de comando (StoredProcedure, Text, etc.).</param>
+            <param name="parameters">Parámetros opcionales para el comando SQL.</param>
+            <returns>Un SqlDataReader para leer los resultados.</returns>
+        </member>
+        <member name="T:Datos.Implementations.SqlServer.Items.DetallePedidoDAO">
+            <summary>
+            Clase que implementa el repositorio para la entidad DETALLE_PEDIDO.
+            </summary>
+        </member>
+        <member name="P:Datos.Implementations.SqlServer.Items.DetallePedidoDAO.Current">
+            <summary>
+            Obtiene la instancia única de DetallePedidoDAO.
+            </summary>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Items.DetallePedidoDAO.Agregar(Domain.DETALLE_PEDIDO)">
+            <summary>
+            Agrega un nuevo detalle de pedido a la base de datos.
+            </summary>
+            <param name="obj">El objeto DETALLE_PEDIDO a agregar.</param>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Items.DetallePedidoDAO.Eliminar(System.Guid)">
+            <summary>
+            Elimina un detalle de pedido de la base de datos.
+            </summary>
+            <param name="id">El ID del detalle de pedido a eliminar.</param>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Items.DetallePedidoDAO.GetOne(System.Guid)">
+            <summary>
+            Obtiene un detalle de pedido por su ID.
+            </summary>
+            <param name="id">El ID del detalle de pedido a obtener.</param>
+            <returns>El objeto DETALLE_PEDIDO correspondiente.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Items.DetallePedidoDAO.Modificar(Domain.DETALLE_PEDIDO)">
+            <summary>
+            Modifica un detalle de pedido existente en la base de datos.
+            </summary>
+            <param name="obj">El objeto DETALLE_PEDIDO con los nuevos valores.</param>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Items.DetallePedidoDAO.ObtenerDetallesPorPedido(System.Guid)">
+            <summary>
+            Obtiene una lista de detalles de productos por el ID de un pedido.
+            </summary>
+            <param name="PedidoID">El ID del pedido para el cual se desean los detalles.</param>
+            <returns>Una lista de objetos ProductoDetalleDTO.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Items.DetallePedidoDAO.GetAll">
+            <summary>
+            Obtiene todos los registros de detalles de pedidos.
+            Este método no está implementado y lanza una excepción <see cref="T:System.NotImplementedException"/>.
+            </summary>
+            <returns>Una lista de objetos <see cref="T:Domain.DETALLE_PEDIDO"/> que representan los detalles de los pedidos.</returns>
+            <exception cref="T:System.NotImplementedException">Lanzado cuando el método no ha sido implementado aún.</exception>
+        </member>
+        <member name="T:Datos.Implementations.SqlServer.Items.PedidoDAO">
+            <summary>
+            Clase que implementa el repositorio para la entidad PEDIDO.
+            </summary>
+        </member>
+        <member name="P:Datos.Implementations.SqlServer.Items.PedidoDAO.Current">
+            <summary>
+            Obtiene la instancia única de PedidoDAO.
+            </summary>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Items.PedidoDAO.Agregar(Domain.PEDIDO)">
+            <summary>
+            Agrega un nuevo pedido a la base de datos.
+            </summary>
+            <param name="obj">El objeto PEDIDO a agregar.</param>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Items.PedidoDAO.Eliminar(System.Guid)">
+            <summary>
+            Elimina un pedido de la base de datos marcándolo como cancelado.
+            </summary>
+            <param name="id">El ID del pedido a eliminar.</param>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Items.PedidoDAO.GetOne(System.Guid)">
+            <summary>
+            Obtiene un pedido por su ID.
+            </summary>
+            <param name="id">El ID del pedido a obtener.</param>
+            <returns>El objeto PEDIDO correspondiente.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Items.PedidoDAO.ProcesarPedido(Domain.PEDIDO)">
+            <summary>
+            Procesa un pedido, cambiando su estado según su estado actual.
+            </summary>
+            <param name="pedido">El objeto PEDIDO a procesar.</param>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Items.PedidoDAO.ObtenerPedidos">
+            <summary>
+            Obtiene una lista de pedidos completos, incluyendo información del cliente, empleado y productos.
+            </summary>
+            <returns>Una lista de objetos PedidoCompletoDTO que representan los pedidos.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Items.PedidoDAO.GetAll">
+            <summary>
+            Obtiene todos los registros de pedidos.
+            Este método aún no está implementado.
+            </summary>
+            <returns>Una lista de objetos <see cref="T:Domain.PEDIDO"/>.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Items.PedidoDAO.Modificar(Domain.PEDIDO)">
+            <summary>
+            Modifica un pedido existente.
+            Este método aún no está implementado.
+            </summary>
+            <param name="obj">El objeto <see cref="T:Domain.PEDIDO"/> que se desea modificar.</param>
+        </member>
+        <member name="T:Datos.Implementations.SqlServer.Items.ProductoDAO">
+            <summary>
+            Clase que implementa el repositorio para la entidad PRODUCTO.
+            </summary>
+        </member>
+        <member name="P:Datos.Implementations.SqlServer.Items.ProductoDAO.Current">
+            <summary>
+            Obtiene la instancia única de ProductoDAO.
+            </summary>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Items.ProductoDAO.Agregar(Domain.PRODUCTO)">
+            <summary>
+            Agrega un nuevo producto a la base de datos.
+            </summary>
+            <param name="obj">El objeto PRODUCTO a agregar.</param>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Items.ProductoDAO.Modificar(Domain.PRODUCTO)">
+            <summary>
+            Modifica un producto existente en la base de datos.
+            </summary>
+            <param name="obj">El objeto PRODUCTO con los nuevos valores.</param>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Items.ProductoDAO.Eliminar(System.Guid)">
+            <summary>
+            Elimina un producto de la base de datos.
+            </summary>
+            <param name="id">El ID del producto a eliminar.</param>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Items.ProductoDAO.EnableDisable(System.Guid)">
+            <summary>
+            Habilita o deshabilita un producto. (Método no implementado)
+            </summary>
+            <param name="id">El ID del producto a habilitar o deshabilitar.</param>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Items.ProductoDAO.GetAll">
+            <summary>
+            Obtiene todos los productos de la base de datos.
+            </summary>
+            <returns>Una lista de objetos PRODUCTO.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Items.ProductoDAO.GetOne(System.Guid)">
+            <summary>
+            Obtiene un producto por su ID.
+            </summary>
+            <param name="id">El ID del producto a obtener.</param>
+            <returns>El objeto PRODUCTO correspondiente.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Items.ProductoDAO.GetBebidas">
+            <summary>
+            Obtiene una lista de productos de tipo "Bebida" que están habilitados.
+            </summary>
+            <returns>Una lista de objetos ProductoDTO que representan las bebidas.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Items.ProductoDAO.GetComidas">
+            <summary>
+            Obtiene una lista de productos de tipo "Comida" que están habilitados.
+            </summary>
+            <returns>Una lista de objetos ProductoDTO que representan las comidas.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Items.ProductoDAO.GetByName(System.String)">
+            <summary>
+            Obtiene una lista de productos que contienen el nombre especificado.
+            </summary>
+            <param name="name">El nombre o parte del nombre del producto a buscar.</param>
+            <returns>Una lista de objetos ProductoDTO que representan los productos encontrados.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Items.ProductoDAO.GetProducts">
+            <summary>
+            Obtiene una lista de todos los productos en la base de datos.
+            </summary>
+            <returns>Una lista de objetos ProductoDTO que representan todos los productos.</returns>
+        </member>
+        <member name="T:Datos.Implementations.SqlServer.People.ClienteDAO">
+            <summary>
+            Clase que implementa el repositorio para la entidad CLIENTE.
+            </summary>
+        </member>
+        <member name="P:Datos.Implementations.SqlServer.People.ClienteDAO.Current">
+            <summary>
+            Obtiene la instancia única de ClienteDAO.
+            </summary>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.People.ClienteDAO.Agregar(Domain.CLIENTE)">
+            <summary>
+            Agrega un nuevo cliente a la base de datos.
+            </summary>
+            <param name="obj">El objeto CLIENTE a agregar.</param>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.People.ClienteDAO.Eliminar(System.Guid)">
+            <summary>
+            Elimina un cliente de la base de datos.
+            </summary>
+            <param name="id">El ID del cliente a eliminar.</param>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.People.ClienteDAO.GetOne(System.Guid)">
+            <summary>
+            Obtiene un cliente por su ID.
+            </summary>
+            <param name="id">El ID del cliente a obtener.</param>
+            <returns>El objeto CLIENTE correspondiente.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.People.ClienteDAO.Modificar(Domain.CLIENTE)">
+            <summary>
+            Modifica un cliente existente en la base de datos.
+            </summary>
+            <param name="obj">El objeto CLIENTE con los nuevos valores.</param>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.People.ClienteDAO.GetAll">
+            <summary>
+            Obtiene todos los clientes de la base de datos.
+            </summary>
+            <returns>Una lista de objetos CLIENTE.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.People.ClienteDAO.GetOneClientDNI(System.Int32)">
+            <summary>
+            Obtiene un cliente por su DNI.
+            </summary>
+            <param name="dni">El DNI del cliente a obtener.</param>
+            <returns>El objeto CLIENTE correspondiente.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.People.ClienteDAO.GetClienteByDNI(System.Int32)">
+            <summary>
+            Obtiene una lista de clientes que coinciden con el DNI especificado y están habilitados.
+            </summary>
+            <param name="dni">El DNI del cliente a buscar.</param>
+            <returns>Una lista de objetos ClienteDTO que representan los clientes encontrados.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.People.ClienteDAO.GetClientes">
+            <summary>
+            Obtiene una lista de todos los clientes habilitados en la base de datos.
+            </summary>
+            <returns>Una lista de objetos ClienteDTO que representan todos los clientes habilitados.</returns>
+        </member>
+        <member name="T:Datos.Implementations.SqlServer.People.EmpleadoDAO">
+            <summary>
+            Clase que implementa el repositorio para la entidad EMPLEADO.
+            </summary>
+        </member>
+        <member name="P:Datos.Implementations.SqlServer.People.EmpleadoDAO.Current">
+            <summary>
+            Obtiene la instancia única de EmpleadoDAO.
+            </summary>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.People.EmpleadoDAO.Agregar(Domain.EMPLEADO)">
+            <summary>
+            Agrega un nuevo empleado a la base de datos.
+            </summary>
+            <param name="obj">El objeto EMPLEADO a agregar.</param>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.People.EmpleadoDAO.DeleteEmp(System.Int32)">
+            <summary>
+            Elimina un empleado de la base de datos.
+            </summary>
+            <param name="id">El ID del empleado a eliminar.</param>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.People.EmpleadoDAO.GetAll">
+            <summary>
+            Obtiene una lista de todos los empleados en la base de datos.
+            </summary>
+            <returns>Una lista de objetos EMPLEADO.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.People.EmpleadoDAO.Modificar(Domain.EMPLEADO)">
+            <summary>
+            Modifica un empleado existente en la base de datos.
+            </summary>
+            <param name="obj">El objeto EMPLEADO con los nuevos valores.</param>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.People.EmpleadoDAO.GetEmpById(System.Int32)">
+            <summary>
+            Obtiene un empleado por su ID.
+            </summary>
+            <param name="empId">El ID del empleado a obtener.</param>
+            <returns>El objeto EMPLEADO correspondiente.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.People.EmpleadoDAO.GetEmpByName(System.String)">
+            <summary>
+            Obtiene una lista de empleados que coinciden con el nombre especificado.
+            </summary>
+            <param name="name">El nombre o parte del nombre del empleado a buscar.</param>
+            <returns>Una lista de objetos EmpleadoDTO que representan los empleados encontrados.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.People.EmpleadoDAO.GetEmpleadosDTO">
+            <summary>
+            Obtiene una lista de todos los empleados en formato DTO.
+            </summary>
+            <returns>Una lista de objetos EmpleadoDTO que representan todos los empleados.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.People.EmpleadoDAO.Eliminar(System.Guid)">
+            <summary>
+            Elimina un empleado por su ID. (No implementado)
+            </summary>
+            <param name="id">El ID del empleado a eliminar.</param>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.People.EmpleadoDAO.GetOne(System.Guid)">
+            <summary>
+            Obtiene un empleado por su ID. (No implementado)
+            </summary>
+            <param name="id">El ID del empleado a obtener.</param>
+            <returns>El objeto EMPLEADO correspondiente.</returns>
+        </member>
+        <member name="T:Datos.Implementations.SqlServer.Performance.BonoDAO">
+            <summary>
+            Clase que implementa el repositorio para la entidad BONO.
+            </summary>
+        </member>
+        <member name="P:Datos.Implementations.SqlServer.Performance.BonoDAO.Current">
+            <summary>
+            Obtiene la instancia única de BonoDAO.
+            </summary>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Performance.BonoDAO.Agregar(Domain.BONO)">
+            <summary>
+            Agrega un nuevo bono a la base de datos.
+            </summary>
+            <param name="obj">El objeto BONO a agregar.</param>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Performance.BonoDAO.Eliminar(System.Guid)">
+            <summary>
+            Elimina un bono de la base de datos.
+            </summary>
+            <param name="id">El ID del bono a eliminar.</param>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Performance.BonoDAO.GetAll">
+            <summary>
+            Obtiene una lista de todos los bonos en la base de datos.
+            </summary>
+            <returns>Una lista de objetos BONO.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Performance.BonoDAO.GetOne(System.Guid)">
+            <summary>
+            Obtiene un bono por su ID.
+            </summary>
+            <param name="id">El ID del bono a obtener.</param>
+            <returns>El objeto BONO correspondiente.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Performance.BonoDAO.GetBonos">
+            <summary>
+            Obtiene una lista de bonos en formato DTO.
+            </summary>
+            <returns>Una lista de objetos BonoDTO que representan todos los bonos.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Performance.BonoDAO.Modificar(Domain.BONO)">
+            <summary>
+            Modifica un bono existente en la base de datos.
+            </summary>
+            <param name="obj">El objeto BONO con los nuevos valores.</param>
+        </member>
+        <member name="T:Datos.Implementations.SqlServer.Performance.EmpleadoTareaDAO">
+            <summary>
+            Clase que implementa el repositorio para la gestión de tareas de empleados.
+            </summary>
+        </member>
+        <member name="P:Datos.Implementations.SqlServer.Performance.EmpleadoTareaDAO.Current">
+            <summary>
+            Obtiene la instancia única de EmpleadoTareaDAO.
+            </summary>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Performance.EmpleadoTareaDAO.HacerTarea(Domain.DETALLE_TAREA)">
+            <summary>
+            Inicia una tarea para un empleado.
+            </summary>
+            <param name="detalle">El objeto DETALLE_TAREA que representa la tarea a iniciar.</param>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Performance.EmpleadoTareaDAO.FinalizarTarea(System.Guid)">
+            <summary>
+            Finaliza una tarea en proceso.
+            </summary>
+            <param name="idTarea">El ID de la tarea a finalizar.</param>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Performance.EmpleadoTareaDAO.GetDetalles">
+            <summary>
+            Obtiene una lista de detalles de tareas que se han iniciado en el mes y año actuales.
+            </summary>
+            <returns>Una lista de objetos DetalleTareaDTO que representan los detalles de las tareas iniciadas.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Performance.EmpleadoTareaDAO.GetDetallesPorEmp(System.Int32)">
+            <summary>
+            Obtiene una lista de detalles de tareas iniciadas por un empleado específico en el mes y año actuales.
+            </summary>
+            <param name="id">El ID del empleado para filtrar las tareas.</param>
+            <returns>Una lista de objetos DetalleTareaDTO que representan los detalles de las tareas iniciadas por el empleado.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Performance.EmpleadoTareaDAO.ObtenerBonosDelMes">
+            <summary>
+            Obtiene los bonos de los empleados en función de las tareas finalizadas en el mes actual.
+            </summary>
+            <returns>Una lista de objetos EmpleadoDesempDTO que representan los empleados y sus respectivos bonos.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Performance.EmpleadoTareaDAO.Agregar(Domain.DETALLE_TAREA)">
+            <summary>
+            Agrega un nuevo detalle de tarea a la base de datos.
+            </summary>
+            <param name="obj">El objeto DETALLE_TAREA que se desea agregar.</param>
+            <exception cref="T:System.NotImplementedException">Siempre se lanza, ya que el método no está implementado.</exception>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Performance.EmpleadoTareaDAO.GetAll">
+            <summary>
+            Obtiene todos los detalles de tareas de la base de datos.
+            </summary>
+            <returns>Una lista de objetos DETALLE_TAREA.</returns>
+            <exception cref="T:System.NotImplementedException">Siempre se lanza, ya que el método no está implementado.</exception>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Performance.EmpleadoTareaDAO.GetOne(System.Guid)">
+            <summary>
+            Obtiene un detalle de tarea específico por su ID.
+            </summary>
+            <param name="id">El ID del detalle de tarea que se desea obtener.</param>
+            <returns>El objeto DETALLE_TAREA correspondiente al ID proporcionado.</returns>
+            <exception cref="T:System.NotImplementedException">Siempre se lanza, ya que el método no está implementado.</exception>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Performance.EmpleadoTareaDAO.Eliminar(System.Guid)">
+            <summary>
+            Elimina un detalle de tarea de la base de datos por su ID.
+            </summary>
+            <param name="id">El ID del detalle de tarea que se desea eliminar.</param>
+            <exception cref="T:System.NotImplementedException">Siempre se lanza, ya que el método no está implementado.</exception>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Performance.EmpleadoTareaDAO.Modificar(Domain.DETALLE_TAREA)">
+            <summary>
+            Modifica un detalle de tarea existente en la base de datos.
+            </summary>
+            <param name="obj">El objeto DETALLE_TAREA que contiene los cambios a aplicar.</param>
+            <exception cref="T:System.NotImplementedException">Siempre se lanza, ya que el método no está implementado.</exception>
+        </member>
+        <member name="T:Datos.Implementations.SqlServer.Performance.TareaDAO">
+            <summary>
+            Clase que implementa el repositorio para manejar operaciones relacionadas con las tareas en la base de datos.
+            Utiliza el patrón Singleton para asegurar que solo haya una instancia de TareaDAO en la aplicación.
+            Proporciona métodos para agregar, eliminar, modificar y obtener tareas, así como para procesar su estado.
+            </summary>
+        </member>
+        <member name="P:Datos.Implementations.SqlServer.Performance.TareaDAO.Current">
+            <summary>
+            Propiedad estática <see cref="P:Datos.Implementations.SqlServer.Performance.TareaDAO.Current"/> que obtiene la instancia actual del <see cref="T:Datos.Implementations.SqlServer.Performance.TareaDAO"/>.
+            Esta propiedad implementa un patrón singleton, asegurando que solo exista una instancia de <see cref="T:Datos.Implementations.SqlServer.Performance.TareaDAO"/>.
+            </summary>
+            <value>La instancia actual de <see cref="T:Datos.Implementations.SqlServer.Performance.TareaDAO"/>.</value>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Performance.TareaDAO.Agregar(Domain.TAREA)">
+            <summary>
+            Agrega una nueva tarea a la base de datos.
+            </summary>
+            <param name="obj">El objeto TAREA que se desea agregar.</param>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Performance.TareaDAO.Eliminar(System.Guid)">
+            <summary>
+            Elimina una tarea de la base de datos por su ID.
+            </summary>
+            <param name="id">El ID de la tarea que se desea eliminar.</param>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Performance.TareaDAO.GetAll">
+            <summary>
+            Obtiene todas las tareas de la base de datos, ordenadas por nombre.
+            </summary>
+            <returns>Una lista de objetos TAREA.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Performance.TareaDAO.GetOne(System.Guid)">
+            <summary>
+            Obtiene una tarea específica por su ID.
+            </summary>
+            <param name="id">El ID de la tarea que se desea obtener.</param>
+            <returns>El objeto TAREA correspondiente al ID proporcionado.</returns>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Performance.TareaDAO.Modificar(Domain.TAREA)">
+            <summary>
+            Modifica una tarea existente en la base de datos.
+            </summary>
+            <param name="obj">El objeto TAREA que contiene los cambios a aplicar.</param>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Performance.TareaDAO.ProcesarEstado(Domain.TAREA)">
+            <summary>
+            Procesa el estado de una tarea, cambiándolo de "Pendiente" a "En Proceso" o de "En Proceso" a "Finalizada".
+            </summary>
+            <param name="obj">El objeto TAREA cuyo estado se desea procesar.</param>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Performance.TareaDAO.ResetearTareasTurno">
+            <summary>
+            Restablece el estado de todas las tareas a "Pendiente".
+            </summary>
+        </member>
+        <member name="M:Datos.Implementations.SqlServer.Performance.TareaDAO.GetTareas">
+            <summary>
+            Obtiene una lista de tareas que no están finalizadas.
+            </summary>
+            <returns>Una lista de objetos TareaDTO que representan las tareas activas.</returns>
+        </member>
+        <member name="T:Domain.GestionWorkFlowEntities">
+            <summary>
+            Clase que representa el contexto de la base de datos para la gestión del flujo de trabajo.
+            Hereda de <see cref="T:System.Data.Entity.DbContext"/> y se utiliza para interactuar con la base de datos.
+            </summary>
+        </member>
+        <member name="M:Domain.GestionWorkFlowEntities.#ctor">
+            <summary>
+            Constructor de la clase <see cref="T:Domain.GestionWorkFlowEntities"/> que inicializa la conexión a la base de datos
+            utilizando el nombre de la cadena de conexión configurada en el archivo de configuración.
+            </summary>
+        </member>
+        <member name="M:Domain.GestionWorkFlowEntities.OnModelCreating(System.Data.Entity.DbModelBuilder)">
+            <summary>
+            Método sobrecargado para configurar el modelo de datos utilizando <see cref="T:System.Data.Entity.DbModelBuilder"/>.
+            Este método lanza una excepción para evitar el uso de Code First en lugar de un modelo basado en base de datos.
+            </summary>
+            <param name="modelBuilder">El objeto <see cref="T:System.Data.Entity.DbModelBuilder"/> utilizado para configurar el modelo de datos.</param>
+            <exception cref="T:System.Data.Entity.Infrastructure.UnintentionalCodeFirstException">Lanzada para evitar la configuración de Code First.</exception>
+        </member>
+        <member name="P:Domain.GestionWorkFlowEntities.BONO">
+            <summary>
+            Representa la colección de <see cref="P:Domain.GestionWorkFlowEntities.BONO"/> en la base de datos.
+            </summary>
+        </member>
+        <member name="P:Domain.GestionWorkFlowEntities.CLIENTE">
+            <summary>
+            Representa la colección de <see cref="P:Domain.GestionWorkFlowEntities.CLIENTE"/> en la base de datos.
+            </summary>
+        </member>
+        <member name="P:Domain.GestionWorkFlowEntities.DETALLE_PEDIDO">
+            <summary>
+            Representa la colección de <see cref="P:Domain.GestionWorkFlowEntities.DETALLE_PEDIDO"/> en la base de datos.
+            </summary>
+        </member>
+        <member name="P:Domain.GestionWorkFlowEntities.DETALLE_TAREA">
+            <summary>
+            Representa la colección de <see cref="P:Domain.GestionWorkFlowEntities.DETALLE_TAREA"/> en la base de datos.
+            </summary>
+        </member>
+        <member name="P:Domain.GestionWorkFlowEntities.EMPLEADO">
+            <summary>
+            Representa la colección de <see cref="P:Domain.GestionWorkFlowEntities.EMPLEADO"/> en la base de datos.
+            </summary>
+        </member>
+        <member name="P:Domain.GestionWorkFlowEntities.PEDIDO">
+            <summary>
+            Representa la colección de <see cref="P:Domain.GestionWorkFlowEntities.PEDIDO"/> en la base de datos.
+            </summary>
+        </member>
+        <member name="P:Domain.GestionWorkFlowEntities.PRODUCTO">
+            <summary>
+            Representa la colección de <see cref="P:Domain.GestionWorkFlowEntities.PRODUCTO"/> en la base de datos.
+            </summary>
+        </member>
+        <member name="P:Domain.GestionWorkFlowEntities.TAREA">
+            <summary>
+            Representa la colección de <see cref="P:Domain.GestionWorkFlowEntities.TAREA"/> en la base de datos.
+            </summary>
+        </member>
+    </members>
+</doc>

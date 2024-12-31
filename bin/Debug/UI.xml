@@ -1,0 +1,641 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WindowsFormsApp1</name>
+    </assembly>
+    <members>
+        <member name="T:WindowsFormsApp1.Coffee">
+            <summary>
+            Formulario principal del Sistema.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.#ctor(Services.Domain.Composite.Usuario,UI.Services.LoginForm)">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:WindowsFormsApp1.Coffee"/>.
+            Este constructor configura el formulario y realiza las acciones de inicialización necesarias, 
+            como la actualización de combos de productos y pedidos, e inicia la actualización automática de tareas.
+            </summary>
+            <param name="user">El usuario que accede al sistema.</param>
+            <param name="form">El formulario de inicio de sesión.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.UpdateLanguage">
+            <summary>
+            Actualiza el idioma del formulario.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.Coffee_Load(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al cargar el formulario.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.Coffee_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
+            <summary>
+            Evento que se dispara al cerrar el formulario.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.ActualizarGridsCliente">
+            <summary>
+            Actualiza los grids de clientes con la información más reciente.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnActDataClientes_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para actualizar los datos de clientes.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnRegistrarCliente_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para registrar un nuevo cliente.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnBuscarCliente_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para buscar un cliente existente.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnEliminarCliente_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para deshabilitar/habilitar un cliente.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.dataALLClientes_SelectionChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en la fila del dataGridView que contiene los clientes.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnModificarCliente_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para modificar un cliente.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnNumericoP_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para ingresar numeros.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnBorrarP_Click1(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para eliminar el contenido de un textBox.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.ActualiarCombosProduPedi">
+            <summary>
+            Actualiza los comboBox con la información de los productos.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.ActualizarDataPedido">
+            <summary>
+            Actualiza los grids con la información de los pedidos.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.ActualizarDataDetalle(System.Guid)">
+            <summary>
+            Actualiza los grids con la información de los detalles de un pedido.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnAddPedido_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para registrar un Pedido.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.UpdateListaDetalles">
+            <summary>
+            Actualiza la lista de detalles de productos y los muestra en un control de datos (DataGridView).
+            Este método obtiene los detalles de los productos a partir de una lista de detalles, 
+            los procesa y actualiza el origen de datos del control, ocultando columnas específicas.
+            Si no hay detalles disponibles, se muestra un mensaje informando al usuario.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnAddComida_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para agregar un Detalle a la lista.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnAddBebida_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para agregar un Detalle a la lista.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnHacerPedido_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para realizar un pedido.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnFinPedido_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para finalizar un pedido.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnCancelPedido_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para cancelar un pedido.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnMasDrink_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para sumar cantidad de bebida a un textbox.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnMenosDrink_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para restar cantidad de bebida a un textbox.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnMasFood_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para sumar cantidad de comida a un textbox.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnMenosFood_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para restar cantidad de comida a un textbox.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.dataPedidos_SelectionChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara cuando cambia la selección en el DataGridView de pedidos.
+            Actualiza el DataGridView de detalles con los detalles del pedido seleccionado.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.dataDetallesMomentum_SelectionChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara cuando cambia la selección en el DataGridView de detalles.
+            Muestra la cantidad del producto seleccionado en el TextBox correspondiente.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnMasProdu_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para aumentar la cantidad de productos.
+            Incrementa la cantidad mostrada en el TextBox de cantidad.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnMenosProdu_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para disminuir la cantidad de productos.
+            Decrementa la cantidad mostrada en el TextBox de cantidad, sin permitir que sea menor a 1.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnEliminarProduDetalles_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para eliminar un producto de los detalles.
+            Elimina el producto seleccionado del DataGridView de detalles y actualiza la lista.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.txtCantProdu_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Evento que se dispara al presionar una tecla en el TextBox de cantidad.
+            Actualiza la cantidad del producto seleccionado al presionar Enter.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnBorrarSeleccion_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para borrar la selección de pedidos.
+            Limpia la selección en el DataGridView de pedidos y vacía el TextBox de cantidad.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.ActualizarDataEmpleado">
+            <summary>
+            Actualiza la lista de empleados en el DataGridView.
+            Obtiene la lista de empleados desde la lógica de negocio y la asigna como fuente de datos.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnActDataEmpleados_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para actualizar la lista de empleados.
+            Llama al método ActualizarDataEmpleado.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnRegistrarEmp_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para registrar un nuevo empleado.
+            Crea un nuevo objeto EMPLEADO y lo agrega a la base de datos.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.dataEmpleados_SelectionChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara cuando cambia la selección en el DataGridView de empleados.
+            Carga los datos del empleado seleccionado en los campos de modificación.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnModificarEmp_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para modificar un empleado.
+            Actualiza los datos del empleado seleccionado en la base de datos.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnBuscarOneEmp_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para buscar un empleado por nombre.
+            Obtiene el empleado correspondiente y lo muestra en el DataGridView.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnEliminarEmp_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para eliminar (desactivar) un empleado.
+            Cambia el estado del empleado seleccionado a inactivo.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.ActualizarDataBono">
+            <summary>
+            Actualiza la lista de bonos en el DataGridView.
+            Obtiene la lista de bonos desde la lógica de negocio y la asigna como fuente de datos.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnActDataBono_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para actualizar la lista de bonos.
+            Llama al método ActualizarDataBono.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnAgregarBono_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para agregar un nuevo bono.
+            Crea un nuevo objeto BONO y lo agrega a la base de datos.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnEliminarBono_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para eliminar (desactivar) un bono.
+            Cambia el estado del bono seleccionado a inactivo o activo.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.ActualizarDataTareas">
+            <summary>
+            Actualiza la lista de tareas en el DataGridView.
+            Obtiene la lista de tareas desde la lógica de negocio y la asigna como fuente de datos.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnActDataTareas_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para actualizar la lista de tareas.
+            Llama al método ActualizarDataTareas.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnCrearTarea_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento que se dispara al hacer clic en el botón para crear una nueva tarea.
+            Crea un nuevo objeto TAREA y lo agrega a la base de datos.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnEliminarTarea_Click(System.Object,System.EventArgs)">
+            <summary>
+            Maneja el evento de clic en el botón para eliminar o restaurar una tarea seleccionada.
+            Cambia el estado de la tarea entre "Deshabilitada" y su estado anterior.
+            </summary>
+            <param name="sender">El origen del evento, normalmente el botón que fue clicado.</param>
+            <param name="e">Los datos del evento asociados al clic.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnNumerico_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para los botones numéricos.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnBorrar_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para el botón de borrar.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.ActualizarDetallesTarea">
+            <summary>
+            Actualiza la lista de detalles de tareas en la interfaz de usuario.
+            </summary>
+            <remarks>
+            Este método se encarga de obtener la lista de detalles de tareas desde la lógica de negocio y asignarla al origen de datos del control de datos.
+            </remarks>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.ActualizarDesempeñosEmpleados">
+            <summary>
+            Actualiza la lista de desempeños de los empleados en la interfaz de usuario.
+            </summary>
+            <remarks>
+            Este método obtiene la lista de desempeños del mes desde la lógica de negocio y la asigna al origen de datos del control de datos.
+            También oculta la columna "Id" en la vista.
+            </remarks>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.dataDesempEmp_SelectionChanged(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos que se ejecuta cuando la selección del control de datos de desempeños de empleados cambia.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnActDetalleTarea_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para el botón que actualiza los detalles de la tarea.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnActDataDesempEmp_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para el botón que actualiza los desempeños de los empleados.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnHacerTarea_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para el botón que inicia la tarea seleccionada.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnTerminarTarea_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para el botón que finaliza la tarea seleccionada.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.ActualizarDataProductos">
+            <summary>
+            Actualiza la lista de productos en la interfaz de usuario.
+            </summary>
+            <remarks>
+            Este método obtiene la lista de productos desde la lógica de negocio y la asigna al origen de datos del control de datos.
+            También oculta la columna "Id" en la vista.
+            </remarks>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnActDataProd_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para el botón que actualiza la lista de productos.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnAgregar_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para el botón que agrega un nuevo producto.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.dataAllProductos_SelectionChanged(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos que se ejecuta cuando la selección del control de datos de productos cambia.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnModificarProducto_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para el botón que modifica un producto seleccionado.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnBuscarProducto_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para el botón que busca un producto por su nombre.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnEnableProduct_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para el botón que habilita o deshabilita un producto seleccionado.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnActDataUsers_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para el botón que actualiza la lista de usuarios en la interfaz de usuario.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.dataAllUsers_SelectionChanged(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos que se ejecuta cuando la selección del control de datos de usuarios cambia.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnActDataFam_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para el botón que actualiza la lista de familias en la interfaz de usuario.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnActDataPatent_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para el botón que actualiza la lista de permisos en la interfaz de usuario.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.dataAllRoles_SelectionChanged(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos que se ejecuta cuando la selección del control de datos de roles cambia.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnCrearUser_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para el botón que crea un nuevo usuario.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnCrearPatent_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para el botón que crea una nueva patente.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnGatherPermisos_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para el botón que recopila los permisos seleccionados.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnCrearRol_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para el botón que crea un nuevo rol con los permisos seleccionados.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnAsociarPermiso_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para el botón que asocia permisos a un rol seleccionado.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnEnableUser_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para el botón que habilita o deshabilita un usuario seleccionado.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnAssociateRol_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para el botón que asocia un rol a un usuario seleccionado.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnEliminarUsuario_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para el botón que elimina un usuario seleccionado.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnEliminarRol_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para el botón que elimina un rol seleccionado.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnEliminarPatente_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para el botón que elimina una patente seleccionada.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnActDataBitacora_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para el botón que actualiza y muestra la bitácora de eventos.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.btnActDataLogs_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para el botón que actualiza y muestra los logs de eventos.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="F:WindowsFormsApp1.Coffee.components">
+            <summary>
+            Variable del diseñador necesaria.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.Dispose(System.Boolean)">
+            <summary>
+            Limpiar los recursos que se estén usando.
+            </summary>
+            <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+        </member>
+        <member name="M:WindowsFormsApp1.Coffee.InitializeComponent">
+            <summary>
+            Método necesario para admitir el Diseñador. No se puede modificar
+            el contenido de este método con el editor de código.
+            </summary>
+        </member>
+        <member name="M:WindowsFormsApp1.Program.Main">
+            <summary>
+            Punto de entrada principal para la aplicación.
+            </summary>
+        </member>
+        <member name="T:WindowsFormsApp1.Properties.Resources">
+            <summary>
+              Clase de recurso fuertemente tipado para buscar cadenas traducidas, etc.
+            </summary>
+        </member>
+        <member name="P:WindowsFormsApp1.Properties.Resources.ResourceManager">
+            <summary>
+              Devuelve la instancia ResourceManager almacenada en caché utilizada por esta clase.
+            </summary>
+        </member>
+        <member name="P:WindowsFormsApp1.Properties.Resources.Culture">
+            <summary>
+              Invalida la propiedad CurrentUICulture del subproceso actual para todas las
+              búsquedas de recursos usando esta clase de recursos fuertemente tipados.
+            </summary>
+        </member>
+        <member name="T:UI.Services.LoginForm">
+            <summary>
+            Clase que representa el formulario de inicio de sesión.
+            Implementa la interfaz <see cref="T:Services.Datos.Contracts.ILanguageObserver"/> para observar cambios en el idioma.
+            </summary>
+        </member>
+        <member name="M:UI.Services.LoginForm.#ctor">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:UI.Services.LoginForm"/>.
+            Suscribe el formulario a los cambios de idioma y configura el idioma inicial.
+            </summary>
+        </member>
+        <member name="M:UI.Services.LoginForm.UpdateLanguage">
+            <summary>
+            Actualiza el idioma del formulario utilizando el servicio de idioma.
+            </summary>
+        </member>
+        <member name="M:UI.Services.LoginForm.LoginForm_Load(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos que se ejecuta cuando se carga el formulario.
+            Realiza la restauración de la base de datos y verifica la integridad de los usuarios.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:UI.Services.LoginForm.LoginForm_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
+            <summary>
+            Manejador de eventos que se ejecuta cuando se está cerrando el formulario.
+            Realiza una copia de seguridad de la base de datos y se desuscribe de los cambios de idioma.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:UI.Services.LoginForm.btnLogin_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos para el botón de inicio de sesión.
+            Valida el usuario y abre el formulario secundario si las credenciales son correctas.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="M:UI.Services.LoginForm.AbrirFormularioSecundario(Services.Domain.Composite.Usuario)">
+            <summary>
+            Abre el formulario secundario y oculta el formulario de inicio de sesión.
+            </summary>
+            <param name="user">El usuario que ha iniciado sesión.</param>
+        </member>
+        <member name="M:UI.Services.LoginForm.FillingLanguageComboBox(System.Windows.Forms.ComboBox)">
+            <summary>
+            Rellena el combo box de idiomas con los idiomas disponibles.
+            </summary>
+            <param name="combo">El combo box a rellenar.</param>
+        </member>
+        <member name="M:UI.Services.LoginForm.comboLanguage_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Manejador de eventos que se ejecuta cuando se cambia la selección en el combo box de idiomas.
+            Actualiza el idioma de la interfaz de usuario según el idioma seleccionado por el usuario.
+            </summary>
+            <param name="sender">El objeto que generó el evento.</param>
+            <param name="e">Los datos del evento.</param>
+        </member>
+        <member name="F:UI.Services.LoginForm.components">
+            <summary>
+            Variable del diseñador necesaria.
+            </summary>
+        </member>
+        <member name="M:UI.Services.LoginForm.Dispose(System.Boolean)">
+            <summary>
+            Limpiar los recursos que se estén usando.
+            </summary>
+            <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+        </member>
+        <member name="M:UI.Services.LoginForm.InitializeComponent">
+            <summary>
+            Método necesario para admitir el Diseñador. No se puede modificar
+            el contenido de este método con el editor de código.
+            </summary>
+        </member>
+    </members>
+</doc>

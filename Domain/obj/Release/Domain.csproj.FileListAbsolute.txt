@@ -1,0 +1,12 @@
+C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Domain\bin\Release\Domain.dll.config
+C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Domain\bin\Release\Domain.dll
+C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Domain\bin\Release\Domain.pdb
+C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Domain\bin\Release\EntityFramework.dll
+C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Domain\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Domain\bin\Release\EntityFramework.xml
+C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Domain\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Domain\obj\Release\Domain.csproj.AssemblyReference.cache
+C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Domain\obj\Release\Domain.csproj.CoreCompileInputs.cache
+C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Domain\obj\Release\Domain.csproj.Up2Date
+C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Domain\obj\Release\Domain.dll
+C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Domain\obj\Release\Domain.pdb

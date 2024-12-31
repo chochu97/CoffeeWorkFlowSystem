@@ -1,0 +1,2 @@
+21/11/2024 18:56:39 [Info] : El Usuario 'admin2024', con el rol 'Administrador' inicio sesion.
+21/11/2024 19:08:57 [Info] : El Usuario 'admin2024', con el rol 'Administrador' inicio sesion.

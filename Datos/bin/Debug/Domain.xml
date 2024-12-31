@@ -1,0 +1,649 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Domain</name>
+    </assembly>
+    <members>
+        <member name="T:Domain.BONO">
+            <summary>
+            Representa un bono que puede ser asignado a empleados.
+            </summary>
+        </member>
+        <member name="M:Domain.BONO.#ctor">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Domain.BONO"/>.
+            </summary>
+        </member>
+        <member name="P:Domain.BONO.ID_BONO">
+            <summary>
+            Obtiene o establece el identificador único del bono.
+            </summary>
+        </member>
+        <member name="P:Domain.BONO.CATEGORIA">
+            <summary>
+            Obtiene o establece la categoría del bono (por ejemplo, rendimiento, asistencia).
+            </summary>
+        </member>
+        <member name="P:Domain.BONO.MONTO">
+            <summary>
+            Obtiene o establece el monto del bono.
+            </summary>
+        </member>
+        <member name="P:Domain.BONO.MINIMO_TAREAS">
+            <summary>
+            Obtiene o establece el número mínimo de tareas que un empleado debe completar para ser elegible para el bono.
+            </summary>
+        </member>
+        <member name="P:Domain.BONO.ESTADO">
+            <summary>
+            Obtiene o establece el estado del bono (por ejemplo, activo o inactivo).
+            </summary>
+        </member>
+        <member name="P:Domain.BONO.EMPLEADO">
+            <summary>
+            Obtiene la colección de empleados asociados a este bono.
+            </summary>
+        </member>
+        <member name="T:Domain.CLIENTE">
+            <summary>
+            Representa un cliente en el sistema.
+            </summary>
+        </member>
+        <member name="M:Domain.CLIENTE.#ctor">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Domain.CLIENTE"/>.
+            </summary>
+        </member>
+        <member name="P:Domain.CLIENTE.ID_CLIENTE">
+            <summary>
+            Obtiene o establece el identificador único del cliente.
+            </summary>
+        </member>
+        <member name="P:Domain.CLIENTE.NOMBRE">
+            <summary>
+            Obtiene o establece el nombre del cliente.
+            </summary>
+        </member>
+        <member name="P:Domain.CLIENTE.APELLIDO">
+            <summary>
+            Obtiene o establece el apellido del cliente.
+            </summary>
+        </member>
+        <member name="P:Domain.CLIENTE.DNI">
+            <summary>
+            Obtiene o establece el número de documento de identidad (DNI) del cliente.
+            </summary>
+        </member>
+        <member name="P:Domain.CLIENTE.ESTADO">
+            <summary>
+            Obtiene o establece el estado del cliente (por ejemplo, activo o inactivo).
+            </summary>
+        </member>
+        <member name="P:Domain.CLIENTE.PEDIDO">
+            <summary>
+            Obtiene la colección de pedidos asociados a este cliente.
+            </summary>
+        </member>
+        <member name="T:Domain.DETALLE_PEDIDO">
+            <summary>
+            Representa un detalle de un pedido en el sistema, que incluye información sobre los productos solicitados.
+            </summary>
+        </member>
+        <member name="P:Domain.DETALLE_PEDIDO.ID_DETALLE">
+            <summary>
+            Obtiene o establece el identificador único del detalle del pedido.
+            </summary>
+        </member>
+        <member name="P:Domain.DETALLE_PEDIDO.ID_PEDIDO">
+            <summary>
+            Obtiene o establece el identificador del pedido al que pertenece este detalle.
+            </summary>
+        </member>
+        <member name="P:Domain.DETALLE_PEDIDO.ID_PRODUCTO">
+            <summary>
+            Obtiene o establece el identificador del producto asociado a este detalle de pedido.
+            </summary>
+        </member>
+        <member name="P:Domain.DETALLE_PEDIDO.CANTIDAD">
+            <summary>
+            Obtiene o establece la cantidad del producto en este detalle de pedido.
+            </summary>
+        </member>
+        <member name="P:Domain.DETALLE_PEDIDO.PEDIDO">
+            <summary>
+            Obtiene o establece el pedido asociado a este detalle.
+            </summary>
+        </member>
+        <member name="P:Domain.DETALLE_PEDIDO.PRODUCTO">
+            <summary>
+            Obtiene o establece el producto asociado a este detalle de pedido.
+            </summary>
+        </member>
+        <member name="T:Domain.DETALLE_TAREA">
+            <summary>
+            Representa un detalle de una tarea, incluyendo información sobre el tiempo de inicio y fin, el empleado asignado y el estado de la tarea.
+            </summary>
+        </member>
+        <member name="P:Domain.DETALLE_TAREA.FECHA_HORA_INICIO">
+            <summary>
+            Obtiene o establece la fecha y hora de inicio de la tarea.
+            </summary>
+        </member>
+        <member name="P:Domain.DETALLE_TAREA.FECHA_HORA_FIN">
+            <summary>
+            Obtiene o establece la fecha y hora de finalización de la tarea. Puede ser nulo si la tarea aún no ha finalizado.
+            </summary>
+        </member>
+        <member name="P:Domain.DETALLE_TAREA.COD_EMPLEADO">
+            <summary>
+            Obtiene o establece el código del empleado asignado a esta tarea.
+            </summary>
+        </member>
+        <member name="P:Domain.DETALLE_TAREA.ID_TAREA">
+            <summary>
+            Obtiene o establece el identificador de la tarea asociada a este detalle.
+            </summary>
+        </member>
+        <member name="P:Domain.DETALLE_TAREA.ESTADO">
+            <summary>
+            Obtiene o establece el estado de la tarea (por ejemplo, "Pendiente", "En Progreso", "Completada").
+            </summary>
+        </member>
+        <member name="P:Domain.DETALLE_TAREA.EMPLEADO">
+            <summary>
+            Obtiene o establece el empleado asociado a este detalle de tarea.
+            </summary>
+        </member>
+        <member name="P:Domain.DETALLE_TAREA.TAREA">
+            <summary>
+            Obtiene o establece la tarea asociada a este detalle.
+            </summary>
+        </member>
+        <member name="T:Domain.DTO.BonoDTO">
+            <summary>
+            Representa un objeto de transferencia de datos (DTO) para un bono.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.BonoDTO.Id">
+            <summary>
+            Obtiene o establece el identificador único del bono.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.BonoDTO.Categoria">
+            <summary>
+            Obtiene o establece la categoría del bono.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.BonoDTO.Monto">
+            <summary>
+            Obtiene o establece el monto del bono.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.BonoDTO.Tareas_Minimas">
+            <summary>
+            Obtiene o establece el número mínimo de tareas requeridas para calificar para el bono.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.BonoDTO.Estado">
+            <summary>
+            Obtiene o establece el estado del bono (por ejemplo, activo, inactivo).
+            </summary>
+        </member>
+        <member name="T:Domain.DTO.ClienteDTO">
+            <summary>
+            Representa un objeto de transferencia de datos (DTO) para un cliente.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.ClienteDTO.Id">
+            <summary>
+            Obtiene o establece el identificador único del cliente.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.ClienteDTO.Nombre">
+            <summary>
+            Obtiene o establece el nombre del cliente.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.ClienteDTO.Apellido">
+            <summary>
+            Obtiene o establece el apellido del cliente.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.ClienteDTO.DNI">
+            <summary>
+            Obtiene o establece el número de documento de identidad (DNI) del cliente.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.ClienteDTO.Puntos">
+            <summary>
+            Obtiene o establece la cantidad de puntos acumulados por el cliente.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.ClienteDTO.Estado">
+            <summary>
+            Obtiene o establece el estado del cliente (por ejemplo, activo, inactivo).
+            </summary>
+        </member>
+        <member name="T:Domain.DTO.DetalleTareaDTO">
+            <summary>
+            Representa un objeto de transferencia de datos (DTO) para los detalles de una tarea.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.DetalleTareaDTO.Iniciada">
+            <summary>
+            Obtiene o establece la fecha y hora en que se inició la tarea.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.DetalleTareaDTO.Finalizada">
+            <summary>
+            Obtiene o establece la fecha y hora en que se finalizó la tarea. 
+            Este campo es opcional y puede ser nulo si la tarea aún no ha sido finalizada.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.DetalleTareaDTO.Tarea">
+            <summary>
+            Obtiene o establece la descripción de la tarea.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.DetalleTareaDTO.Empleado">
+            <summary>
+            Obtiene o establece el nombre del empleado que está asignado a la tarea.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.DetalleTareaDTO.Estado">
+            <summary>
+            Obtiene o establece el estado actual de la tarea (por ejemplo, pendiente, en progreso, completada).
+            </summary>
+        </member>
+        <member name="T:Domain.DTO.EmpleadoDesempDTO">
+            <summary>
+            Representa un objeto de transferencia de datos (DTO) para el desempeño de un empleado.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.EmpleadoDesempDTO.Id">
+            <summary>
+            Obtiene o establece el identificador único del empleado.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.EmpleadoDesempDTO.Empleado">
+            <summary>
+            Obtiene o establece el nombre del empleado.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.EmpleadoDesempDTO.Tareas_Realizadas">
+            <summary>
+            Obtiene o establece la cantidad de tareas realizadas por el empleado.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.EmpleadoDesempDTO.Bono">
+            <summary>
+            Obtiene o establece el bono asociado al desempeño del empleado.
+            </summary>
+        </member>
+        <member name="T:Domain.DTO.EmpleadoDTO">
+            <summary>
+            Representa un objeto de transferencia de datos (DTO) para un empleado.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.EmpleadoDTO.Codigo">
+            <summary>
+            Obtiene o establece el código único del empleado.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.EmpleadoDTO.Nombre">
+            <summary>
+            Obtiene o establece el nombre del empleado.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.EmpleadoDTO.Rol">
+            <summary>
+            Obtiene o establece el rol del empleado dentro de la organización.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.EmpleadoDTO.Turno">
+            <summary>
+            Obtiene o establece el turno de trabajo del empleado (por ejemplo, mañana, tarde, noche).
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.EmpleadoDTO.Telefono">
+            <summary>
+            Obtiene o establece el número de teléfono del empleado.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.EmpleadoDTO.DNI">
+            <summary>
+            Obtiene o establece el número de documento de identidad (DNI) del empleado.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.EmpleadoDTO.Estado">
+            <summary>
+            Obtiene o establece el estado del empleado (por ejemplo, activo, inactivo).
+            </summary>
+        </member>
+        <member name="T:Domain.DTO.PedidoCompletoDTO">
+            <summary>
+            Representa un objeto de transferencia de datos (DTO) para un pedido completo.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.PedidoCompletoDTO.Id">
+            <summary>
+            Obtiene o establece el identificador único del pedido.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.PedidoCompletoDTO.Fecha_Hora">
+            <summary>
+            Obtiene o establece la fecha y hora en que se realizó el pedido.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.PedidoCompletoDTO.Cliente">
+            <summary>
+            Obtiene o establece el nombre del cliente que realizó el pedido.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.PedidoCompletoDTO.Productos">
+            <summary>
+            Obtiene o establece la lista de productos incluidos en el pedido.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.PedidoCompletoDTO.Total">
+            <summary>
+            Obtiene o establece el total del pedido.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.PedidoCompletoDTO.Empleado">
+            <summary>
+            Obtiene o establece el nombre del empleado que gestionó el pedido.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.PedidoCompletoDTO.Estado">
+            <summary>
+            Obtiene o establece el estado actual del pedido (por ejemplo, pendiente, completado, cancelado).
+            </summary>
+        </member>
+        <member name="T:Domain.DTO.ProductoDTO">
+            <summary>
+            Representa un objeto de transferencia de datos (DTO) para un producto.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.ProductoDTO.Id">
+            <summary>
+            Obtiene o establece el identificador único del producto.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.ProductoDTO.Nombre">
+            <summary>
+            Obtiene o establece el nombre del producto.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.ProductoDTO.Descripcion">
+            <summary>
+            Obtiene o establece la descripción del producto.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.ProductoDTO.Tipo">
+            <summary>
+            Obtiene o establece el tipo de producto (por ejemplo, alimento, bebida, etc.).
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.ProductoDTO.Precio">
+            <summary>
+            Obtiene o establece el precio del producto.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.ProductoDTO.Estado">
+            <summary>
+            Obtiene o establece el estado del producto (por ejemplo, disponible, agotado).
+            </summary>
+        </member>
+        <member name="T:Domain.DTO.ProductoDetalleDTO">
+            <summary>
+            Representa un objeto de transferencia de datos (DTO) para los detalles de un producto en un pedido.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.ProductoDetalleDTO.Id_Detalle">
+            <summary>
+            Obtiene o establece el identificador único del detalle del producto.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.ProductoDetalleDTO.Id_Producto">
+            <summary>
+            Obtiene o establece el identificador único del producto asociado a este detalle.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.ProductoDetalleDTO.Producto">
+            <summary>
+            Obtiene o establece el nombre del producto.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.ProductoDetalleDTO.Cantidad">
+            <summary>
+            Obtiene o establece la cantidad del producto en este detalle.
+            </summary>
+        </member>
+        <member name="T:Domain.DTO.TareaDTO">
+            <summary>
+            Representa un objeto de transferencia de datos (DTO) para una tarea.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.TareaDTO.Id">
+            <summary>
+            Obtiene o establece el identificador único de la tarea.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.TareaDTO.Nombre">
+            <summary>
+            Obtiene o establece el nombre de la tarea.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.TareaDTO.Descripcion">
+            <summary>
+            Obtiene o establece la descripción de la tarea.
+            </summary>
+        </member>
+        <member name="P:Domain.DTO.TareaDTO.Estado">
+            <summary>
+            Obtiene o establece el estado actual de la tarea (por ejemplo, pendiente, en progreso, completada).
+            </summary>
+        </member>
+        <member name="T:Domain.EMPLEADO">
+            <summary>
+            Representa un empleado en el sistema, incluyendo información personal y su relación con tareas y pedidos.
+            </summary>
+        </member>
+        <member name="M:Domain.EMPLEADO.#ctor">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Domain.EMPLEADO"/>.
+            </summary>
+        </member>
+        <member name="P:Domain.EMPLEADO.COD_EMPLEADO">
+            <summary>
+            Obtiene o establece el código único del empleado.
+            </summary>
+        </member>
+        <member name="P:Domain.EMPLEADO.ID_BONO">
+            <summary>
+            Obtiene o establece el identificador del bono asociado al empleado.
+            </summary>
+        </member>
+        <member name="P:Domain.EMPLEADO.NOMBRE">
+            <summary>
+            Obtiene o establece el nombre del empleado.
+            </summary>
+        </member>
+        <member name="P:Domain.EMPLEADO.APELLIDO">
+            <summary>
+            Obtiene o establece el apellido del empleado.
+            </summary>
+        </member>
+        <member name="P:Domain.EMPLEADO.DNI">
+            <summary>
+            Obtiene o establece el número de documento de identidad (DNI) del empleado.
+            </summary>
+        </member>
+        <member name="P:Domain.EMPLEADO.TELEFONO">
+            <summary>
+            Obtiene o establece el número de teléfono del empleado.
+            </summary>
+        </member>
+        <member name="P:Domain.EMPLEADO.ROL">
+            <summary>
+            Obtiene o establece el rol del empleado en la organización.
+            </summary>
+        </member>
+        <member name="P:Domain.EMPLEADO.TURNO">
+            <summary>
+            Obtiene o establece el turno de trabajo del empleado.
+            </summary>
+        </member>
+        <member name="P:Domain.EMPLEADO.ESTADO">
+            <summary>
+            Obtiene o establece el estado del empleado (por ejemplo, activo o inactivo).
+            </summary>
+        </member>
+        <member name="P:Domain.EMPLEADO.BONO">
+            <summary>
+            Obtiene o establece el bono asociado a este empleado.
+            </summary>
+        </member>
+        <member name="P:Domain.EMPLEADO.DETALLE_TAREA">
+            <summary>
+            Obtiene la colección de detalles de tareas asociados a este empleado.
+            </summary>
+        </member>
+        <member name="P:Domain.EMPLEADO.PEDIDO">
+            <summary>
+            Obtiene la colección de pedidos asociados a este empleado.
+            </summary>
+        </member>
+        <member name="T:Domain.PEDIDO">
+            <summary>
+            Representa un pedido realizado por un cliente, incluyendo información sobre el cliente, el empleado que gestionó el pedido y los detalles del pedido.
+            </summary>
+        </member>
+        <member name="M:Domain.PEDIDO.#ctor">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Domain.PEDIDO"/>.
+            </summary>
+        </member>
+        <member name="P:Domain.PEDIDO.ID_PEDIDO">
+            <summary>
+            Obtiene o establece el identificador único del pedido.
+            </summary>
+        </member>
+        <member name="P:Domain.PEDIDO.ID_CLIENTE">
+            <summary>
+            Obtiene o establece el identificador del cliente que realizó el pedido.
+            </summary>
+        </member>
+        <member name="P:Domain.PEDIDO.COD_EMPLEADO">
+            <summary>
+            Obtiene o establece el código del empleado que gestionó el pedido.
+            </summary>
+        </member>
+        <member name="P:Domain.PEDIDO.FECHA_HORA">
+            <summary>
+            Obtiene o establece la fecha y hora en que se realizó el pedido.
+            </summary>
+        </member>
+        <member name="P:Domain.PEDIDO.ESTADO">
+            <summary>
+            Obtiene o establece el estado del pedido (por ejemplo, "Pendiente", "Completado", "Cancelado").
+            </summary>
+        </member>
+        <member name="P:Domain.PEDIDO.CLIENTE">
+            <summary>
+            Obtiene o establece el cliente asociado a este pedido.
+            </summary>
+        </member>
+        <member name="P:Domain.PEDIDO.DETALLE_PEDIDO">
+            <summary>
+            Obtiene la colección de detalles de pedido asociados a este pedido.
+            </summary>
+        </member>
+        <member name="P:Domain.PEDIDO.EMPLEADO">
+            <summary>
+            Obtiene o establece el empleado asociado a este pedido.
+            </summary>
+        </member>
+        <member name="T:Domain.PRODUCTO">
+            <summary>
+            Representa un producto en el sistema, incluyendo información sobre su nombre, descripción, precio y estado.
+            </summary>
+        </member>
+        <member name="M:Domain.PRODUCTO.#ctor">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Domain.PRODUCTO"/>.
+            </summary>
+        </member>
+        <member name="P:Domain.PRODUCTO.ID_PRODUCTO">
+            <summary>
+            Obtiene o establece el identificador único del producto.
+            </summary>
+        </member>
+        <member name="P:Domain.PRODUCTO.NOMBRE">
+            <summary>
+            Obtiene o establece el nombre del producto.
+            </summary>
+        </member>
+        <member name="P:Domain.PRODUCTO.DESCRIPCION">
+            <summary>
+            Obtiene o establece la descripción del producto.
+            </summary>
+        </member>
+        <member name="P:Domain.PRODUCTO.PRECIO">
+            <summary>
+            Obtiene o establece el precio del producto.
+            </summary>
+        </member>
+        <member name="P:Domain.PRODUCTO.TIPO">
+            <summary>
+            Obtiene o establece el tipo de producto (por ejemplo, "Electrónico", "Alimento", etc.).
+            </summary>
+        </member>
+        <member name="P:Domain.PRODUCTO.ESTADO">
+            <summary>
+            Obtiene o establece el estado del producto (por ejemplo, disponible o no disponible).
+            </summary>
+        </member>
+        <member name="P:Domain.PRODUCTO.DETALLE_PEDIDO">
+            <summary>
+            Obtiene la colección de detalles de pedido asociados a este producto.
+            </summary>
+        </member>
+        <member name="T:Domain.TAREA">
+            <summary>
+            Representa una tarea en el sistema, incluyendo información sobre su nombre, descripción y estado.
+            </summary>
+        </member>
+        <member name="M:Domain.TAREA.#ctor">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Domain.TAREA"/>.
+            </summary>
+        </member>
+        <member name="P:Domain.TAREA.ID_TAREA">
+            <summary>
+            Obtiene o establece el identificador único de la tarea.
+            </summary>
+        </member>
+        <member name="P:Domain.TAREA.NOMBRE">
+            <summary>
+            Obtiene o establece el nombre de la tarea.
+            </summary>
+        </member>
+        <member name="P:Domain.TAREA.DESCRIPCION">
+            <summary>
+            Obtiene o establece la descripción de la tarea.
+            </summary>
+        </member>
+        <member name="P:Domain.TAREA.ESTADO">
+            <summary>
+            Obtiene o establece el estado de la tarea (por ejemplo, "Pendiente", "En Progreso", "Completada").
+            </summary>
+        </member>
+        <member name="P:Domain.TAREA.DETALLE_TAREA">
+            <summary>
+            Obtiene la colección de detalles de tarea asociados a esta tarea.
+            </summary>
+        </member>
+    </members>
+</doc>

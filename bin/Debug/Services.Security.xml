@@ -1,0 +1,1565 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Services.Security</name>
+    </assembly>
+    <members>
+        <member name="T:Services.Security.CoffeeSecurityDataSet">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:Services.Security.CoffeeSecurityDataSet.FAMILIADataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:Services.Security.CoffeeSecurityDataSet.FAMILIA_PATENTEDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:Services.Security.CoffeeSecurityDataSet.PATENTEDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:Services.Security.CoffeeSecurityDataSet.USUARIODataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:Services.Security.CoffeeSecurityDataSet.USUARIO_FAMILIADataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:Services.Security.CoffeeSecurityDataSet.FAMILIARow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:Services.Security.CoffeeSecurityDataSet.FAMILIA_PATENTERow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:Services.Security.CoffeeSecurityDataSet.PATENTERow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:Services.Security.CoffeeSecurityDataSet.USUARIORow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:Services.Security.CoffeeSecurityDataSet.USUARIO_FAMILIARow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:Services.Security.CoffeeSecurityDataSet.FAMILIARowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:Services.Security.CoffeeSecurityDataSet.FAMILIA_PATENTERowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:Services.Security.CoffeeSecurityDataSet.PATENTERowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:Services.Security.CoffeeSecurityDataSet.USUARIORowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:Services.Security.CoffeeSecurityDataSet.USUARIO_FAMILIARowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:Services.Security.CoffeeSecurityDataSetTableAdapters.FAMILIATableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:Services.Security.CoffeeSecurityDataSetTableAdapters.FAMILIA_PATENTETableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:Services.Security.CoffeeSecurityDataSetTableAdapters.PATENTETableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:Services.Security.CoffeeSecurityDataSetTableAdapters.USUARIOTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:Services.Security.CoffeeSecurityDataSetTableAdapters.USUARIO_FAMILIATableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:Services.Security.CoffeeSecurityDataSetTableAdapters.TableAdapterManager">
+             <summary>
+            TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+            </summary>
+        </member>
+        <member name="M:Services.Security.CoffeeSecurityDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(Services.Security.CoffeeSecurityDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Update rows in top-down order.
+            </summary>
+        </member>
+        <member name="M:Services.Security.CoffeeSecurityDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(Services.Security.CoffeeSecurityDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Insert rows in top-down order.
+            </summary>
+        </member>
+        <member name="M:Services.Security.CoffeeSecurityDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(Services.Security.CoffeeSecurityDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Delete rows in bottom-up order.
+            </summary>
+        </member>
+        <member name="M:Services.Security.CoffeeSecurityDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+            </summary>
+        </member>
+        <member name="M:Services.Security.CoffeeSecurityDataSetTableAdapters.TableAdapterManager.UpdateAll(Services.Security.CoffeeSecurityDataSet)">
+             <summary>
+            Update all changes to the dataset.
+            </summary>
+        </member>
+        <member name="T:Services.Security.CoffeeSecurityDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+             <summary>
+            Update Order Option
+            </summary>
+        </member>
+        <member name="T:Services.Security.CoffeeSecurityDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+             <summary>
+            Used to sort self-referenced table's rows
+            </summary>
+        </member>
+        <member name="T:Services.Security.Datos.Contracts.IBackUpRepository">
+            <summary>
+            Interfaz que define los métodos para realizar copias de seguridad y restaurar bases de datos.
+            </summary>
+        </member>
+        <member name="M:Services.Security.Datos.Contracts.IBackUpRepository.BackUpDataBase(System.String,System.String)">
+            <summary>
+            Realiza una copia de seguridad de la base de datos especificada.
+            </summary>
+            <param name="dataBaseName">El nombre de la base de datos a respaldar.</param>
+            <param name="backUpPath">La ruta donde se almacenará la copia de seguridad.</param>
+        </member>
+        <member name="M:Services.Security.Datos.Contracts.IBackUpRepository.RestoreDataBase(System.String,System.String)">
+            <summary>
+            Restaura la base de datos desde una copia de seguridad.
+            </summary>
+            <param name="dataBaseName">El nombre de la base de datos a restaurar.</param>
+            <param name="backUpPath">La ruta de la copia de seguridad desde la cual se restaurará.</param>
+        </member>
+        <member name="T:Services.Security.Datos.Implementations.SqlServer.BackUpRepository">
+            <summary>
+            Implementación del repositorio para realizar copias de seguridad y restauraciones de bases de datos.
+            </summary>
+        </member>
+        <member name="M:Services.Security.Datos.Implementations.SqlServer.BackUpRepository.BackUpDataBase(System.String,System.String)">
+            <summary>
+            Realiza una copia de seguridad de la base de datos especificada en la ruta de respaldo proporcionada.
+            </summary>
+            <param name="dataBaseName">Nombre de la base de datos a respaldar.</param>
+            <param name="backUpPath">Ruta donde se almacenará la copia de seguridad.</param>
+        </member>
+        <member name="M:Services.Security.Datos.Implementations.SqlServer.BackUpRepository.RestoreDataBase(System.String,System.String)">
+            <summary>
+            Restaura la base de datos especificada desde la ruta de respaldo proporcionada.
+            </summary>
+            <param name="dataBaseName">Nombre de la base de datos a restaurar.</param>
+            <param name="backUpPath">Ruta desde donde se restaurará la base de datos.</param>
+        </member>
+        <member name="T:Services.Security.Domain.DTO.UsuarioDTO">
+            <summary>
+            Data Transfer Object (DTO) para representar un usuario.
+            </summary>
+        </member>
+        <member name="P:Services.Security.Domain.DTO.UsuarioDTO.Id">
+            <summary>
+            Identificador único del usuario.
+            </summary>
+        </member>
+        <member name="P:Services.Security.Domain.DTO.UsuarioDTO.Username">
+            <summary>
+            Nombre de usuario.
+            </summary>
+        </member>
+        <member name="P:Services.Security.Domain.DTO.UsuarioDTO.Estado">
+            <summary>
+            Estado del usuario (por ejemplo, activo, inactivo).
+            </summary>
+        </member>
+        <member name="T:Services.Security.Domain.Exceptions.BusinessRuleException">
+            <summary>
+            Excepción personalizada que representa una violación de una regla de negocio.
+            Hereda de la clase base Exception.
+            </summary>
+        </member>
+        <member name="M:Services.Security.Domain.Exceptions.BusinessRuleException.#ctor(System.String)">
+            <summary>
+            Constructor para crear una nueva instancia de BusinessRuleException.
+            </summary>
+            <param name="message">El mensaje que describe la excepción.</param>
+        </member>
+        <member name="T:Services.Security.Domain.Exceptions.DataAccessException">
+            <summary>
+            Excepción personalizada que representa un error de acceso a datos.
+            Hereda de la clase base Exception.
+            </summary>
+        </member>
+        <member name="M:Services.Security.Domain.Exceptions.DataAccessException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor para crear una nueva instancia de DataAccessException.
+            </summary>
+            <param name="message">El mensaje que describe la excepción.</param>
+            <param name="innerException">La excepción interna que causó el error (opcional).</param>
+        </member>
+        <member name="T:Services.Security.Facade.AccesoService">
+            <summary>
+            Proporciona servicios relacionados con el acceso de usuarios a controles específicos.
+            </summary>
+        </member>
+        <member name="M:Services.Security.Facade.AccesoService.AplicarAcceso(Services.Domain.Composite.Usuario,System.Collections.Generic.List{System.Windows.Forms.Control})">
+            <summary>
+            Aplica los controles de acceso a un usuario específico.
+            </summary>
+            <param name="user">El usuario al que se le aplicarán los controles de acceso.</param>
+            <param name="controles">Una lista de controles que se aplicarán al usuario.</param>
+        </member>
+        <member name="T:Services.Security.Facade.BackUpService">
+            <summary>
+            Proporciona servicios para realizar copias de seguridad y restauraciones.
+            </summary>
+        </member>
+        <member name="M:Services.Security.Facade.BackUpService.BackUp">
+            <summary>
+            Realiza una copia de seguridad utilizando la lógica de respaldo.
+            </summary>
+        </member>
+        <member name="M:Services.Security.Facade.BackUpService.Restore">
+            <summary>
+            Restaura los datos desde una copia de seguridad utilizando la lógica de restauración.
+            </summary>
+        </member>
+        <member name="T:Services.Security.Facade.UserService">
+            <summary>
+            Proporciona servicios relacionados con la gestión de usuarios, incluyendo la validación,
+            creación y recuperación de usuarios.
+            </summary>
+        </member>
+        <member name="M:Services.Security.Facade.UserService.ValidateUser(System.String,System.String)">
+            <summary>
+            Valida las credenciales de un usuario.
+            </summary>
+            <param name="username">El nombre de usuario.</param>
+            <param name="password">La contraseña del usuario.</param>
+            <returns>True si las credenciales son válidas, de lo contrario false.</returns>
+            <exception cref="T:Services.Security.Domain.Exceptions.BusinessRuleException">Se lanza si hay un error de regla de negocio.</exception>
+            <exception cref="T:Services.Security.Domain.Exceptions.DataAccessException">Se lanza si ocurre un error al acceder a la base de datos.</exception>
+        </member>
+        <member name="M:Services.Security.Facade.UserService.GetUsuarioByUsername(System.String)">
+            <summary>
+            Obtiene un usuario por su nombre de usuario.
+            </summary>
+            <param name="username">El nombre de usuario.</param>
+            <returns>Un objeto Usuario correspondiente al nombre de usuario.</returns>
+            <exception cref="T:Services.Security.Domain.Exceptions.BusinessRuleException">Se lanza si hay un error de regla de negocio.</exception>
+            <exception cref="T:Services.Security.Domain.Exceptions.DataAccessException">Se lanza si ocurre un error al acceder a la base de datos.</exception>
+        </member>
+        <member name="M:Services.Security.Facade.UserService.CreateUser(Services.Domain.Composite.Usuario,System.String)">
+            <summary>
+            Crea un nuevo usuario.
+            </summary>
+            <param name="usuario">El objeto Usuario que se desea crear.</param>
+            <param name="plainPassword">La contraseña en texto plano del usuario.</param>
+            <exception cref="T:Services.Security.Domain.Exceptions.BusinessRuleException">Se lanza si hay un error de regla de negocio.</exception>
+            <exception cref="T:Services.Security.Domain.Exceptions.DataAccessException">Se lanza si ocurre un error al acceder a la base de datos.</exception>
+        </member>
+        <member name="M:Services.Security.Facade.UserService.DisableUser(System.Guid)">
+            <summary>
+            Desactiva un usuario dado su ID.
+            </summary>
+            <param name="idUsuario">El ID del usuario que se desea desactivar.</param>
+            <exception cref="T:Services.Security.Domain.Exceptions.BusinessRuleException">Se lanza si hay un error de regla de negocio.</exception>
+            <exception cref="T:Services.Security.Domain.Exceptions.DataAccessException">Se lanza si ocurre un error al acceder a la base de datos.</exception>
+        </member>
+        <member name="M:Services.Security.Facade.UserService.EnabledUsuario(System.Guid)">
+            <summary>
+            Habilita un usuario dado su ID.
+            </summary>
+            <param name="idUsuario">El ID del usuario que se desea habilitar.</param>
+            <exception cref="T:Services.Security.Domain.Exceptions.BusinessRuleException">Se lanza si hay un error de regla de negocio.</exception>
+            <exception cref="T:Services.Security.Domain.Exceptions.DataAccessException">Se lanza si ocurre un error al acceder a la base de datos.</exception>
+        </member>
+        <member name="M:Services.Security.Facade.UserService.GetAllUsuarios">
+            <summary>
+            Obtiene una lista de todos los usuarios.
+            </summary>
+            <returns>Una lista de objetos Usuario.</returns>
+            <exception cref="T:Services.Security.Domain.Exceptions.BusinessRuleException">Se lanza si hay un error de regla de negocio.</exception>
+            <exception cref="T:Services.Security.Domain.Exceptions.DataAccessException">Se lanza si ocurre un error al acceder a la base de datos.</exception>
+        </member>
+        <member name="M:Services.Security.Facade.UserService.GetFamiliasByUsuarioId(System.Guid)">
+            <summary>
+            Obtiene una lista de familias asociadas a un usuario dado su ID.
+            </summary>
+            <param name="usuarioId">El ID del usuario.</param>
+            <returns>Una lista de objetos Familia.</returns>
+            <exception cref="T:Services.Security.Domain.Exceptions.BusinessRuleException">Se lanza si no hay roles asignados al usuario.</exception>
+            <exception cref="T:Services.Security.Domain.Exceptions.DataAccessException">Se lanza si ocurre un error al acceder a la base de datos.</exception>
+        </member>
+        <member name="M:Services.Security.Facade.UserService.DeleteUser(System.Guid)">
+            <summary>
+            Elimina un usuario dado su ID.
+            </summary>
+            <param name="id">El ID del usuario que se desea eliminar.</param>
+            <exception cref="T:Services.Security.Domain.Exceptions.BusinessRuleException">Se lanza si hay un error de regla de negocio.</exception>
+            <exception cref="T:Services.Security.Domain.Exceptions.DataAccessException">Se lanza si ocurre un error al acceder a la base de datos.</exception>
+        </member>
+        <member name="M:Services.Security.Facade.UserService.GetUsuariosDTO">
+            <summary>
+            Obtiene una lista de usuarios en formato DTO.
+            </summary>
+            <returns>Una lista de objetos UsuarioDTO.</returns>
+            <exception cref="T:Services.Security.Domain.Exceptions.BusinessRuleException">Se lanza si no hay usuarios registrados.</exception>
+            <exception cref="T:Services.Security.Domain.Exceptions.DataAccessException">Se lanza si ocurre un error al acceder a la base de datos.</exception>
+        </member>
+        <member name="T:Services.Security.Logic.BackUpLogic">
+            <summary>
+            Clase que gestiona la lógica de copias de seguridad y restauración de bases de datos.
+            </summary>
+        </member>
+        <member name="M:Services.Security.Logic.BackUpLogic.#ctor">
+            <summary>
+            Constructor de la clase <see cref="T:Services.Security.Logic.BackUpLogic"/>.
+            Inicializa el repositorio de respaldo utilizando el patrón Factory.
+            </summary>
+        </member>
+        <member name="M:Services.Security.Logic.BackUpLogic.RealizarBackUp">
+            <summary>
+            Realiza copias de seguridad de las bases de datos configuradas.
+            </summary>
+        </member>
+        <member name="M:Services.Security.Logic.BackUpLogic.RealizarRestore">
+            <summary>
+            Restaura las bases de datos desde las copias de seguridad configuradas.
+            </summary>
+        </member>
+        <member name="T:Services.Datos.Contracts.IControlAccess">
+            <summary>
+            Interfaz que define los métodos para el control de acceso en el sistema.
+            </summary>
+        </member>
+        <member name="M:Services.Datos.Contracts.IControlAccess.SetAccess(System.Collections.Generic.List{Services.Domain.Composite.Patente})">
+            <summary>
+            Establece los accesos para un usuario basado en una lista de patentes.
+            </summary>
+            <param name="patentesUsuario">Lista de patentes que representan los accesos del usuario.</param>
+        </member>
+        <member name="T:Services.Datos.Contracts.IGenericInterface`1">
+            <summary>
+            Interfaz genérica que define operaciones CRUD para cualquier entidad.
+            </summary>
+            <typeparam name="T">Tipo de entidad que se manejará.</typeparam>
+        </member>
+        <member name="M:Services.Datos.Contracts.IGenericInterface`1.Add(`0)">
+            <summary>
+            Agrega una nueva entidad.
+            </summary>
+            <param name="obj">La entidad a agregar.</param>
+        </member>
+        <member name="M:Services.Datos.Contracts.IGenericInterface`1.Update(`0)">
+            <summary>
+            Actualiza una entidad existente.
+            </summary>
+            <param name="obj">La entidad con los datos actualizados.</param>
+        </member>
+        <member name="M:Services.Datos.Contracts.IGenericInterface`1.Remove(System.Guid)">
+            <summary>
+            Elimina una entidad por su identificador.
+            </summary>
+            <param name="id">El identificador de la entidad a eliminar.</param>
+        </member>
+        <member name="M:Services.Datos.Contracts.IGenericInterface`1.GetById(System.Guid)">
+            <summary>
+            Obtiene una entidad por su identificador.
+            </summary>
+            <param name="id">El identificador de la entidad a obtener.</param>
+            <returns>La entidad correspondiente al identificador.</returns>
+        </member>
+        <member name="M:Services.Datos.Contracts.IGenericInterface`1.GetAll">
+            <summary>
+            Obtiene todas las entidades.
+            </summary>
+            <returns>Una lista de todas las entidades.</returns>
+        </member>
+        <member name="T:Services.Datos.Contracts.ILanguageObserver">
+            <summary>
+            Interfaz que define el patrón Observer para notificar cambios de idioma.
+            </summary>
+        </member>
+        <member name="M:Services.Datos.Contracts.ILanguageObserver.UpdateLanguage">
+            <summary>
+            Método que se llama cuando se produce un cambio de idioma.
+            </summary>
+        </member>
+        <member name="T:Services.Datos.Contracts.IUsuarioRepository">
+            <summary>
+            Interfaz que define las operaciones específicas para el repositorio de usuarios.
+            Hereda de IGenericInterface para operaciones CRUD básicas.
+            </summary>
+        </member>
+        <member name="M:Services.Datos.Contracts.IUsuarioRepository.GetUsuarioByUsername(System.String)">
+            <summary>
+            Obtiene un usuario por su nombre de usuario.
+            </summary>
+            <param name="username">El nombre de usuario del usuario a buscar.</param>
+            <returns>El usuario correspondiente al nombre de usuario.</returns>
+        </member>
+        <member name="M:Services.Datos.Contracts.IUsuarioRepository.CreateUsuario(Services.Domain.Composite.Usuario)">
+            <summary>
+            Crea un nuevo usuario.
+            </summary>
+            <param name="usuario">El usuario a crear.</param>
+        </member>
+        <member name="M:Services.Datos.Contracts.IUsuarioRepository.DisableUsuario(System.Guid)">
+            <summary>
+            Desactiva un usuario por su identificador.
+            </summary>
+            <param name="idUsuario">El identificador del usuario a desactivar.</param>
+        </member>
+        <member name="M:Services.Datos.Contracts.IUsuarioRepository.UpdateAccesos(System.Guid,System.Collections.Generic.List{Services.Domain.Composite.Acceso})">
+            <summary>
+            Actualiza los accesos de un usuario.
+            </summary>
+            <param name="idUsuario">El identificador del usuario.</param>
+            <param name="accesos">Lista de accesos a asignar al usuario.</param>
+        </member>
+        <member name="M:Services.Datos.Contracts.IUsuarioRepository.EnabledUsuario(System.Guid)">
+            <summary>
+            Habilita un usuario por su identificador.
+            </summary>
+            <param name="idUsuario">El identificador del usuario a habilitar.</param>
+        </member>
+        <member name="M:Services.Datos.Contracts.IUsuarioRepository.GetFamiliasByUsuarioId(System.Guid)">
+            <summary>
+            Obtiene las familias asociadas a un usuario por su identificador.
+            </summary>
+            <param name="usuarioId">El identificador del usuario.</param>
+            <returns>Lista de familias asociadas al usuario.</returns>
+        </member>
+        <member name="M:Services.Datos.Contracts.IUsuarioRepository.GetUsuariosDTO">
+            <summary>
+            Obtiene una lista de usuarios en formato DTO.
+            </summary>
+            <returns>Lista de usuarios como objetos DTO.</returns>
+        </member>
+        <member name="T:Services.Datos.Factory.FactoryDAO">
+            <summary>
+            Clase estática <see cref="T:Services.Datos.Factory.FactoryDAO"/> que proporciona métodos para obtener instancias de repositorios.
+            Utiliza el patrón Factory para crear repositorios dependiendo del tipo de backend configurado.
+            </summary>
+        </member>
+        <member name="M:Services.Datos.Factory.FactoryDAO.#cctor">
+            <summary>
+            Constructor estático de la clase <see cref="T:Services.Datos.Factory.FactoryDAO"/>.
+            Lee el tipo de backend desde la configuración de la aplicación.
+            </summary>
+        </member>
+        <member name="M:Services.Datos.Factory.FactoryDAO.GetUsuarioRepository">
+            <summary>
+            Obtiene una instancia del repositorio de usuarios.
+            </summary>
+            <returns>Una instancia de <see cref="T:Services.Datos.Contracts.IUsuarioRepository"/>.</returns>
+            <exception cref="T:System.NotSupportedException">Si el tipo de backend no es soportado.</exception>
+        </member>
+        <member name="M:Services.Datos.Factory.FactoryDAO.GetBackUp">
+            <summary>
+            Obtiene una instancia del repositorio de respaldo (backup).
+            </summary>
+            <returns>Una instancia de <see cref="T:Services.Security.Datos.Contracts.IBackUpRepository"/>.</returns>
+            <exception cref="T:System.NotSupportedException">Si el tipo de backend no es soportado.</exception>
+        </member>
+        <member name="T:Services.Datos.Factory.BackendType">
+            <summary>
+            Enumeración que define los tipos de backend soportados.
+            </summary>
+        </member>
+        <member name="F:Services.Datos.Factory.BackendType.SqlServer">
+            <summary>
+            Tipo de backend SqlServer.
+            </summary>
+        </member>
+        <member name="T:Services.Datos.Implementations.SqlServer.FamiliaRepository">
+            <summary>
+            Repositorio para gestionar las familias y sus permisos (patentes) en la base de datos.
+            </summary>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.FamiliaRepository.GetPatentesByFamiliaId(System.Guid)">
+            <summary>
+            Obtiene una lista de patentes asociadas a una familia específica.
+            </summary>
+            <param name="familiaId">Identificador de la familia.</param>
+            <returns>Lista de patentes asociadas a la familia.</returns>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.FamiliaRepository.AddPatentesToFamilia(Services.Domain.Composite.Familia,System.Collections.Generic.List{Services.Domain.Composite.Patente})">
+            <summary>
+            Agrega patentes a una familia específica.
+            </summary>
+            <param name="familia">La familia a la que se agregarán las patentes.</param>
+            <param name="patentes">Lista de patentes a agregar.</param>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.FamiliaRepository.SaveFamilia(Services.Domain.Composite.Familia)">
+            <summary>
+            Guarda una nueva familia en la base de datos.
+            </summary>
+            <param name="familia">La familia a guardar.</param>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.FamiliaRepository.CreatePatente(Services.Domain.Composite.Patente)">
+            <summary>
+            Crea una nueva patente en la base de datos.
+            </summary>
+            <param name="patente">La patente a crear.</param>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.FamiliaRepository.UpdateFamilia(Services.Domain.Composite.Familia)">
+            <summary>
+            Actualiza la información de una familia en la base de datos.
+            </summary>
+            <param name="familia">La familia a actualizar.</param>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.FamiliaRepository.SaveUsuarioFamilia(System.Guid,System.Guid)">
+            <summary>
+            Guarda una relación entre un usuario y una familia en la base de datos.
+            </summary>
+            <param name="IdUsuario">Identificador del usuario.</param>
+            <param name="IdFamilia">Identificador de la familia.</param>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.FamiliaRepository.UpdateUsuarioFamilia(System.Guid,System.Collections.Generic.List{Services.Domain.Composite.Familia})">
+            <summary>
+            Actualiza las relaciones entre un usuario y sus familias en la base de datos.
+            </summary>
+            <param name="usuarioId">Identificador del usuario.</param>
+            <param name="familias">Lista de familias a las que el usuario debe estar asociado.</param>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.FamiliaRepository.GetAll">
+            <summary>
+            Obtiene todas las familias de la base de datos.
+            </summary>
+            <returns>Lista de familias.</returns>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.FamiliaRepository.GetAllPatentes">
+            <summary>
+            Obtiene todas las patentes de la base de datos.
+            </summary>
+            <returns>Lista de patentes.</returns>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.FamiliaRepository.DeletePatente(System.Guid)">
+            <summary>
+            Elimina una patente de la base de datos y sus relaciones en la tabla FAMILIA_PATENTE.
+            </summary>
+            <param name="id">Identificador de la patente a eliminar.</param>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.FamiliaRepository.DeleteFamilia(System.Guid)">
+            <summary>
+            Elimina una familia de la base de datos y sus relaciones en las tablas FAMILIA_PATENTE y USUARIO_FAMILIA.
+            </summary>
+            <param name="id">Identificador de la familia a eliminar.</param>
+        </member>
+        <member name="T:Services.Datos.Implementations.SqlServer.Helpers.SqlHelper">
+            <summary>
+            Clase estática que proporciona métodos de ayuda para la ejecución de comandos SQL en una base de datos SQL Server.
+            </summary>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.Helpers.SqlHelper.ExecuteNonQuery(System.String,System.Data.CommandType,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Ejecuta un comando SQL que no devuelve filas (INSERT, UPDATE, DELETE).
+            </summary>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.Helpers.SqlHelper.CheckNullables(System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Verifica si los parámetros son nulos y los establece en DBNull.Value si es necesario.
+            </summary>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.Helpers.SqlHelper.ExecuteScalar(System.String,System.Data.CommandType,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Ejecuta un comando SQL y devuelve un solo valor (por ejemplo, un conteo o un ID).
+            </summary>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.Helpers.SqlHelper.ExecuteReader(System.String,System.Data.CommandType,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Ejecuta un comando SQL y devuelve un SqlDataReader para leer los resultados.
+            </summary>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.Helpers.SqlHelper.ExecuteDataTable(System.String,System.Data.CommandType,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Ejecuta un comando SQL y devuelve un DataTable con los resultados.
+            </summary>
+        </member>
+        <member name="T:Services.Datos.Implementations.SqlServer.UsuarioRepository">
+            <summary>
+            Repositorio para gestionar las operaciones relacionadas con los usuarios en la base de datos.
+            Proporciona métodos para obtener información de usuarios, incluyendo sus familias y patentes asociadas.
+            Implementa la interfaz <see cref="T:Services.Datos.Contracts.IUsuarioRepository"/> para asegurar la consistencia en el acceso a datos.
+            </summary>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.UsuarioRepository.#ctor">
+            <summary>
+            Constructor de la clase <see cref="T:Services.Datos.Implementations.SqlServer.UsuarioRepository"/>.
+            Inicializa el repositorio de familias, creando una nueva instancia de <see cref="T:Services.Datos.Implementations.SqlServer.FamiliaRepository"/>.
+            </summary>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.UsuarioRepository.GetUsuarioByUsername(System.String)">
+            <summary>
+            Obtiene un usuario a partir de su nombre de usuario.
+            </summary>
+            <param name="username">El nombre de usuario a buscar.</param>
+            <returns>El objeto Usuario correspondiente, o null si no se encuentra.</returns>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.UsuarioRepository.GetFamiliasByUsuarioId(System.Guid)">
+            <summary>
+            Obtiene las familias asociadas a un usuario específico.
+            </summary>
+            <param name="usuarioId">El identificador del usuario.</param>
+            <returns>Lista de familias asociadas al usuario.</returns>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.UsuarioRepository.CreateUsuario(Services.Domain.Composite.Usuario)">
+            <summary>
+            Crea un nuevo usuario en la base de datos.
+            </summary>
+            <param name="usuario">El objeto Usuario que contiene la información del nuevo usuario.</param>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.UsuarioRepository.DisableUsuario(System.Guid)">
+            <summary>
+            Desactiva un usuario estableciendo su estado a inactivo en la base de datos.
+            </summary>
+            <param name="idUsuario">El identificador del usuario a desactivar.</param>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.UsuarioRepository.EnabledUsuario(System.Guid)">
+            <summary>
+            Activa un usuario estableciendo su estado a activo en la base de datos.
+            </summary>
+            <param name="idUsuario">El identificador del usuario a activar.</param>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.UsuarioRepository.UpdateAccesos(System.Guid,System.Collections.Generic.List{Services.Domain.Composite.Acceso})">
+            <summary>
+            Actualiza los accesos de un usuario en la base de datos.
+            Primero elimina los accesos existentes y luego inserta los nuevos accesos.
+            </summary>
+            <param name="idUsuario">El identificador del usuario cuyos accesos se van a actualizar.</param>
+            <param name="accesos">Lista de objetos Acceso que representan los nuevos accesos del usuario.</param>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.UsuarioRepository.GetAll">
+            <summary>
+            Obtiene todos los usuarios de la base de datos.
+            </summary>
+            <returns>Una lista de objetos Usuario.</returns>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.UsuarioRepository.Add(Services.Domain.Composite.Usuario)">
+            <summary>
+            Agrega un nuevo usuario a la base de datos. (Método no implementado).
+            </summary>
+            <param name="obj">El objeto Usuario a agregar.</param>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.UsuarioRepository.Update(Services.Domain.Composite.Usuario)">
+            <summary>
+            Actualiza un usuario existente en la base de datos. (Método no implementado).
+            </summary>
+            <param name="obj">El objeto Usuario con los datos actualizados.</param>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.UsuarioRepository.Remove(System.Guid)">
+            <summary>
+            Elimina un usuario de la base de datos por su identificador.
+            </summary>
+            <param name="id">El identificador del usuario a eliminar.</param>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.UsuarioRepository.GetById(System.Guid)">
+            <summary>
+            Obtiene un usuario por su identificador. (Método no implementado).
+            </summary>
+            <param name="id">El identificador del usuario a obtener.</param>
+            <returns>El objeto Usuario correspondiente al identificador.</returns>
+        </member>
+        <member name="M:Services.Datos.Implementations.SqlServer.UsuarioRepository.GetUsuariosDTO">
+            <summary>
+            Obtiene una lista de usuarios en formato DTO (Data Transfer Object) desde la base de datos.
+            </summary>
+            <returns>Una lista de objetos UsuarioDTO que contienen el ID, el nombre de usuario y el estado del usuario.</returns>
+        </member>
+        <member name="T:Services.Datos.Implementations.Texto.LoggerRepository">
+            <summary>
+            Repositorio para el registro de logs de errores y bitácoras de información.
+            </summary>
+        </member>
+        <member name="M:Services.Datos.Implementations.Texto.LoggerRepository.WriteLog(Services.Domain.Log,System.Exception)">
+            <summary>
+            Escribe un log en el archivo correspondiente según el nivel de traza.
+            </summary>
+            <param name="log">El objeto de log que contiene la información a registrar.</param>
+            <param name="ex">Una excepción opcional relacionada con el log.</param>
+        </member>
+        <member name="M:Services.Datos.Implementations.Texto.LoggerRepository.FormatMessage(Services.Domain.Log)">
+            <summary>
+            Formatea el log recibido para crear una cadena ordenada para un archivo .txt.
+            </summary>
+            <param name="log">El objeto de log que contiene la información a formatear.</param>
+            <returns>Una cadena formateada que representa el log.</returns>
+        </member>
+        <member name="M:Services.Datos.Implementations.Texto.LoggerRepository.WriteToFile(System.String,System.String)">
+            <summary>
+            Escribe un mensaje en un archivo, creando un nuevo archivo con la fecha actual si es necesario.
+            </summary>
+            <param name="path">La ruta del archivo donde se escribirá el mensaje.</param>
+            <param name="message">El mensaje que se escribirá en el archivo.</param>
+        </member>
+        <member name="M:Services.Datos.Implementations.Texto.LoggerRepository.GetLogs">
+            <summary>
+            Obtiene una lista de logs de error desde el archivo de registro.
+            </summary>
+            <returns>Una lista de objetos Log que representan los logs de error.</returns>
+        </member>
+        <member name="M:Services.Datos.Implementations.Texto.LoggerRepository.GetBitacora">
+            <summary>
+            Obtiene una lista de logs de información desde el archivo de registro.
+            </summary>
+            <returns>Una lista de objetos Log que representan los logs de información.</returns>
+        </member>
+        <member name="M:Services.Datos.Implementations.Texto.LoggerRepository.ReadLogsFromFile(System.String,System.Diagnostics.TraceLevel)">
+            <summary>
+            Lee los logs desde un archivo y devuelve una lista de objetos Log.
+            </summary>
+            <param name="path">La ruta del archivo desde el cual se leerán los logs.</param>
+            <param name="level">El nivel de traza que se filtrará al leer los logs.</param>
+            <returns>Una lista de objetos Log que representan los logs leídos del archivo.</returns>
+        </member>
+        <member name="M:Services.Datos.Implementations.Texto.LoggerRepository.ParseLogLine(System.String,System.Diagnostics.TraceLevel)">
+            <summary>
+            Analiza una línea de log y devuelve un objeto Log si la línea es válida.
+            </summary>
+            <param name="line">La línea de log que se va a analizar.</param>
+            <param name="level">El nivel de traza que se utilizará para el log.</param>
+            <returns>Un objeto Log que representa la línea analizada, o null si la línea no es válida.</returns>
+        </member>
+        <member name="T:Services.Datos.Implementations.Texto.LanguageRepository">
+            <summary>
+            Repositorio de idiomas que proporciona métodos para traducir claves a su correspondiente valor en el idioma actual.
+            </summary>
+        </member>
+        <member name="M:Services.Datos.Implementations.Texto.LanguageRepository.Translate(System.String)">
+            <summary>
+            Traduce una clave a su correspondiente valor en el idioma actual.
+            </summary>
+            <param name="key">La clave que se desea traducir.</param>
+            <returns>La traducción correspondiente a la clave en el idioma actual.</returns>
+            <exception cref="T:System.Exception">Lanza una excepción si no se encuentra el archivo de idioma o la clave no existe.</exception>
+        </member>
+        <member name="M:Services.Datos.Implementations.Texto.LanguageRepository.GetLanguages">
+            <summary>
+            Obtiene un diccionario de códigos de idioma y sus nombres nativos desde los archivos de idioma disponibles.
+            </summary>
+            <returns>Un diccionario donde la clave es el código del idioma y el valor es el nombre nativo del idioma.</returns>
+        </member>
+        <member name="M:Services.Datos.Implementations.Texto.LanguageRepository.SaveUserLanguage(System.String)">
+            <summary>
+            Guarda el código del idioma del usuario en un archivo de configuración.
+            </summary>
+            <param name="languageCode">El código del idioma que se desea guardar.</param>
+        </member>
+        <member name="M:Services.Datos.Implementations.Texto.LanguageRepository.LoadUserLanguage">
+            <summary>
+            Carga el idioma de preferencia del usuario desde un archivo de configuración.
+            </summary>
+            <returns>El código del idioma guardado, o "es-ES" si no existe o está vacío.</returns>
+        </member>
+        <member name="T:Services.Domain.Composite.Acceso">
+            <summary>
+            Clase abstracta que representa un acceso. 
+            Define la estructura básica para componentes que pueden ser agregados o removidos,
+            así como para obtener el conteo de dichos componentes.
+            </summary>
+        </member>
+        <member name="P:Services.Domain.Composite.Acceso.Id">
+            <summary>
+            Identificador único del acceso.
+            </summary>
+        </member>
+        <member name="P:Services.Domain.Composite.Acceso.Nombre">
+            <summary>
+            Nombre del acceso.
+            </summary>
+        </member>
+        <member name="M:Services.Domain.Composite.Acceso.#ctor">
+            <summary>
+            Constructor por defecto.
+            </summary>
+        </member>
+        <member name="M:Services.Domain.Composite.Acceso.Add(Services.Domain.Composite.Acceso)">
+            <summary>
+            Método abstracto para agregar un componente de tipo Acceso.
+            </summary>
+            <param name="component">El componente a agregar.</param>
+        </member>
+        <member name="M:Services.Domain.Composite.Acceso.Remove(Services.Domain.Composite.Acceso)">
+            <summary>
+            Método abstracto para remover un componente de tipo Acceso.
+            </summary>
+            <param name="component">El componente a remover.</param>
+        </member>
+        <member name="M:Services.Domain.Composite.Acceso.GetCount">
+            <summary>
+            Método abstracto para obtener el conteo de componentes.
+            </summary>
+            <returns>El número de componentes.</returns>
+        </member>
+        <member name="T:Services.Domain.Composite.Familia">
+            <summary>
+            Clase que representa una familia de accesos. 
+            Hereda de la clase abstracta Acceso y permite agregar, remover y contar accesos.
+            </summary>
+        </member>
+        <member name="M:Services.Domain.Composite.Familia.#ctor(Services.Domain.Composite.Acceso)">
+            <summary>
+            Constructor que inicializa una nueva instancia de la clase Familia.
+            Si se proporciona un acceso, se agrega a la lista de accesos.
+            </summary>
+            <param name="acceso">Acceso opcional a agregar a la familia.</param>
+        </member>
+        <member name="M:Services.Domain.Composite.Familia.Add(Services.Domain.Composite.Acceso)">
+            <summary>
+            Agrega un componente de tipo Acceso a la familia.
+            </summary>
+            <param name="component">El componente a agregar.</param>
+        </member>
+        <member name="M:Services.Domain.Composite.Familia.Remove(Services.Domain.Composite.Acceso)">
+            <summary>
+            Remueve un componente de tipo Acceso de la familia.
+            </summary>
+            <param name="component">El componente a remover.</param>
+        </member>
+        <member name="M:Services.Domain.Composite.Familia.GetCount">
+            <summary>
+            Obtiene el conteo de accesos en la familia.
+            </summary>
+            <returns>El número de accesos en la familia.</returns>
+        </member>
+        <member name="P:Services.Domain.Composite.Familia.Accesos">
+            <summary>
+            Propiedad que obtiene la lista de accesos.
+            </summary>
+        </member>
+        <member name="T:Services.Domain.Composite.Patente">
+            <summary>
+            Clase que representa una patente de acceso. 
+            Hereda de la clase abstracta Acceso y no permite agregar o remover componentes.
+            </summary>
+        </member>
+        <member name="P:Services.Domain.Composite.Patente.TipoAcceso">
+            <summary>
+            Tipo de acceso asociado a la patente.
+            </summary>
+        </member>
+        <member name="P:Services.Domain.Composite.Patente.DataKey">
+            <summary>
+            Clave de datos asociada a la patente.
+            </summary>
+        </member>
+        <member name="M:Services.Domain.Composite.Patente.#ctor(Services.Domain.Composite.TipoAcceso)">
+            <summary>
+            Constructor que inicializa una nueva instancia de la clase Patente.
+            Se puede especificar el tipo de acceso, que por defecto es UI.
+            </summary>
+            <param name="tipoAcceso">Tipo de acceso de la patente.</param>
+        </member>
+        <member name="M:Services.Domain.Composite.Patente.Add(Services.Domain.Composite.Acceso)">
+            <summary>
+            Método que intenta agregar un componente de tipo Acceso.
+            Lanza una excepción ya que no se puede agregar un elemento a una patente.
+            </summary>
+            <param name="component">El componente a agregar.</param>
+        </member>
+        <member name="M:Services.Domain.Composite.Patente.Remove(Services.Domain.Composite.Acceso)">
+            <summary>
+            Método que intenta remover un componente de tipo Acceso.
+            Lanza una excepción ya que no se puede quitar un elemento de una patente.
+            </summary>
+            <param name="component">El componente a remover.</param>
+        </member>
+        <member name="M:Services.Domain.Composite.Patente.GetCount">
+            <summary>
+            Obtiene el conteo de accesos en la patente, que siempre es 0.
+            </summary>
+            <returns>0, ya que una patente no tiene componentes hijos.</returns>
+        </member>
+        <member name="T:Services.Domain.Composite.TipoAcceso">
+            <summary>
+            Enumeración que define los tipos de acceso disponibles.
+            </summary>
+        </member>
+        <member name="F:Services.Domain.Composite.TipoAcceso.UI">
+            <summary>
+            Representa el acceso a la interfaz de usuario.
+            </summary>
+        </member>
+        <member name="F:Services.Domain.Composite.TipoAcceso.Control">
+            <summary>
+            Representa el acceso a las funciones de control del sistema.
+            </summary>
+        </member>
+        <member name="F:Services.Domain.Composite.TipoAcceso.UseCases">
+            <summary>
+            Representa el acceso a los casos de uso dentro del sistema.
+            </summary>
+        </member>
+        <member name="T:Services.Domain.Composite.Usuario">
+            <summary>
+            Clase que representa un usuario en el sistema.
+            Contiene información sobre el usuario y sus accesos.
+            </summary>
+        </member>
+        <member name="P:Services.Domain.Composite.Usuario.IdUsuario">
+            <summary>
+            Identificador único del usuario.
+            </summary>
+        </member>
+        <member name="P:Services.Domain.Composite.Usuario.UserName">
+            <summary>
+            Nombre de usuario.
+            </summary>
+        </member>
+        <member name="P:Services.Domain.Composite.Usuario.Password">
+            <summary>
+            Contraseña del usuario.
+            </summary>
+        </member>
+        <member name="P:Services.Domain.Composite.Usuario.Estado">
+            <summary>
+            Estado del usuario (habilitado o deshabilitado).
+            </summary>
+        </member>
+        <member name="P:Services.Domain.Composite.Usuario.Digit">
+            <summary>
+            Dígito verificador horizontal.
+            </summary>
+        </member>
+        <member name="F:Services.Domain.Composite.Usuario.Accesos">
+            <summary>
+            Lista de accesos asociados al usuario.
+            </summary>
+        </member>
+        <member name="M:Services.Domain.Composite.Usuario.#ctor">
+            <summary>
+            Constructor que inicializa una nueva instancia de la clase Usuario.
+            Genera un nuevo GUID para el IdUsuario.
+            </summary>
+        </member>
+        <member name="M:Services.Domain.Composite.Usuario.#ctor(System.Guid)">
+            <summary>
+            Constructor que inicializa una nueva instancia de la clase Usuario con un IdUsuario específico.
+            </summary>
+            <param name="idUsuario">Identificador del usuario.</param>
+        </member>
+        <member name="M:Services.Domain.Composite.Usuario.GetPatentes">
+            <summary>
+            Obtiene una lista de patentes asociadas al usuario.
+            </summary>
+            <returns>Lista de patentes.</returns>
+        </member>
+        <member name="M:Services.Domain.Composite.Usuario.GetAllPatentes(System.Collections.Generic.List{Services.Domain.Composite.Acceso},System.Collections.Generic.List{Services.Domain.Composite.Patente})">
+            <summary>
+            Método recursivo que obtiene todas las patentes de una lista de accesos.
+            </summary>
+            <param name="accesos">Lista de accesos a procesar.</param>
+            <param name="patentesReturn">Lista de patentes a llenar.</param>
+        </member>
+        <member name="M:Services.Domain.Composite.Usuario.GetFamilias">
+            <summary>
+            Obtiene una lista de familias asociadas al usuario.
+            </summary>
+            <returns>Lista de familias.</returns>
+        </member>
+        <member name="M:Services.Domain.Composite.Usuario.GetAllFamilias(System.Collections.Generic.List{Services.Domain.Composite.Acceso},System.Collections.Generic.List{Services.Domain.Composite.Familia})">
+            <summary>
+            Método recursivo que obtiene todas las familias de una lista de accesos.
+            </summary>
+            <param name="accesos">Lista de accesos a procesar.</param>
+            <param name="famililaReturn">Lista de familias a llenar.</param>
+        </member>
+        <member name="T:Services.Domain.Exceptions.WordNotFoundException">
+            <summary>
+            Excepción personalizada que indica que no se encontró una palabra para traducir.
+            </summary>
+        </member>
+        <member name="M:Services.Domain.Exceptions.WordNotFoundException.#ctor">
+            <summary>
+            Constructor para crear una nueva instancia de WordNotFoundException.
+            Inicializa la excepción con un mensaje predeterminado.
+            </summary>
+        </member>
+        <member name="T:Services.Domain.Log">
+            <summary>
+            Clase que representa un registro de log o bitácora.
+            Dependiendo del nivel de traza (TraceLevel), puede ser utilizado para diferentes propósitos de registro.
+            </summary>
+        </member>
+        <member name="P:Services.Domain.Log.Message">
+            <summary>
+            Mensaje que describe el evento o la información que se está registrando.
+            </summary>
+        </member>
+        <member name="P:Services.Domain.Log.TraceLevel">
+            <summary>
+            Nivel de traza que indica la severidad o importancia del log.
+            </summary>
+        </member>
+        <member name="P:Services.Domain.Log.Date">
+            <summary>
+            Fecha y hora en que se registró el log.
+            </summary>
+        </member>
+        <member name="M:Services.Domain.Log.#ctor(System.String,System.Diagnostics.TraceLevel,System.DateTime)">
+            <summary>
+            Constructor para crear una nueva instancia de Log.
+            </summary>
+            <param name="message">El mensaje que se desea registrar.</param>
+            <param name="traceLevel">El nivel de traza del log (por defecto es Info).</param>
+            <param name="date">La fecha y hora del registro (por defecto es la fecha y hora actual).</param>
+        </member>
+        <member name="T:Services.Facade.CryptographyService">
+            <summary>
+            Proporciona métodos para realizar operaciones de criptografía, incluyendo 
+            hashing MD5, encriptación y desencriptación utilizando AES.
+            </summary>
+        </member>
+        <member name="M:Services.Facade.CryptographyService.HashMd5(System.String)">
+            <summary>
+            Genera un hash MD5 a partir de un texto plano.
+            </summary>
+            <param name="textPlain">El texto plano que se va a hashear.</param>
+            <returns>El hash MD5 en formato hexadecimal.</returns>
+        </member>
+        <member name="M:Services.Facade.CryptographyService.Encrypt(System.String)">
+            <summary>
+            Encripta un texto claro utilizando AES.
+            </summary>
+            <param name="clearText">El texto claro que se va a encriptar.</param>
+            <returns>El texto encriptado en formato Base64.</returns>
+        </member>
+        <member name="M:Services.Facade.CryptographyService.Decrypt(System.String)">
+            <summary>
+            Desencripta un texto encriptado en formato Base64.
+            </summary>
+            <param name="cipherText">El texto encriptado que se va a desencriptar.</param>
+            <returns>El texto claro original.</returns>
+        </member>
+        <member name="T:Services.Facade.Extentions.StringExtention">
+            <summary>
+            Clase estática que agrupa las extensiones de cadena para funcionalidades adicionales.
+            </summary>
+        </member>
+        <member name="M:Services.Facade.Extentions.StringExtention.Translate(System.String)">
+            <summary>
+            Traducir una clave de texto usando la lógica de traducción.
+            </summary>
+            <param name="key">La clave del texto a traducir.</param>
+            <returns>La cadena traducida correspondiente a la clave.</returns>
+        </member>
+        <member name="M:Services.Facade.Extentions.StringExtention.ToUpperCapital(System.String)">
+            <summary>
+            Convierte la primera letra de la palabra a mayúscula.
+            </summary>
+            <param name="word">La palabra a la que se le aplicará la transformación.</param>
+            <returns>La palabra con la primera letra en mayúscula.</returns>
+        </member>
+        <member name="M:Services.Facade.Extentions.StringExtention.ExtentionWithParameters(System.String,System.Int32,System.String)">
+            <summary>
+            Realiza una operación personalizada sobre una palabra utilizando parámetros adicionales.
+            </summary>
+            <param name="word">La palabra sobre la que se realizará la operación.</param>
+            <param name="a">Un parámetro entero que puede influir en la operación.</param>
+            <param name="pepe">Un parámetro de tipo cadena adicional que puede influir en la operación.</param>
+            <returns>Una cadena que representa el resultado de la operación.</returns>
+        </member>
+        <member name="T:Services.Facade.FamiliaService">
+            <summary>
+            Proporciona servicios para gestionar familias y sus patentes.
+            </summary>
+        </member>
+        <member name="M:Services.Facade.FamiliaService.CrearFamiliaConPatentes(System.String,System.Collections.Generic.List{Services.Domain.Composite.Patente})">
+            <summary>
+            Crea una nueva familia con las patentes especificadas.
+            </summary>
+            <param name="nombreFamilia">El nombre de la familia a crear.</param>
+            <param name="patentes">La lista de patentes asociadas a la familia.</param>
+            <exception cref="T:Services.Security.Domain.Exceptions.BusinessRuleException">Se lanza si hay una violación de las reglas de negocio.</exception>
+            <exception cref="T:Services.Security.Domain.Exceptions.DataAccessException">Se lanza si ocurre un error al acceder a la base de datos.</exception>
+        </member>
+        <member name="M:Services.Facade.FamiliaService.CreatePatente(Services.Domain.Composite.Patente)">
+            <summary>
+            Crea una nueva patente.
+            </summary>
+            <param name="patente">La patente a crear.</param>
+            <exception cref="T:Services.Security.Domain.Exceptions.BusinessRuleException">Se lanza si hay una violación de las reglas de negocio.</exception>
+            <exception cref="T:Services.Security.Domain.Exceptions.DataAccessException">Se lanza si ocurre un error al acceder a la base de datos.</exception>
+        </member>
+        <member name="M:Services.Facade.FamiliaService.AddPatentesToFamilia(Services.Domain.Composite.Familia,System.Collections.Generic.List{Services.Domain.Composite.Patente})">
+            <summary>
+            Agrega patentes a una familia existente.
+            </summary>
+            <param name="familia">La familia a la que se agregarán las patentes.</param>
+            <param name="patentes">La lista de patentes a agregar.</param>
+            <exception cref="T:Services.Security.Domain.Exceptions.BusinessRuleException">Se lanza si hay una violación de las reglas de negocio.</exception>
+            <exception cref="T:Services.Security.Domain.Exceptions.DataAccessException">Se lanza si ocurre un error al acceder a la base de datos.</exception>
+        </member>
+        <member name="M:Services.Facade.FamiliaService.AsignarFamiliaAUsuario(System.Guid,Services.Domain.Composite.Familia)">
+            <summary>
+            Asigna una familia a un usuario específico.
+            </summary>
+            <param name="usuarioId">El ID del usuario al que se le asignará la familia.</param>
+            <param name="familia">La familia que se asignará al usuario.</param>
+            <exception cref="T:Services.Security.Domain.Exceptions.BusinessRuleException">Se lanza si hay una violación de las reglas de negocio.</exception>
+            <exception cref="T:Services.Security.Domain.Exceptions.DataAccessException">Se lanza si ocurre un error al acceder a la base de datos.</exception>
+        </member>
+        <member name="M:Services.Facade.FamiliaService.ActualizarFamilia(Services.Domain.Composite.Familia)">
+            <summary>
+            Actualiza la información de una familia existente.
+            </summary>
+            <param name="familia">La familia con la información actualizada.</param>
+            <exception cref="T:Services.Security.Domain.Exceptions.BusinessRuleException">Se lanza si hay una violación de las reglas de negocio.</exception>
+            <exception cref="T:Services.Security.Domain.Exceptions.DataAccessException">Se lanza si ocurre un error al acceder a la base de datos.</exception>
+        </member>
+        <member name="M:Services.Facade.FamiliaService.ActualizarFamiliasDeUsuario(System.Guid,System.Collections.Generic.List{Services.Domain.Composite.Familia})">
+            <summary>
+            Actualiza las familias asociadas a un usuario específico.
+            </summary>
+            <param name="usuarioId">El ID del usuario cuyas familias se actualizarán.</param>
+            <param name="familias">La lista de familias con la información actualizada.</param>
+            <exception cref="T:Services.Security.Domain.Exceptions.BusinessRuleException">Se lanza si hay una violación de las reglas de negocio.</exception>
+            <exception cref="T:Services.Security.Domain.Exceptions.DataAccessException">Se lanza si ocurre un error al acceder a la base de datos.</exception>
+        </member>
+        <member name="M:Services.Facade.FamiliaService.GetPatentesByFamiliaId(System.Guid)">
+            <summary>
+            Obtiene una lista de patentes asociadas a una familia específica.
+            </summary>
+            <param name="familiaId">El ID de la familia para la cual se desean obtener las patentes.</param>
+            <returns>Una lista de patentes asociadas a la familia.</returns>
+            <exception cref="T:Services.Security.Domain.Exceptions.BusinessRuleException">Se lanza si la familia no posee permisos.</exception>
+            <exception cref="T:Services.Security.Domain.Exceptions.DataAccessException">Se lanza si ocurre un error al acceder a la base de datos.</exception>
+        </member>
+        <member name="M:Services.Facade.FamiliaService.GetAllFamilias">
+            <summary>
+            Obtiene una lista de todas las familias registradas.
+            </summary>
+            <returns>Una lista de todas las familias.</returns>
+            <exception cref="T:Services.Security.Domain.Exceptions.BusinessRuleException">Se lanza si no hay familias registradas.</exception>
+            <exception cref="T:Services.Security.Domain.Exceptions.DataAccessException">Se lanza si ocurre un error al acceder a la base de datos.</exception>
+        </member>
+        <member name="M:Services.Facade.FamiliaService.GetAllPatentes">
+            <summary>
+            Obtiene una lista de todas las patentes registradas.
+            </summary>
+            <returns>Una lista de todas las patentes.</returns>
+            <exception cref="T:Services.Security.Domain.Exceptions.BusinessRuleException">Se lanza si no hay permisos registrados.</exception>
+            <exception cref="T:Services.Security.Domain.Exceptions.DataAccessException">Se lanza si ocurre un error al acceder a la base de datos.</exception>
+        </member>
+        <member name="M:Services.Facade.FamiliaService.DeleteFamilia(System.Guid)">
+            <summary>
+            Elimina una familia por su ID.
+            </summary>
+            <param name="id">El ID de la familia a eliminar.</param>
+            <exception cref="T:Services.Security.Domain.Exceptions.BusinessRuleException">Se lanza si hay una violación de las reglas de negocio.</exception>
+            <exception cref="T:Services.Security.Domain.Exceptions.DataAccessException">Se lanza si ocurre un error al acceder a la base de datos.</exception>
+        </member>
+        <member name="M:Services.Facade.FamiliaService.DeletePatente(System.Guid)">
+            <summary>
+            Elimina una patente por su ID.
+            </summary>
+            <param name="id">El ID de la patente a eliminar.</param>
+            <exception cref="T:Services.Security.Domain.Exceptions.BusinessRuleException">Se lanza si hay una violación de las reglas de negocio.</exception>
+            <exception cref="T:Services.Security.Domain.Exceptions.DataAccessException">Se lanza si ocurre un error al acceder a la base de datos.</exception>
+        </member>
+        <member name="T:Services.Facade.LanguageService">
+            <summary>
+            Proporciona servicios relacionados con la gestión de idiomas, incluyendo la traducción de claves
+            y la suscripción de observadores para notificaciones de cambios en el idioma.
+            </summary>
+        </member>
+        <member name="M:Services.Facade.LanguageService.Subscribe(Services.Datos.Contracts.ILanguageObserver)">
+            <summary>
+            Suscribe un observador para recibir notificaciones de cambios en el idioma.
+            </summary>
+            <param name="observer">El observador que se desea suscribir.</param>
+        </member>
+        <member name="M:Services.Facade.LanguageService.Unsubscribe(Services.Datos.Contracts.ILanguageObserver)">
+            <summary>
+            Desuscribe un observador para dejar de recibir notificaciones de cambios en el idioma.
+            </summary>
+            <param name="observer">El observador que se desea desuscribir.</param>
+        </member>
+        <member name="M:Services.Facade.LanguageService.NotifyObservers">
+            <summary>
+            Notifica a todos los observadores sobre un cambio en el idioma.
+            </summary>
+        </member>
+        <member name="M:Services.Facade.LanguageService.Translate(System.String)">
+            <summary>
+            Traduce una clave específica utilizando la lógica de traducción.
+            </summary>
+            <param name="key">La clave que se desea traducir.</param>
+            <returns>La traducción correspondiente a la clave.</returns>
+        </member>
+        <member name="M:Services.Facade.LanguageService.GetLanguages">
+            <summary>
+            Obtiene un diccionario de idiomas disponibles.
+            </summary>
+            <returns>Un diccionario donde las claves son los códigos de idioma y los valores son los nombres de los idiomas.</returns>
+        </member>
+        <member name="M:Services.Facade.LanguageService.SaveUserLanguage(System.String)">
+            <summary>
+            Guarda el idioma del usuario y notifica a los observadores sobre el cambio.
+            </summary>
+            <param name="languageCode">El código del idioma que se desea guardar.</param>
+        </member>
+        <member name="M:Services.Facade.LanguageService.LoadUserLanguage">
+            <summary>
+            Carga el idioma guardado en la configuración.
+            </summary>
+            <returns>El código del idioma guardado.</returns>
+        </member>
+        <member name="M:Services.Facade.LanguageService.TranslateForm(System.Windows.Forms.Control)">
+            <summary>
+            Traduce un formulario completo.
+            </summary>
+            <param name="control">El control que representa el formulario a traducir.</param>
+        </member>
+        <member name="T:Services.Facade.LoggerService">
+            <summary>
+            Proporciona servicios de registro para la aplicación, permitiendo escribir logs y manejar excepciones.
+            Funciona como un adaptador para la lógica de registro subyacente.
+            </summary>
+        </member>
+        <member name="M:Services.Facade.LoggerService.WriteLog(Services.Domain.Log,System.Exception)">
+            <summary>
+            Escribe un log con un objeto Log y una excepción opcional.
+            </summary>
+            <param name="log">El objeto Log que se desea registrar.</param>
+            <param name="ex">La excepción asociada al log, si existe.</param>
+        </member>
+        <member name="M:Services.Facade.LoggerService.WriteLog(System.String,System.Diagnostics.TraceLevel)">
+            <summary>
+            Escribe un log con un mensaje y un nivel de traza. El nivel por defecto es INFO.
+            </summary>
+            <param name="message">El mensaje que se desea registrar.</param>
+            <param name="level">El nivel de traza del log (por defecto es TraceLevel.Info).</param>
+        </member>
+        <member name="M:Services.Facade.LoggerService.WriteException(System.Exception)">
+            <summary>
+            Escribe un log para una excepción específica.
+            </summary>
+            <param name="ex">La excepción que se desea registrar.</param>
+        </member>
+        <member name="M:Services.Facade.LoggerService.GetLogs">
+            <summary>
+            Obtiene una lista de logs registrados.
+            </summary>
+            <returns>Una lista de objetos Log.</returns>
+        </member>
+        <member name="M:Services.Facade.LoggerService.GetBitacora">
+            <summary>
+            Obtiene la bitácora de logs.
+            </summary>
+            <returns>Una lista de objetos Log que representan la bitácora.</returns>
+        </member>
+        <member name="T:Services.Logic.AccesoLogic">
+            <summary>
+            Clase estática que gestiona el acceso a controles y pestañas en la interfaz de usuario.
+            </summary>
+        </member>
+        <member name="T:Services.Logic.AccesoLogic.ControlDecorator">
+            <summary>
+            Decorador para controles que implementa la interfaz IControlAccess.
+            </summary>
+        </member>
+        <member name="M:Services.Logic.AccesoLogic.ControlDecorator.#ctor(System.Windows.Forms.Control,System.String)">
+            <summary>
+            Constructor de la clase <see cref="T:Services.Logic.AccesoLogic.ControlDecorator"/>.
+            Inicializa el decorador de control con el control y la patente requerida.
+            </summary>
+            <param name="control">El <see cref="T:System.Windows.Forms.Control"/> que se va a decorar.</param>
+            <param name="requiredPatente">La patente requerida para acceder al <see cref="T:System.Windows.Forms.Control"/>.</param>
+        </member>
+        <member name="M:Services.Logic.AccesoLogic.ControlDecorator.SetAccess(System.Collections.Generic.List{Services.Domain.Composite.Patente})">
+            <summary>
+            Establece el acceso al control basado en las patentes del usuario.
+            </summary>
+            <param name="patentesUsuario">Lista de patentes del usuario.</param>
+        </member>
+        <member name="T:Services.Logic.AccesoLogic.TabPageDecorator">
+            <summary>
+            Decorador para TabPages que implementa la interfaz IControlAccess.
+            </summary>
+        </member>
+        <member name="M:Services.Logic.AccesoLogic.TabPageDecorator.#ctor(System.Windows.Forms.TabPage,System.String)">
+            <summary>
+            Constructor de la clase <see cref="T:Services.Logic.AccesoLogic.TabPageDecorator"/>.
+            Inicializa el decorador de la tabPage con la tabPage y la patente requerida.
+            </summary>
+            <param name="tab">La <see cref="T:System.Windows.Forms.TabPage"/> que se va a decorar.</param>
+            <param name="requiredPatente">La patente requerida para acceder a la <see cref="T:System.Windows.Forms.TabPage"/>.</param>
+        </member>
+        <member name="M:Services.Logic.AccesoLogic.TabPageDecorator.SetAccess(System.Collections.Generic.List{Services.Domain.Composite.Patente})">
+            <summary>
+            Establece el acceso a la pestaña basado en las patentes del usuario.
+            </summary>
+            <param name="patentesUsuario">Lista de patentes del usuario.</param>
+        </member>
+        <member name="M:Services.Logic.AccesoLogic.AplicarAccesoUsuario(Services.Domain.Composite.Usuario,System.Collections.Generic.List{System.Windows.Forms.Control})">
+            <summary>
+            Aplica el acceso a los controles para un usuario específico.
+            </summary>
+            <param name="user">El usuario para el que se aplicará el acceso.</param>
+            <param name="controles">Lista de controles a los que se aplicará el acceso.</param>
+        </member>
+        <member name="M:Services.Logic.AccesoLogic.ObtenerDecoradorAdecuado(System.Windows.Forms.Control)">
+            <summary>
+            Obtiene el decorador adecuado para un control dado.
+            </summary>
+            <param name="control">El control para el que se obtendrá el decorador.</param>
+            <returns>Un objeto que implementa IControlAccess.</returns>
+        </member>
+        <member name="T:Services.Logic.FamiliaLogic">
+            <summary>
+            Clase que gestiona la lógica relacionada con las familias y las patentes.
+            </summary>
+        </member>
+        <member name="M:Services.Logic.FamiliaLogic.#ctor">
+            <summary>
+            Constructor de la clase <see cref="T:Services.Logic.FamiliaLogic"/>.
+            Inicializa el repositorio de familias.
+            </summary>
+        </member>
+        <member name="M:Services.Logic.FamiliaLogic.CrearFamiliaConPatentes(Services.Domain.Composite.Familia)">
+            <summary>
+            Crea una nueva familia con las patentes asociadas.
+            </summary>
+            <param name="familia">La familia a crear.</param>
+        </member>
+        <member name="M:Services.Logic.FamiliaLogic.CreatePatente(Services.Domain.Composite.Patente)">
+            <summary>
+            Crea una nueva patente.
+            </summary>
+            <param name="patente">La patente a crear.</param>
+        </member>
+        <member name="M:Services.Logic.FamiliaLogic.AddPatentesToFamilia(Services.Domain.Composite.Familia,System.Collections.Generic.List{Services.Domain.Composite.Patente})">
+            <summary>
+            Agrega patentes a una familia existente.
+            </summary>
+            <param name="familia">La familia a la que se agregarán las patentes.</param>
+            <param name="patentes">Lista de patentes a agregar.</param>
+        </member>
+        <member name="M:Services.Logic.FamiliaLogic.AsignarFamiliaAUsuario(System.Guid,Services.Domain.Composite.Familia)">
+            <summary>
+            Asigna una familia a un usuario.
+            </summary>
+            <param name="usuarioId">El ID del usuario.</param>
+            <param name="familia">La familia a asignar.</param>
+        </member>
+        <member name="M:Services.Logic.FamiliaLogic.ActualizarFamilia(Services.Domain.Composite.Familia)">
+            <summary>
+            Actualiza la información de una familia existente.
+            </summary>
+            <param name="familia">La familia con la información actualizada.</param>
+        </member>
+        <member name="M:Services.Logic.FamiliaLogic.ActualizarFamiliasDeUsuario(System.Guid,System.Collections.Generic.List{Services.Domain.Composite.Familia})">
+            <summary>
+            Actualiza las familias asociadas a un usuario.
+            </summary>
+            <param name="usuarioId">El ID del usuario.</param>
+            <param name="familias">Lista de familias a actualizar.</param>
+        </member>
+        <member name="M:Services.Logic.FamiliaLogic.GetPatentesByFamiliaId(System.Guid)">
+            <summary>
+            Obtiene las patentes asociadas a una familia dada su ID.
+            </summary>
+            <param name="familiaId">El ID de la familia.</param>
+            <returns>Lista de patentes asociadas a la familia.</returns>
+        </member>
+        <member name="M:Services.Logic.FamiliaLogic.GetAllFamilias">
+            <summary>
+            Obtiene todas las familias registradas.
+            </summary>
+            <returns>Lista de todas las familias.</returns>
+        </member>
+        <member name="M:Services.Logic.FamiliaLogic.GetAllPatentes">
+            <summary>
+            Obtiene todas las patentes registradas.
+            </summary>
+            <returns>Lista de todas las patentes.</returns>
+        </member>
+        <member name="M:Services.Logic.FamiliaLogic.DeleteFamilia(System.Guid)">
+            <summary>
+            Elimina una familia dada su ID.
+            </summary>
+            <param name="id">El ID de la familia a eliminar.</param>
+        </member>
+        <member name="M:Services.Logic.FamiliaLogic.DeletePatente(System.Guid)">
+            <summary>
+            Elimina una patente dada su ID.
+            </summary>
+            <param name="id">El ID de la patente a eliminar.</param>
+        </member>
+        <member name="T:Services.Logic.LanguageLogic">
+            <summary>
+            Clase que gestiona la lógica de traducción de textos en la aplicación.
+            </summary>
+        </member>
+        <member name="M:Services.Logic.LanguageLogic.Translate(System.String)">
+            <summary>
+            Traduce una clave de texto a su correspondiente traducción.
+            </summary>
+            <param name="key">La clave de texto a traducir.</param>
+            <returns>La traducción correspondiente o la clave original si ocurre un error.</returns>
+        </member>
+        <member name="M:Services.Logic.LanguageLogic.TranslateForm(System.Windows.Forms.Control)">
+            <summary>
+            Traduce todos los controles en un formulario.
+            </summary>
+            <param name="control">El control contenedor que contiene otros controles a traducir.</param>
+        </member>
+        <member name="M:Services.Logic.LanguageLogic.GetLanguages">
+            <summary>
+            Obtiene un diccionario de idiomas disponibles.
+            </summary>
+            <returns>Un diccionario con los códigos de idioma y sus nombres.</returns>
+        </member>
+        <member name="M:Services.Logic.LanguageLogic.SaveUserLanguage(System.String)">
+            <summary>
+            Guarda el idioma seleccionado por el usuario en la configuración.
+            </summary>
+            <param name="languageCode">El código del idioma a guardar.</param>
+        </member>
+        <member name="M:Services.Logic.LanguageLogic.LoadUserLanguage">
+            <summary>
+            Carga el idioma seleccionado por el usuario desde la configuración.
+            </summary>
+            <returns>El código del idioma cargado.</returns>
+        </member>
+        <member name="T:Services.Logic.LoggerLogic">
+            <summary>
+            Clase que gestiona la lógica de registro de logs en la aplicación.
+            </summary>
+        </member>
+        <member name="M:Services.Logic.LoggerLogic.WriteLog(Services.Domain.Log,System.Exception)">
+            <summary>
+            Escribe un log en el repositorio de logs.
+            </summary>
+            <param name="log">El objeto log que se va a registrar.</param>
+            <param name="ex">Una excepción opcional asociada al log.</param>
+        </member>
+        <member name="M:Services.Logic.LoggerLogic.GetLogs">
+            <summary>
+            Obtiene todos los logs registrados.
+            </summary>
+            <returns>Una lista de logs.</returns>
+        </member>
+        <member name="M:Services.Logic.LoggerLogic.GetBitacora">
+            <summary>
+            Obtiene la bitácora de logs.
+            </summary>
+            <returns>Una lista de logs de la bitácora.</returns>
+        </member>
+        <member name="T:Services.Logic.UserLogic">
+            <summary>
+            Clase que gestiona la lógica relacionada con los usuarios en el panel de administración.
+            </summary>
+        </member>
+        <member name="M:Services.Logic.UserLogic.#ctor">
+            <summary>
+            Constructor de la clase <see cref="T:Services.Logic.UserLogic"/>.
+            Inicializa el repositorio de usuarios utilizando el patrón Factory.
+            </summary>
+        </member>
+        <member name="M:Services.Logic.UserLogic.ValidateUser(System.String,System.String)">
+            <summary>
+            Valida las credenciales de un usuario.
+            </summary>
+            <param name="username">El nombre de usuario.</param>
+            <param name="password">La contraseña del usuario.</param>
+            <returns>True si las credenciales son válidas, de lo contrario, false.</returns>
+        </member>
+        <member name="M:Services.Logic.UserLogic.CreateUser(Services.Domain.Composite.Usuario,System.String)">
+            <summary>
+            Crea un nuevo usuario.
+            </summary>
+            <param name="usuario">El objeto usuario a crear.</param>
+            <param name="plainPassword">La contraseña en texto plano del usuario.</param>
+        </member>
+        <member name="M:Services.Logic.UserLogic.DisableUser(System.Guid)">
+            <summary>
+            Deshabilita un usuario dado su ID.
+            </summary>
+            <param name="idUsuario">El ID del usuario a deshabilitar.</param>
+        </member>
+        <member name="M:Services.Logic.UserLogic.EnabledUsuario(System.Guid)">
+            <summary>
+            Habilita un usuario dado su ID.
+            </summary>
+            <param name="idUsuario">El ID del usuario a habilitar.</param>
+        </member>
+        <member name="M:Services.Logic.UserLogic.UpdateUserAccesos(System.Guid,System.Collections.Generic.List{Services.Domain.Composite.Acceso})">
+            <summary>
+            Actualiza los accesos de un usuario dado su ID.
+            </summary>
+            <param name="idUsuario">El ID del usuario.</param>
+            <param name="accesos">La lista de accesos a actualizar.</param>
+        </member>
+        <member name="M:Services.Logic.UserLogic.GetAllUsuarios">
+            <summary>
+            Obtiene todos los usuarios.
+            </summary>
+            <returns>Una lista de usuarios.</returns>
+        </member>
+        <member name="M:Services.Logic.UserLogic.GetUsuarioByUsername(System.String)">
+            <summary>
+            Obtiene un usuario por su nombre de usuario.
+            </summary>
+            <param name="username">El nombre de usuario.</param>
+            <returns>El objeto Usuario correspondiente.</returns>
+        </member>
+        <member name="M:Services.Logic.UserLogic.GetFamiliasByUsuarioId(System.Guid)">
+            <summary>
+            Obtiene las familias asociadas a un usuario dado su ID.
+            </summary>
+            <param name="usuarioId">El ID del usuario.</param>
+            <returns>Una lista de familias asociadas al usuario.</returns>
+        </member>
+        <member name="M:Services.Logic.UserLogic.DeleteUser(System.Guid)">
+            <summary>
+            Elimina un usuario dado su ID.
+            </summary>
+            <param name="id">El ID del usuario a eliminar.</param>
+        </member>
+        <member name="M:Services.Logic.UserLogic.GetUsuariosDTO">
+            <summary>
+            Obtiene una lista de usuarios en formato DTO.
+            </summary>
+            <returns>Una lista de objetos UsuarioDTO.</returns>
+        </member>
+    </members>
+</doc>

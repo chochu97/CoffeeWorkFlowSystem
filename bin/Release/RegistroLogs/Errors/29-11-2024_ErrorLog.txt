@@ -1,0 +1,30 @@
+29/11/2024 09:42:12 [Error] : Input string was not in a correct format.   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at WindowsFormsApp1.Coffee.btnAddBebida_Click(Object sender, EventArgs e) in C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Coffee.cs:line 667
+29/11/2024 09:49:30 [Error] : An error occurred while updating the entries. See the inner exception for details.   at Business.Items.PedidoLogic.ProcesarPedido(PEDIDO ped) in C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Business\Items\PedidoLogic.cs:line 137
+   at WindowsFormsApp1.Coffee.btnHacerPedido_Click(Object sender, EventArgs e) in C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Coffee.cs:line 704
+29/11/2024 10:12:19 [Error] : No hay desempeños registrados este mes   en Business.Performance.EmpleadoTareaLogic.ObtenerDesempDelMes() en C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Business\Performance\EmpleadoTareaLogic.cs:línea 184
+   en WindowsFormsApp1.Coffee.ActualizarDesempeñosEmpleados() en C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Coffee.cs:línea 1708
+29/11/2024 10:12:23 [Error] : No hay detalles registrados este mes.   en Business.Performance.EmpleadoTareaLogic.GetDetalles() en C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Business\Performance\EmpleadoTareaLogic.cs:línea 128
+   en WindowsFormsApp1.Coffee.ActualizarDetallesTarea() en C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Coffee.cs:línea 1675
+29/11/2024 11:41:14 [Error] : Column named Id cannot be found.
+Parameter name: columnName   at System.Windows.Forms.DataGridViewCellCollection.get_Item(String columnName)
+   at WindowsFormsApp1.Coffee.btnEliminarEmp_Click(Object sender, EventArgs e) in C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Coffee.cs:line 1341
+29/11/2024 11:41:18 [Error] : Column named Id cannot be found.
+Parameter name: columnName   at System.Windows.Forms.DataGridViewCellCollection.get_Item(String columnName)
+   at WindowsFormsApp1.Coffee.btnEliminarEmp_Click(Object sender, EventArgs e) in C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Coffee.cs:line 1341
+29/11/2024 11:42:36 [Error] : Length cannot be less than zero.
+Parameter name: length   at Services.Datos.Implementations.Texto.LoggerRepository.ParseLogLine(String line, TraceLevel level) in C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Services.Security\Datos\Implementations\Texto\LoggerRepository.cs:line 170
+   at Services.Datos.Implementations.Texto.LoggerRepository.ReadLogsFromFile(String path, TraceLevel level) in C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Services.Security\Datos\Implementations\Texto\LoggerRepository.cs:line 137
+   at Services.Datos.Implementations.Texto.LoggerRepository.GetLogs() in C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Services.Security\Datos\Implementations\Texto\LoggerRepository.cs:line 98
+   at Services.Logic.LoggerLogic.GetLogs() in C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Services.Security\Logic\LoggerLogic.cs:line 40
+   at Services.Facade.LoggerService.GetLogs() in C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Services.Security\Facade\LoggerService.cs:line 53
+   at WindowsFormsApp1.Coffee.btnActDataLogs_Click(Object sender, EventArgs e) in C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Coffee.cs:line 2766
+29/11/2024 11:42:38 [Error] : Length cannot be less than zero.
+Parameter name: length   at Services.Datos.Implementations.Texto.LoggerRepository.ParseLogLine(String line, TraceLevel level) in C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Services.Security\Datos\Implementations\Texto\LoggerRepository.cs:line 170
+   at Services.Datos.Implementations.Texto.LoggerRepository.ReadLogsFromFile(String path, TraceLevel level) in C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Services.Security\Datos\Implementations\Texto\LoggerRepository.cs:line 137
+   at Services.Datos.Implementations.Texto.LoggerRepository.GetLogs() in C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Services.Security\Datos\Implementations\Texto\LoggerRepository.cs:line 98
+   at Services.Logic.LoggerLogic.GetLogs() in C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Services.Security\Logic\LoggerLogic.cs:line 40
+   at Services.Facade.LoggerService.GetLogs() in C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Services.Security\Facade\LoggerService.cs:line 53
+   at WindowsFormsApp1.Coffee.btnActDataLogs_Click(Object sender, EventArgs e) in C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Coffee.cs:line 2766

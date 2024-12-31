@@ -1,0 +1,6 @@
+23/11/2024 18:55:30 [Info] : El Usuario 'prueba', con el rol 'prueba' inicio sesion.
+23/11/2024 19:03:15 [Info] : El Usuario 'prueba', con el rol 'prueba' inicio sesion.
+23/11/2024 19:05:53 [Info] : El Usuario 'prueba', con el rol 'prueba' inicio sesion.
+23/11/2024 19:07:39 [Info] : El Usuario 'prueba', con el rol 'prueba' inicio sesion.
+23/11/2024 19:10:44 [Info] : El Usuario 'prueba', con el rol 'prueba' inicio sesion.
+23/11/2024 19:14:02 [Info] : El Usuario 'prueba', con el rol 'prueba' inicio sesion.

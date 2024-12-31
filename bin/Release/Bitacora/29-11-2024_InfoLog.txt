@@ -1,0 +1,13 @@
+29/11/2024 09:41:09 [Info] : El Usuario 'prueba', con el rol 'prueba' inicio sesion.
+29/11/2024 09:47:28 [Info] : El Usuario 'prueba', con el rol 'prueba' inicio sesion.
+29/11/2024 09:54:55 [Info] : El Usuario 'prueba', con el rol 'prueba' inicio sesion.
+29/11/2024 09:55:41 [Info] : El Usuario 'prueba', con el rol 'prueba' inicio sesion.
+29/11/2024 10:01:04 [Info] : El Usuario 'prueba', con el rol 'prueba' inicio sesion.
+29/11/2024 10:01:49 [Info] : El Usuario 'prueba', con el rol 'prueba' inicio sesion.
+29/11/2024 10:04:50 [Info] : El Usuario 'prueba', con el rol 'prueba' inicio sesion.
+29/11/2024 10:17:26 [Info] : El Usuario 'prueba', con el rol 'prueba' inicio sesion.
+29/11/2024 10:22:26 [Info] : El Usuario 'prueba', con el rol 'prueba' inicio sesion.
+29/11/2024 11:39:04 [Info] : El Usuario 'prueba', con el rol 'prueba' inicio sesion.
+29/11/2024 11:44:59 [Info] : El Usuario 'prueba', con el rol 'prueba' inicio sesion.
+29/11/2024 11:46:48 [Info] : El Usuario 'prueba', con el rol 'prueba' inicio sesion.
+29/11/2024 11:52:41 [Info] : El Usuario 'prueba', con el rol 'prueba' inicio sesion.

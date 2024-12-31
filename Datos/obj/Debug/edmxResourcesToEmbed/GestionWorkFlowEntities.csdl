@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GestionWorkFlowModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BONO">
+    <Key>
+      <PropertyRef Name="ID_BONO" />
+    </Key>
+    <Property Name="ID_BONO" Type="Guid" Nullable="false" />
+    <Property Name="CATEGORIA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MONTO" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="MINIMO_TAREAS" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="EMPLEADO" Relationship="Self.FK_EMPLEADO_PK_BONO" FromRole="BONO" ToRole="EMPLEADO" />
+    <Property Name="ESTADO" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CLIENTE">
+    <Key>
+      <PropertyRef Name="ID_CLIENTE" />
+    </Key>
+    <Property Name="ID_CLIENTE" Type="Guid" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="APELLIDO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DNI" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PEDIDO" Relationship="Self.FK_PEDIDO_PK_CLIENTE" FromRole="CLIENTE" ToRole="PEDIDO" />
+    <Property Name="ESTADO" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DETALLE_PEDIDO">
+    <Key>
+      <PropertyRef Name="ID_DETALLE" />
+      <PropertyRef Name="ID_PEDIDO" />
+      <PropertyRef Name="ID_PRODUCTO" />
+    </Key>
+    <Property Name="ID_DETALLE" Type="Guid" Nullable="false" />
+    <Property Name="ID_PEDIDO" Type="Guid" Nullable="false" />
+    <Property Name="ID_PRODUCTO" Type="Guid" Nullable="false" />
+    <Property Name="CANTIDAD" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PEDIDO" Relationship="Self.FK_DETALLE_PEDIDO_PK_PEDIDO" FromRole="DETALLE_PEDIDO" ToRole="PEDIDO" />
+    <NavigationProperty Name="PRODUCTO" Relationship="Self.FK_DETALLE_PEDIDO_PK_PRODUCTO" FromRole="DETALLE_PEDIDO" ToRole="PRODUCTO" />
+  </EntityType>
+  <EntityType Name="DETALLE_TAREA">
+    <Key>
+      <PropertyRef Name="FECHA_HORA_INICIO" />
+      <PropertyRef Name="COD_EMPLEADO" />
+      <PropertyRef Name="ID_TAREA" />
+    </Key>
+    <Property Name="FECHA_HORA_INICIO" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FECHA_HORA_FIN" Type="DateTime" Precision="3" />
+    <Property Name="COD_EMPLEADO" Type="Int32" Nullable="false" />
+    <Property Name="ID_TAREA" Type="Guid" Nullable="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="EMPLEADO" Relationship="Self.FK_DETALLE_TAREA_PK_EMP" FromRole="DETALLE_TAREA" ToRole="EMPLEADO" />
+    <NavigationProperty Name="TAREA" Relationship="Self.FK_DETALLE_TAREA_PK_TAREA" FromRole="DETALLE_TAREA" ToRole="TAREA" />
+  </EntityType>
+  <EntityType Name="EMPLEADO">
+    <Key>
+      <PropertyRef Name="COD_EMPLEADO" />
+    </Key>
+    <Property Name="COD_EMPLEADO" Type="Int32" Nullable="false" />
+    <Property Name="ID_BONO" Type="Guid" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="APELLIDO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DNI" Type="Int32" Nullable="false" />
+    <Property Name="TELEFONO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ROL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TURNO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="BONO" Relationship="Self.FK_EMPLEADO_PK_BONO" FromRole="EMPLEADO" ToRole="BONO" />
+    <NavigationProperty Name="DETALLE_TAREA" Relationship="Self.FK_DETALLE_TAREA_PK_EMP" FromRole="EMPLEADO" ToRole="DETALLE_TAREA" />
+    <NavigationProperty Name="PEDIDO" Relationship="Self.FK_PEDIDO_PK_EMP" FromRole="EMPLEADO" ToRole="PEDIDO" />
+    <Property Name="ESTADO" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PEDIDO">
+    <Key>
+      <PropertyRef Name="ID_PEDIDO" />
+    </Key>
+    <Property Name="ID_PEDIDO" Type="Guid" Nullable="false" />
+    <Property Name="ID_CLIENTE" Type="Guid" Nullable="false" />
+    <Property Name="COD_EMPLEADO" Type="Int32" Nullable="false" />
+    <Property Name="FECHA_HORA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ESTADO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CLIENTE" Relationship="Self.FK_PEDIDO_PK_CLIENTE" FromRole="PEDIDO" ToRole="CLIENTE" />
+    <NavigationProperty Name="DETALLE_PEDIDO" Relationship="Self.FK_DETALLE_PEDIDO_PK_PEDIDO" FromRole="PEDIDO" ToRole="DETALLE_PEDIDO" />
+    <NavigationProperty Name="EMPLEADO" Relationship="Self.FK_PEDIDO_PK_EMP" FromRole="PEDIDO" ToRole="EMPLEADO" />
+  </EntityType>
+  <EntityType Name="PRODUCTO">
+    <Key>
+      <PropertyRef Name="ID_PRODUCTO" />
+    </Key>
+    <Property Name="ID_PRODUCTO" Type="Guid" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PRECIO" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="TIPO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="DETALLE_PEDIDO" Relationship="Self.FK_DETALLE_PEDIDO_PK_PRODUCTO" FromRole="PRODUCTO" ToRole="DETALLE_PEDIDO" />
+    <Property Name="ESTADO" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TAREA">
+    <Key>
+      <PropertyRef Name="ID_TAREA" />
+    </Key>
+    <Property Name="ID_TAREA" Type="Guid" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="DETALLE_TAREA" Relationship="Self.FK_DETALLE_TAREA_PK_TAREA" FromRole="TAREA" ToRole="DETALLE_TAREA" />
+  </EntityType>
+  <Association Name="FK_EMPLEADO_PK_BONO">
+    <End Role="BONO" Type="Self.BONO" Multiplicity="1" />
+    <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BONO">
+        <PropertyRef Name="ID_BONO" />
+      </Principal>
+      <Dependent Role="EMPLEADO">
+        <PropertyRef Name="ID_BONO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PEDIDO_PK_CLIENTE">
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+    <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTE">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Principal>
+      <Dependent Role="PEDIDO">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DETALLE_PEDIDO_PK_PEDIDO">
+    <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="1" />
+    <End Role="DETALLE_PEDIDO" Type="Self.DETALLE_PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PEDIDO">
+        <PropertyRef Name="ID_PEDIDO" />
+      </Principal>
+      <Dependent Role="DETALLE_PEDIDO">
+        <PropertyRef Name="ID_PEDIDO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DETALLE_PEDIDO_PK_PRODUCTO">
+    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
+    <End Role="DETALLE_PEDIDO" Type="Self.DETALLE_PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTO">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Principal>
+      <Dependent Role="DETALLE_PEDIDO">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DETALLE_TAREA_PK_EMP">
+    <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+    <End Role="DETALLE_TAREA" Type="Self.DETALLE_TAREA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLEADO">
+        <PropertyRef Name="COD_EMPLEADO" />
+      </Principal>
+      <Dependent Role="DETALLE_TAREA">
+        <PropertyRef Name="COD_EMPLEADO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DETALLE_TAREA_PK_TAREA">
+    <End Role="TAREA" Type="Self.TAREA" Multiplicity="1" />
+    <End Role="DETALLE_TAREA" Type="Self.DETALLE_TAREA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAREA">
+        <PropertyRef Name="ID_TAREA" />
+      </Principal>
+      <Dependent Role="DETALLE_TAREA">
+        <PropertyRef Name="ID_TAREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PEDIDO_PK_EMP">
+    <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+    <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLEADO">
+        <PropertyRef Name="COD_EMPLEADO" />
+      </Principal>
+      <Dependent Role="PEDIDO">
+        <PropertyRef Name="COD_EMPLEADO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GestionWorkFlowEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BONO" EntityType="Self.BONO" />
+    <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" />
+    <EntitySet Name="DETALLE_PEDIDO" EntityType="Self.DETALLE_PEDIDO" />
+    <EntitySet Name="DETALLE_TAREA" EntityType="Self.DETALLE_TAREA" />
+    <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" />
+    <EntitySet Name="PEDIDO" EntityType="Self.PEDIDO" />
+    <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" />
+    <EntitySet Name="TAREA" EntityType="Self.TAREA" />
+    <AssociationSet Name="FK_EMPLEADO_PK_BONO" Association="Self.FK_EMPLEADO_PK_BONO">
+      <End Role="BONO" EntitySet="BONO" />
+      <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PEDIDO_PK_CLIENTE" Association="Self.FK_PEDIDO_PK_CLIENTE">
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+      <End Role="PEDIDO" EntitySet="PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DETALLE_PEDIDO_PK_PEDIDO" Association="Self.FK_DETALLE_PEDIDO_PK_PEDIDO">
+      <End Role="PEDIDO" EntitySet="PEDIDO" />
+      <End Role="DETALLE_PEDIDO" EntitySet="DETALLE_PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DETALLE_PEDIDO_PK_PRODUCTO" Association="Self.FK_DETALLE_PEDIDO_PK_PRODUCTO">
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+      <End Role="DETALLE_PEDIDO" EntitySet="DETALLE_PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DETALLE_TAREA_PK_EMP" Association="Self.FK_DETALLE_TAREA_PK_EMP">
+      <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+      <End Role="DETALLE_TAREA" EntitySet="DETALLE_TAREA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DETALLE_TAREA_PK_TAREA" Association="Self.FK_DETALLE_TAREA_PK_TAREA">
+      <End Role="TAREA" EntitySet="TAREA" />
+      <End Role="DETALLE_TAREA" EntitySet="DETALLE_TAREA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PEDIDO_PK_EMP" Association="Self.FK_PEDIDO_PK_EMP">
+      <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+      <End Role="PEDIDO" EntitySet="PEDIDO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

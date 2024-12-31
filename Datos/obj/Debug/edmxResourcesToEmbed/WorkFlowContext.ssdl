@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GestionWorkFlowModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BONO">
+    <Key>
+      <PropertyRef Name="ID_BONO" />
+    </Key>
+    <Property Name="ID_BONO" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CATEGORIA" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MONTO" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="MINIMO_TAREAS" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CLIENTE">
+    <Key>
+      <PropertyRef Name="ID_CLIENTE" />
+    </Key>
+    <Property Name="ID_CLIENTE" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="APELLIDO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DNI" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DETALLE_PEDIDO">
+    <Key>
+      <PropertyRef Name="ID_DETALLE" />
+      <PropertyRef Name="ID_PEDIDO" />
+      <PropertyRef Name="ID_PRODUCTO" />
+    </Key>
+    <Property Name="ID_DETALLE" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ID_PEDIDO" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ID_PRODUCTO" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CANTIDAD" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DETALLE_TAREA">
+    <Key>
+      <PropertyRef Name="FECHA_HORA_INICIO" />
+      <PropertyRef Name="COD_EMPLEADO" />
+      <PropertyRef Name="ID_TAREA" />
+    </Key>
+    <Property Name="FECHA_HORA_INICIO" Type="datetime" Nullable="false" />
+    <Property Name="FECHA_HORA_FIN" Type="datetime" Nullable="false" />
+    <Property Name="COD_EMPLEADO" Type="int" Nullable="false" />
+    <Property Name="ID_TAREA" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EMPLEADO">
+    <Key>
+      <PropertyRef Name="COD_EMPLEADO" />
+    </Key>
+    <Property Name="COD_EMPLEADO" Type="int" Nullable="false" />
+    <Property Name="ID_BONO" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="APELLIDO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DNI" Type="int" Nullable="false" />
+    <Property Name="TELEFONO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ROL" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TURNO" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PEDIDO">
+    <Key>
+      <PropertyRef Name="ID_PEDIDO" />
+    </Key>
+    <Property Name="ID_PEDIDO" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ID_CLIENTE" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="COD_EMPLEADO" Type="int" Nullable="false" />
+    <Property Name="FECHA_HORA" Type="datetime" Nullable="false" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PRODUCTO">
+    <Key>
+      <PropertyRef Name="ID_PRODUCTO" />
+    </Key>
+    <Property Name="ID_PRODUCTO" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="PRECIO" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="TIPO" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TAREA">
+    <Key>
+      <PropertyRef Name="ID_TAREA" />
+    </Key>
+    <Property Name="ID_TAREA" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_DETALLE_PEDIDO_PK_PEDIDO">
+    <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="1" />
+    <End Role="DETALLE_PEDIDO" Type="Self.DETALLE_PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PEDIDO">
+        <PropertyRef Name="ID_PEDIDO" />
+      </Principal>
+      <Dependent Role="DETALLE_PEDIDO">
+        <PropertyRef Name="ID_PEDIDO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DETALLE_PEDIDO_PK_PRODUCTO">
+    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
+    <End Role="DETALLE_PEDIDO" Type="Self.DETALLE_PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTO">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Principal>
+      <Dependent Role="DETALLE_PEDIDO">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DETALLE_TAREA_PK_EMP">
+    <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+    <End Role="DETALLE_TAREA" Type="Self.DETALLE_TAREA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLEADO">
+        <PropertyRef Name="COD_EMPLEADO" />
+      </Principal>
+      <Dependent Role="DETALLE_TAREA">
+        <PropertyRef Name="COD_EMPLEADO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DETALLE_TAREA_PK_TAREA">
+    <End Role="TAREA" Type="Self.TAREA" Multiplicity="1" />
+    <End Role="DETALLE_TAREA" Type="Self.DETALLE_TAREA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAREA">
+        <PropertyRef Name="ID_TAREA" />
+      </Principal>
+      <Dependent Role="DETALLE_TAREA">
+        <PropertyRef Name="ID_TAREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPLEADO_PK_BONO">
+    <End Role="BONO" Type="Self.BONO" Multiplicity="1" />
+    <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BONO">
+        <PropertyRef Name="ID_BONO" />
+      </Principal>
+      <Dependent Role="EMPLEADO">
+        <PropertyRef Name="ID_BONO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PEDIDO_PK_CLIENTE">
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+    <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTE">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Principal>
+      <Dependent Role="PEDIDO">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PEDIDO_PK_EMP">
+    <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+    <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLEADO">
+        <PropertyRef Name="COD_EMPLEADO" />
+      </Principal>
+      <Dependent Role="PEDIDO">
+        <PropertyRef Name="COD_EMPLEADO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GestionWorkFlowModelStoreContainer">
+    <EntitySet Name="BONO" EntityType="Self.BONO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DETALLE_PEDIDO" EntityType="Self.DETALLE_PEDIDO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DETALLE_TAREA" EntityType="Self.DETALLE_TAREA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PEDIDO" EntityType="Self.PEDIDO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TAREA" EntityType="Self.TAREA" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_DETALLE_PEDIDO_PK_PEDIDO" Association="Self.FK_DETALLE_PEDIDO_PK_PEDIDO">
+      <End Role="PEDIDO" EntitySet="PEDIDO" />
+      <End Role="DETALLE_PEDIDO" EntitySet="DETALLE_PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DETALLE_PEDIDO_PK_PRODUCTO" Association="Self.FK_DETALLE_PEDIDO_PK_PRODUCTO">
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+      <End Role="DETALLE_PEDIDO" EntitySet="DETALLE_PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DETALLE_TAREA_PK_EMP" Association="Self.FK_DETALLE_TAREA_PK_EMP">
+      <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+      <End Role="DETALLE_TAREA" EntitySet="DETALLE_TAREA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DETALLE_TAREA_PK_TAREA" Association="Self.FK_DETALLE_TAREA_PK_TAREA">
+      <End Role="TAREA" EntitySet="TAREA" />
+      <End Role="DETALLE_TAREA" EntitySet="DETALLE_TAREA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPLEADO_PK_BONO" Association="Self.FK_EMPLEADO_PK_BONO">
+      <End Role="BONO" EntitySet="BONO" />
+      <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PEDIDO_PK_CLIENTE" Association="Self.FK_PEDIDO_PK_CLIENTE">
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+      <End Role="PEDIDO" EntitySet="PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PEDIDO_PK_EMP" Association="Self.FK_PEDIDO_PK_EMP">
+      <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+      <End Role="PEDIDO" EntitySet="PEDIDO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

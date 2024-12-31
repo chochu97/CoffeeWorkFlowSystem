@@ -1,0 +1,697 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Business</name>
+    </assembly>
+    <members>
+        <member name="T:Business.Contracts.IGenericInterface`1">
+            <summary>
+            These are the namespace comments for <c>Business.Contracts</c>.
+            </summary>
+            <summary>
+            Define un contrato genérico para operaciones básicas de gestión de entidades.
+            </summary>
+            <typeparam name="T">El tipo de entidad que se gestionará.</typeparam>
+        </member>
+        <member name="M:Business.Contracts.IGenericInterface`1.Add(`0)">
+            <summary>
+            Agrega un nuevo objeto de tipo <typeparamref name="T"/>.
+            </summary>
+            <param name="obj">El objeto a agregar.</param>
+        </member>
+        <member name="M:Business.Contracts.IGenericInterface`1.Update(`0)">
+            <summary>
+            Actualiza un objeto existente de tipo <typeparamref name="T"/>.
+            </summary>
+            <param name="obj">El objeto a actualizar.</param>
+        </member>
+        <member name="M:Business.Contracts.IGenericInterface`1.Remove(System.Guid)">
+            <summary>
+            Elimina un objeto de tipo <typeparamref name="T"/> por su identificador único.
+            </summary>
+            <param name="id">El identificador único del objeto a eliminar.</param>
+        </member>
+        <member name="M:Business.Contracts.IGenericInterface`1.GetById(System.Guid)">
+            <summary>
+            Obtiene un objeto de tipo <typeparamref name="T"/> por su identificador único.
+            </summary>
+            <param name="id">El identificador único del objeto a obtener.</param>
+            <returns>El objeto de tipo <typeparamref name="T"/> correspondiente al identificador, o null si no se encuentra.</returns>
+        </member>
+        <member name="M:Business.Contracts.IGenericInterface`1.GetAll">
+            <summary>
+            Obtiene una lista de todos los objetos de tipo <typeparamref name="T"/>.
+            </summary>
+            <returns>Una lista de objetos de tipo <typeparamref name="T"/>.</returns>
+        </member>
+        <member name="T:Business.Items.DetallePedidoLogic">
+            <summary>
+            Lógica de negocio para la gestión de detalles de pedidos.
+            Implementa la interfaz <see cref="T:Business.Contracts.IGenericInterface`1"/>.
+            </summary>
+        </member>
+        <member name="F:Business.Items.DetallePedidoLogic.instance">
+            <summary>
+            Instancia única de la clase <see cref="T:Business.Items.DetallePedidoLogic"/>.
+            </summary>
+        </member>
+        <member name="F:Business.Items.DetallePedidoLogic._lock">
+            <summary>
+            Objeto utilizado para asegurar la sincronización en el patrón Singleton.
+            </summary>
+        </member>
+        <member name="F:Business.Items.DetallePedidoLogic._repository">
+            <summary>
+            Repositorio para interactuar con los datos de los detalles de los pedidos.
+            </summary>
+        </member>
+        <member name="M:Business.Items.DetallePedidoLogic.#ctor">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Business.Items.DetallePedidoLogic"/>.
+            </summary>
+        </member>
+        <member name="M:Business.Items.DetallePedidoLogic.GetInstance">
+            <summary>
+            Obtiene la instancia única de <see cref="T:Business.Items.DetallePedidoLogic"/> (patrón Singleton).
+            </summary>
+            <returns>La instancia única de <see cref="T:Business.Items.DetallePedidoLogic"/>.</returns>
+        </member>
+        <member name="M:Business.Items.DetallePedidoLogic.Add(Domain.DETALLE_PEDIDO)">
+            <summary>
+            Agrega un nuevo detalle de pedido.
+            </summary>
+            <param name="obj">El detalle de pedido a agregar.</param>
+        </member>
+        <member name="M:Business.Items.DetallePedidoLogic.GetAll">
+            <summary>
+            Obtiene todos los detalles de pedido.
+            </summary>
+            <returns>Una lista de todos los detalles de pedido.</returns>
+        </member>
+        <member name="M:Business.Items.DetallePedidoLogic.Update(Domain.DETALLE_PEDIDO)">
+            <summary>
+            Actualiza un detalle de pedido existente.
+            </summary>
+            <param name="obj">El detalle de pedido a actualizar.</param>
+        </member>
+        <member name="M:Business.Items.DetallePedidoLogic.Remove(System.Guid)">
+            <summary>
+            Elimina un detalle de pedido por su identificador único.
+            </summary>
+            <param name="id">El identificador único del detalle de pedido a eliminar.</param>
+        </member>
+        <member name="M:Business.Items.DetallePedidoLogic.ObtenerDetallesPorPedido(System.Guid)">
+            <summary>
+            Obtiene los detalles de pedido asociados a un pedido específico.
+            </summary>
+            <param name="PedidoID">El identificador del pedido.</param>
+            <returns>Una lista de detalles de pedido asociados al pedido especificado.</returns>
+        </member>
+        <member name="M:Business.Items.DetallePedidoLogic.GetById(System.Guid)">
+            <summary>
+            Obtiene un detalle de pedido por su identificador único.
+            </summary>
+            <param name="id">El identificador único del detalle de pedido a obtener.</param>
+            <returns>El detalle de pedido correspondiente al identificador, o null si no se encuentra.</returns>
+        </member>
+        <member name="T:Business.Items.PedidoLogic">
+            <summary>
+            Lógica de negocio para la gestión de pedidos.
+            Implementa la interfaz <see cref="T:Business.Contracts.IGenericInterface`1"/>.
+            </summary>
+        </member>
+        <member name="F:Business.Items.PedidoLogic.instance">
+            <summary>
+            Instancia única de la clase <see cref="T:Business.Items.PedidoLogic"/>.
+            </summary>
+        </member>
+        <member name="F:Business.Items.PedidoLogic._lock">
+            <summary>
+            Objeto utilizado para asegurar la sincronización en el patrón Singleton.
+            </summary>
+        </member>
+        <member name="F:Business.Items.PedidoLogic._petoRepository">
+            <summary>
+            Repositorio para interactuar con los datos de los pedidos.
+            </summary>
+        </member>
+        <member name="M:Business.Items.PedidoLogic.#ctor">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Business.Items.PedidoLogic"/>.
+            </summary>
+        </member>
+        <member name="M:Business.Items.PedidoLogic.GetInstance">
+            <summary>
+            Obtiene la instancia única de <see cref="T:Business.Items.PedidoLogic"/> (patrón Singleton).
+            </summary>
+            <returns>La instancia única de <see cref="T:Business.Items.PedidoLogic"/>.</returns>
+        </member>
+        <member name="M:Business.Items.PedidoLogic.Add(Domain.PEDIDO)">
+            <summary>
+            Agrega un nuevo pedido.
+            </summary>
+            <param name="obj">El pedido a agregar.</param>
+        </member>
+        <member name="M:Business.Items.PedidoLogic.GetPedidos">
+            <summary>
+            Obtiene todos los pedidos registrados.
+            </summary>
+            <returns>Una lista de pedidos completos.</returns>
+        </member>
+        <member name="M:Business.Items.PedidoLogic.ProcesarPedido(Domain.PEDIDO)">
+            <summary>
+            Procesa un pedido existente.
+            </summary>
+            <param name="ped">El pedido a procesar.</param>
+        </member>
+        <member name="M:Business.Items.PedidoLogic.GetById(System.Guid)">
+            <summary>
+            Obtiene un pedido por su identificador único.
+            </summary>
+            <param name="id">El identificador único del pedido a obtener.</param>
+            <returns>El pedido correspondiente al identificador, o null si no se encuentra.</returns>
+        </member>
+        <member name="M:Business.Items.PedidoLogic.GetAll">
+            <summary>
+            Obtiene todos los pedidos (no implementado).
+            </summary>
+            <returns>Una lista de todos los pedidos.</returns>
+        </member>
+        <member name="M:Business.Items.PedidoLogic.Update(Domain.PEDIDO)">
+            <summary>
+            Actualiza un pedido existente (no implementado).
+            </summary>
+            <param name="obj">El pedido a actualizar.</param>
+        </member>
+        <member name="M:Business.Items.PedidoLogic.Remove(System.Guid)">
+            <summary>
+            Elimina un pedido por su identificador único (no implementado).
+            </summary>
+            <param name="id">El identificador único del pedido a eliminar.</param>
+        </member>
+        <member name="T:Business.Items.ProductoLogic">
+            <summary>
+            Lógica de negocio para la gestión de productos.
+            Implementa la interfaz <see cref="T:Business.Contracts.IGenericInterface`1"/>.
+            </summary>
+        </member>
+        <member name="F:Business.Items.ProductoLogic.instance">
+            <summary>
+            Instancia única de la clase <see cref="T:Business.Items.ProductoLogic"/>.
+            </summary>
+        </member>
+        <member name="F:Business.Items.ProductoLogic._lock">
+            <summary>
+            Objeto utilizado para asegurar la sincronización en el patrón Singleton.
+            </summary>
+        </member>
+        <member name="F:Business.Items.ProductoLogic._repository">
+            <summary>
+            Repositorio para interactuar con los datos de los productos.
+            </summary>
+        </member>
+        <member name="M:Business.Items.ProductoLogic.#ctor">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Business.Items.ProductoLogic"/>.
+            </summary>
+        </member>
+        <member name="M:Business.Items.ProductoLogic.GetInstance">
+            <summary>
+            Obtiene la instancia única de <see cref="T:Business.Items.ProductoLogic"/> (patrón Singleton).
+            </summary>
+            <returns>La instancia única de <see cref="T:Business.Items.ProductoLogic"/>.</returns>
+        </member>
+        <member name="M:Business.Items.ProductoLogic.Add(Domain.PRODUCTO)">
+            <summary>
+            Agrega un nuevo producto.
+            </summary>
+            <param name="obj">El producto a agregar.</param>
+        </member>
+        <member name="M:Business.Items.ProductoLogic.GetProducts">
+            <summary>
+            Obtiene todos los productos registrados.
+            </summary>
+            <returns>Una lista de productos.</returns>
+        </member>
+        <member name="M:Business.Items.ProductoLogic.GetBebidas">
+            <summary>
+            Obtiene todos los productos de tipo bebida.
+            </summary>
+            <returns>Una lista de bebidas.</returns>
+        </member>
+        <member name="M:Business.Items.ProductoLogic.GetComidas">
+            <summary>
+            Obtiene todos los productos de tipo comida.
+            </summary>
+            <returns>Una lista de comidas.</returns>
+        </member>
+        <member name="M:Business.Items.ProductoLogic.Update(Domain.PRODUCTO)">
+            <summary>
+            Actualiza un producto existente.
+            </summary>
+            <param name="obj">El producto a actualizar.</param>
+        </member>
+        <member name="M:Business.Items.ProductoLogic.Remove(System.Guid)">
+            <summary>
+            Elimina un producto por su identificador único.
+            </summary>
+            <param name="id">El identificador único del producto a eliminar.</param>
+        </member>
+        <member name="M:Business.Items.ProductoLogic.GetById(System.Guid)">
+            <summary>
+            Obtiene un producto por su identificador único.
+            </summary>
+            <param name="id">El identificador único del producto a obtener.</param>
+            <returns>El producto correspondiente al identificador, o lanza una excepción si no se encuentra.</returns>
+        </member>
+        <member name="M:Business.Items.ProductoLogic.GetAll">
+            <summary>
+            Obtiene todos los productos registrados.
+            </summary>
+            <returns>Una lista de todos los productos.</returns>
+        </member>
+        <member name="M:Business.Items.ProductoLogic.GetProductoByName(System.String)">
+            <summary>
+            Obtiene productos por su nombre.
+            </summary>
+            <param name="name">El nombre del producto a buscar.</param>
+            <returns>Una lista de productos que coinciden con el nombre proporcionado.</returns>
+        </member>
+        <member name="T:Business.Items.TareaLogic">
+            <summary>
+            Lógica de negocio para la gestión de tareas.
+            Implementa la interfaz <see cref="T:Business.Contracts.IGenericInterface`1"/>.
+            </summary>
+        </member>
+        <member name="F:Business.Items.TareaLogic.instance">
+            <summary>
+            Instancia única de la clase <see cref="T:Business.Items.TareaLogic"/>.
+            </summary>
+        </member>
+        <member name="F:Business.Items.TareaLogic._lock">
+            <summary>
+            Objeto utilizado para asegurar la sincronización en el patrón Singleton.
+            </summary>
+        </member>
+        <member name="F:Business.Items.TareaLogic._repository">
+            <summary>
+            Repositorio para interactuar con los datos de las tareas.
+            </summary>
+        </member>
+        <member name="M:Business.Items.TareaLogic.#ctor">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Business.Items.TareaLogic"/>.
+            </summary>
+        </member>
+        <member name="M:Business.Items.TareaLogic.GetInstance">
+            <summary>
+            Obtiene la instancia única de <see cref="T:Business.Items.TareaLogic"/> (patrón Singleton).
+            </summary>
+            <returns>La instancia única de <see cref="T:Business.Items.TareaLogic"/>.</returns>
+        </member>
+        <member name="M:Business.Items.TareaLogic.Add(Domain.TAREA)">
+            <summary>
+            Agrega una nueva tarea.
+            </summary>
+            <param name="obj">La tarea a agregar.</param>
+        </member>
+        <member name="M:Business.Items.TareaLogic.GetAll">
+            <summary>
+            Obtiene todas las tareas.
+            </summary>
+            <returns>Una lista de todas las tareas.</returns>
+        </member>
+        <member name="M:Business.Items.TareaLogic.Update(Domain.TAREA)">
+            <summary>
+            Actualiza una tarea existente.
+            </summary>
+            <param name="obj">La tarea a modificar.</param>
+        </member>
+        <member name="M:Business.Items.TareaLogic.Remove(System.Guid)">
+            <summary>
+            Elimina una tarea por su identificador único.
+            </summary>
+            <param name="id">El identificador único de la tarea a eliminar.</param>
+        </member>
+        <member name="M:Business.Items.TareaLogic.GetById(System.Guid)">
+            <summary>
+            Obtiene una tarea por su identificador único.
+            </summary>
+            <param name="id">El identificador único de la tarea a obtener.</param>
+            <returns>La tarea correspondiente al identificador.</returns>
+        </member>
+        <member name="M:Business.Items.TareaLogic.GetTareas">
+            <summary>
+            Obtiene todas las tareas registradas.
+            </summary>
+            <returns>Una lista de tareas registradas.</returns>
+        </member>
+        <member name="M:Business.Items.TareaLogic.ProcesarTarea(Domain.TAREA)">
+            <summary>
+            Procesa el estado de una tarea.
+            </summary>
+            <param name="obj">La tarea a procesar.</param>
+        </member>
+        <member name="M:Business.Items.TareaLogic.IniciarActualizacionAutomatica">
+            <summary>
+            Inicia un proceso de actualización automática de tareas a intervalos específicos.
+            Este método se ejecuta de forma asíncrona.
+            </summary>
+        </member>
+        <member name="T:Business.People.ClienteLogic">
+            <summary>
+            Lógica de negocio para la gestión de clientes.
+            Implementa la interfaz <see cref="T:Business.Contracts.IGenericInterface`1"/>.
+            </summary>
+        </member>
+        <member name="F:Business.People.ClienteLogic.instance">
+            <summary>
+            Instancia única de la clase <see cref="T:Business.People.ClienteLogic"/>.
+            </summary>
+        </member>
+        <member name="F:Business.People.ClienteLogic._lock">
+            <summary>
+            Objeto utilizado para asegurar la sincronización en el patrón Singleton.
+            </summary>
+        </member>
+        <member name="F:Business.People.ClienteLogic._repository">
+            <summary>
+            Repositorio para interactuar con los datos de los clientes.
+            </summary>
+        </member>
+        <member name="M:Business.People.ClienteLogic.#ctor">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Business.People.ClienteLogic"/>.
+            </summary>
+        </member>
+        <member name="M:Business.People.ClienteLogic.GetInstance">
+            <summary>
+            Obtiene la instancia única de <see cref="T:Business.People.ClienteLogic"/> (patrón Singleton).
+            </summary>
+            <returns>La instancia única de <see cref="T:Business.People.ClienteLogic"/>.</returns>
+        </member>
+        <member name="M:Business.People.ClienteLogic.Add(Domain.CLIENTE)">
+            <summary>
+            Agrega un nuevo cliente.
+            </summary>
+            <param name="obj">El cliente a agregar.</param>
+        </member>
+        <member name="M:Business.People.ClienteLogic.GetAll">
+            <summary>
+            Obtiene todos los clientes registrados.
+            </summary>
+            <returns>Una lista de todos los clientes.</returns>
+        </member>
+        <member name="M:Business.People.ClienteLogic.Update(Domain.CLIENTE)">
+            <summary>
+            Actualiza un cliente existente.
+            </summary>
+            <param name="obj">El cliente a actualizar.</param>
+        </member>
+        <member name="M:Business.People.ClienteLogic.Remove(System.Guid)">
+            <summary>
+            Elimina un cliente por su identificador único.
+            </summary>
+            <param name="id">El identificador único del cliente a eliminar.</param>
+        </member>
+        <member name="M:Business.People.ClienteLogic.GetById(System.Guid)">
+            <summary>
+            Obtiene un cliente por su identificador único.
+            </summary>
+            <param name="id">El identificador único del cliente a obtener.</param>
+            <returns>El cliente correspondiente al identificador, o lanza una excepción si no se encuentra.</returns>
+        </member>
+        <member name="M:Business.People.ClienteLogic.GetOneByDNI(System.Int32)">
+            <summary>
+            Obtiene un cliente por su número de DNI.
+            </summary>
+            <param name="dni">El número de DNI del cliente a obtener.</param>
+            <returns>El cliente correspondiente al DNI, o lanza una excepción si no se encuentra.</returns>
+        </member>
+        <member name="M:Business.People.ClienteLogic.GetByDNI(System.Int32)">
+            <summary>
+            Obtiene una lista de clientes por su número de DNI.
+            </summary>
+            <param name="dni">El número de DNI de los clientes a buscar.</param>
+            <returns>Una lista de clientes que coinciden con el DNI proporcionado.</returns>
+        </member>
+        <member name="M:Business.People.ClienteLogic.GetClientes">
+            <summary>
+            Obtiene todos los clientes registrados.
+            </summary>
+            <returns>Una lista de todos los clientes.</returns>
+        </member>
+        <member name="T:Business.People.EmpleadoLogic">
+            <summary>
+            Lógica de negocio para la gestión de empleados.
+            Implementa la interfaz <see cref="T:Business.Contracts.IGenericInterface`1"/>.
+            </summary>
+        </member>
+        <member name="F:Business.People.EmpleadoLogic.instance">
+            <summary>
+            Instancia única de la clase <see cref="T:Business.People.EmpleadoLogic"/>.
+            </summary>
+        </member>
+        <member name="F:Business.People.EmpleadoLogic._lock">
+            <summary>
+            Objeto utilizado para asegurar la sincronización en el patrón Singleton.
+            </summary>
+        </member>
+        <member name="F:Business.People.EmpleadoLogic._repository">
+            <summary>
+            Repositorio para interactuar con los datos de los empleados.
+            </summary>
+        </member>
+        <member name="M:Business.People.EmpleadoLogic.#ctor">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Business.People.EmpleadoLogic"/>.
+            </summary>
+        </member>
+        <member name="M:Business.People.EmpleadoLogic.GetInstance">
+            <summary>
+            Obtiene la instancia única de <see cref="T:Business.People.EmpleadoLogic"/> (patrón Singleton).
+            </summary>
+            <returns>La instancia única de <see cref="T:Business.People.EmpleadoLogic"/>.</returns>
+        </member>
+        <member name="M:Business.People.EmpleadoLogic.Add(Domain.EMPLEADO)">
+            <summary>
+            Agrega un nuevo empleado.
+            </summary>
+            <param name="obj">El empleado a agregar.</param>
+        </member>
+        <member name="M:Business.People.EmpleadoLogic.GetAll">
+            <summary>
+            Obtiene todos los empleados registrados.
+            </summary>
+            <returns>Una lista de todos los empleados.</returns>
+        </member>
+        <member name="M:Business.People.EmpleadoLogic.Update(Domain.EMPLEADO)">
+            <summary>
+            Actualiza un empleado existente.
+            </summary>
+            <param name="obj">El empleado a actualizar.</param>
+        </member>
+        <member name="M:Business.People.EmpleadoLogic.Delete(System.Int32)">
+            <summary>
+            Elimina un empleado por su identificador único.
+            </summary>
+            <param name="id">El identificador único del empleado a eliminar.</param>
+        </member>
+        <member name="M:Business.People.EmpleadoLogic.GetOne(System.Int32)">
+            <summary>
+            Obtiene un empleado por su identificador único.
+            </summary>
+            <param name="id">El identificador único del empleado a obtener.</param>
+            <returns>El empleado correspondiente al identificador, o lanza una excepción si no se encuentra.</returns>
+        </member>
+        <member name="M:Business.People.EmpleadoLogic.GetEmpleados">
+            <summary>
+            Obtiene una lista de todos los empleados en formato DTO.
+            </summary>
+            <returns>Una lista de empleados registrados.</returns>
+        </member>
+        <member name="M:Business.People.EmpleadoLogic.GetByName(System.String)">
+            <summary>
+            Obtiene una lista de empleados que coinciden con el nombre proporcionado.
+            </summary>
+            <param name="name">El nombre del empleado a buscar.</param>
+            <returns>Una lista de empleados que coinciden con el nombre proporcionado.</returns>
+        </member>
+        <member name="M:Business.People.EmpleadoLogic.Remove(System.Guid)">
+            <summary>
+            Método no implementado para eliminar un empleado por su identificador único.
+            </summary>
+            <param name="id">El identificador único del empleado a eliminar.</param>
+        </member>
+        <member name="M:Business.People.EmpleadoLogic.GetById(System.Guid)">
+            <summary>
+            Método no implementado para obtener un empleado por su identificador único.
+            </summary>
+            <param name="id">El identificador único del empleado a obtener.</param>
+            <returns>El empleado correspondiente al identificador.</returns>
+        </member>
+        <member name="T:Business.Performance.BonoLogic">
+            <summary>
+            Lógica de negocio para la gestión de bonos.
+            Implementa la interfaz <see cref="T:Business.Contracts.IGenericInterface`1"/>.
+            </summary>
+        </member>
+        <member name="F:Business.Performance.BonoLogic.instance">
+            <summary>
+            Instancia única de la clase <see cref="T:Business.Performance.BonoLogic"/>.
+            </summary>
+        </member>
+        <member name="F:Business.Performance.BonoLogic._lock">
+            <summary>
+            Objeto utilizado para asegurar la sincronización en el patrón Singleton.
+            </summary>
+        </member>
+        <member name="F:Business.Performance.BonoLogic._repository">
+            <summary>
+            Repositorio para interactuar con los datos de los bonos.
+            </summary>
+        </member>
+        <member name="M:Business.Performance.BonoLogic.#ctor">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Business.Performance.BonoLogic"/>.
+            </summary>
+        </member>
+        <member name="M:Business.Performance.BonoLogic.GetInstance">
+            <summary>
+            Obtiene la instancia única de <see cref="T:Business.Performance.BonoLogic"/> (patrón Singleton).
+            </summary>
+            <returns>La instancia única de <see cref="T:Business.Performance.BonoLogic"/>.</returns>
+        </member>
+        <member name="M:Business.Performance.BonoLogic.Add(Domain.BONO)">
+            <summary>
+            Agrega un nuevo bono.
+            </summary>
+            <param name="obj">El bono a agregar.</param>
+        </member>
+        <member name="M:Business.Performance.BonoLogic.GetAll">
+            <summary>
+            Obtiene todos los bonos registrados.
+            </summary>
+            <returns>Una lista de todos los bonos.</returns>
+        </member>
+        <member name="M:Business.Performance.BonoLogic.Update(Domain.BONO)">
+            <summary>
+            Actualiza un bono existente.
+            </summary>
+            <param name="obj">El bono a modificar.</param>
+        </member>
+        <member name="M:Business.Performance.BonoLogic.Remove(System.Guid)">
+            <summary>
+            Elimina un bono por su identificador único.
+            </summary>
+            <param name="id">El identificador único del bono a eliminar.</param>
+        </member>
+        <member name="M:Business.Performance.BonoLogic.GetById(System.Guid)">
+            <summary>
+            Obtiene un bono por su identificador único.
+            </summary>
+            <param name="id">El identificador único del bono a obtener.</param>
+            <returns>El bono correspondiente al identificador.</returns>
+        </member>
+        <member name="M:Business.Performance.BonoLogic.GetBonos">
+            <summary>
+            Obtiene una lista de todos los bonos en formato DTO.
+            </summary>
+            <returns>Una lista de bonos registrados.</returns>
+        </member>
+        <member name="T:Business.Performance.EmpleadoTareaLogic">
+            <summary>
+            Lógica de negocio para la gestión de tareas de empleados.
+            Implementa la interfaz <see cref="T:Business.Contracts.IGenericInterface`1"/>.
+            </summary>
+        </member>
+        <member name="F:Business.Performance.EmpleadoTareaLogic.instance">
+            <summary>
+            Instancia única de la clase <see cref="T:Business.Performance.EmpleadoTareaLogic"/>.
+            </summary>
+        </member>
+        <member name="F:Business.Performance.EmpleadoTareaLogic._lock">
+            <summary>
+            Objeto utilizado para asegurar la sincronización en el patrón Singleton.
+            </summary>
+        </member>
+        <member name="F:Business.Performance.EmpleadoTareaLogic._repository">
+            <summary>
+            Repositorio para interactuar con los datos de la relación entre empleados y tareas.
+            </summary>
+        </member>
+        <member name="M:Business.Performance.EmpleadoTareaLogic.#ctor">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Business.Performance.EmpleadoTareaLogic"/>.
+            </summary>
+        </member>
+        <member name="M:Business.Performance.EmpleadoTareaLogic.GetInstance">
+            <summary>
+            Obtiene la instancia única de <see cref="T:Business.Performance.EmpleadoTareaLogic"/> (patrón Singleton).
+            </summary>
+            <returns>La instancia única de <see cref="T:Business.Performance.EmpleadoTareaLogic"/>.</returns>
+        </member>
+        <member name="M:Business.Performance.EmpleadoTareaLogic.HacerTarea(Domain.DETALLE_TAREA)">
+            <summary>
+            Asigna una tarea a un empleado.
+            </summary>
+            <param name="detalle">El detalle de la tarea a realizar.</param>
+        </member>
+        <member name="M:Business.Performance.EmpleadoTareaLogic.FinTarea(System.Guid)">
+            <summary>
+            Finaliza una tarea por su identificador único.
+            </summary>
+            <param name="idTarea">El identificador único de la tarea a finalizar.</param>
+        </member>
+        <member name="M:Business.Performance.EmpleadoTareaLogic.GetDetalles">
+            <summary>
+            Obtiene todos los detalles de tareas registrados.
+            </summary>
+            <returns>Una lista de detalles de tareas.</returns>
+        </member>
+        <member name="M:Business.Performance.EmpleadoTareaLogic.GetDetallesPorEmp(System.Int32)">
+            <summary>
+            Obtiene los detalles de tareas asignadas a un empleado específico.
+            </summary>
+            <param name="id">El identificador del empleado.</param>
+            <returns>Una lista de detalles de tareas para el empleado especificado.</returns>
+        </member>
+        <member name="M:Business.Performance.EmpleadoTareaLogic.ObtenerDesempDelMes">
+            <summary>
+            Obtiene los desempeños de empleados registrados en el mes actual.
+            </summary>
+            <returns>Una lista de desempeños de empleados.</returns>
+        </member>
+        <member name="M:Business.Performance.EmpleadoTareaLogic.Add(Domain.DETALLE_TAREA)">
+            <summary>
+            Agrega un nuevo detalle de tarea. Este método no está implementado.
+            </summary>
+            <param name="obj">El detalle de tarea a agregar.</param>
+        </member>
+        <member name="M:Business.Performance.EmpleadoTareaLogic.GetAll">
+            <summary>
+            Obtiene todos los detalles de tareas. Este método no está implementado.
+            </summary>
+            <returns>Una lista de todos los detalles de tareas.</returns>
+        </member>
+        <member name="M:Business.Performance.EmpleadoTareaLogic.Update(Domain.DETALLE_TAREA)">
+            <summary>
+            Actualiza un detalle de tarea existente. Este método no está implementado.
+            </summary>
+            <param name="obj">El detalle de tarea a actualizar.</param>
+        </member>
+        <member name="M:Business.Performance.EmpleadoTareaLogic.Remove(System.Guid)">
+            <summary>
+            Elimina un detalle de tarea por su identificador único. Este método no está implementado.
+            </summary>
+            <param name="id">El identificador único del detalle de tarea a eliminar.</param>
+        </member>
+        <member name="M:Business.Performance.EmpleadoTareaLogic.GetById(System.Guid)">
+            <summary>
+            Obtiene un detalle de tarea por su identificador único. Este método no está implementado.
+            </summary>
+            <param name="id">El identificador único del detalle de tarea a obtener.</param>
+            <returns>El detalle de tarea correspondiente al identificador.</returns>
+        </member>
+    </members>
+</doc>

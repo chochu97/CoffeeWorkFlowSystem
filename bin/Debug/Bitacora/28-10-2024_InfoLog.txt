@@ -1,0 +1,6 @@
+28/10/2024 16:43:03 [Info] : El Usuario 'caja2024', con el rol 'Cajero' inicio sesion.
+28/10/2024 16:43:33 [Info] : El Usuario 'caja2024', con el rol 'Cajero' inicio sesion.
+28/10/2024 16:43:46 [Info] : El Usuario 'caja2024', con el rol 'Cajero' inicio sesion.
+28/10/2024 16:44:18 [Info] : El Usuario 'caja2024', con el rol 'Cajero' inicio sesion.
+28/10/2024 16:45:07 [Info] : El Usuario 'caja2024', con el rol 'Cajero' inicio sesion.
+28/10/2024 16:48:55 [Info] : El Usuario 'caja2024', con el rol 'Cajero' inicio sesion.

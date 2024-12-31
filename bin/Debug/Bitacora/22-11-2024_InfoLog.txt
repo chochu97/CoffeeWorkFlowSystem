@@ -1,0 +1,4 @@
+22/11/2024 10:33:11 [Info] : El Usuario 'admin2024', con el rol 'Administrador' inicio sesion.
+22/11/2024 10:37:11 [Info] : El Usuario 'prueba', con el rol 'prueba' inicio sesion.
+22/11/2024 10:40:13 [Info] : El Usuario 'prueba', con el rol 'prueba' inicio sesion.
+22/11/2024 10:44:01 [Info] : El Usuario 'prueba', con el rol 'prueba' inicio sesion.

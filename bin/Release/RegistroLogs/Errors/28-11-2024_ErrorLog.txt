@@ -1,0 +1,23 @@
+28/11/2024 09:20:31 [Error] : Debe seleccionar una Tarea en estado Pendiente para realizar.   en WindowsFormsApp1.Coffee.btnHacerTarea_Click(Object sender, EventArgs e) en C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Coffee.cs:línea 1366
+28/11/2024 10:43:23 [Error] : No se encontro el cliente solicitado.   en Business.People.ClienteLogic.GetOneByDNI(Int32 dni) en C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Business\People\ClienteLogic.cs:línea 162
+   en WindowsFormsApp1.Coffee.btnAddPedido_Click(Object sender, EventArgs e) en C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Coffee.cs:línea 396
+28/11/2024 10:43:29 [Error] : No se encontro el cliente solicitado.   en Business.People.ClienteLogic.GetOneByDNI(Int32 dni) en C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Business\People\ClienteLogic.cs:línea 162
+   en WindowsFormsApp1.Coffee.btnAddPedido_Click(Object sender, EventArgs e) en C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Coffee.cs:línea 396
+28/11/2024 10:46:02 [Error] : La cadena de entrada no tiene el formato correcto.   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Convert.ToInt32(String value)
+   en WindowsFormsApp1.Coffee.btnAddComida_Click(Object sender, EventArgs e) en C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Coffee.cs:línea 533
+28/11/2024 10:46:11 [Error] : No se encontro el cliente solicitado.   en Business.People.ClienteLogic.GetOneByDNI(Int32 dni) en C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Business\People\ClienteLogic.cs:línea 162
+   en WindowsFormsApp1.Coffee.btnAddPedido_Click(Object sender, EventArgs e) en C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Coffee.cs:línea 396
+28/11/2024 10:46:40 [Error] : No se encontro el cliente solicitado.   en Business.People.ClienteLogic.GetOneByDNI(Int32 dni) en C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Business\People\ClienteLogic.cs:línea 162
+   en WindowsFormsApp1.Coffee.btnAddPedido_Click(Object sender, EventArgs e) en C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Coffee.cs:línea 396
+28/11/2024 10:51:20 [Error] : La cadena de entrada no tiene el formato correcto.   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Convert.ToInt32(String value)
+   en WindowsFormsApp1.Coffee.btnAddBebida_Click(Object sender, EventArgs e) en C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Coffee.cs:línea 589
+28/11/2024 10:51:27 [Error] : La cadena de entrada no tiene el formato correcto.   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Convert.ToInt32(String value)
+   en WindowsFormsApp1.Coffee.btnAddBebida_Click(Object sender, EventArgs e) en C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Coffee.cs:línea 589
+28/11/2024 14:04:10 [Error] : No hay detalles registrados este mes.   at Business.Performance.EmpleadoTareaLogic.GetDetalles() in C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Business\Performance\EmpleadoTareaLogic.cs:line 118
+   at WindowsFormsApp1.Coffee.ActualizarDetallesTarea() in C:\Users\nicok\source\repos\Programacion\Escritorio Winforms\Pantallas\WindowsFormsApp1\Coffee.cs:line 1449
